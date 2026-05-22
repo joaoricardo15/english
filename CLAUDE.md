@@ -80,6 +80,13 @@ A 10-week English course for a beginner Brazilian student (60yo). All materials,
 - Casual and fun, not academic
 - Errors are fine and expected — the app should never feel punitive
 
+### Characters for Dialogues (real family names)
+Use these names instead of generic characters:
+- **Little girl:** Blue
+- **Boys:** Lazaro, Joao, Manoel
+- **Men:** Nelson, Osni
+- **Women:** Cleci, Marina, Vanessa
+
 ## Web App (GitHub Pages)
 
 ### Tech Stack
