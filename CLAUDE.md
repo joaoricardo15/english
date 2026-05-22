@@ -87,12 +87,27 @@ A 10-week English course for a beginner Brazilian student (60yo). All materials,
 - localStorage for progress tracking
 - No backend, no dependencies, no build step
 
-### Design Principles
-- Large text, large buttons (accessibility for 60yo user)
-- Clean, uncluttered layout
-- Clear navigation between classes
-- Visual progress indicators
-- Works offline after first load (optional: service worker)
+### Design Principles (MUST FOLLOW)
+
+**Mobile-first, always:**
+- Design for phone screen first, then scale up. Never the other way around.
+- Vertical scrolling only — no horizontal swipe, no carousels, no tabs that hide content.
+- Test mentally: "Does this work on a 375px wide screen?"
+
+**Accessibility for non-tech-savvy users:**
+- The student is 60yo and not familiar with digital tools. Everything must be intuitive without explanation.
+- Large touch targets — buttons minimum 48px height, generous padding, easy to tap with a finger.
+- Large readable text — body text minimum 16px, vocabulary/exercise text 18px+. Never small print.
+- High contrast — clear text-to-background contrast. No light gray text on white.
+- No jargon in UI — no "submit", "navigate", "toggle". Use plain words: "Check", "Next", "Back".
+
+**Simplicity:**
+- Minimal UI — one action per screen when possible.
+- No hamburger menus, no hidden elements, no hover-dependent interactions.
+- Clear feedback — after every user action (tap, submit), immediate and obvious visual + text feedback.
+- Forgiving input — accept lowercase/uppercase, ignore trailing spaces, accept common typos where reasonable.
+
+**Litmus test:** "Would a 60-year-old who mostly uses WhatsApp and Netflix understand this without instructions?" If not, simplify.
 
 ### Exercise Types to Implement
 1. **Fill-in-the-blank** — type the missing word
@@ -132,3 +147,19 @@ After each class, save notes in /notes/ about:
 - What the student struggled with
 - Vocabulary she needs more repetition on
 - Any adjustments for next week
+
+## AI Assistant Rules (for Claude)
+
+### Self-improving instructions
+- Whenever a new rule, guideline, or preference emerges during an interaction, flag it and ask: "Should I save this to the project instructions for future sessions?"
+- If yes, add it to the relevant section of this CLAUDE.md file and commit
+- Only save patterns that should persist — not trivial one-off things
+
+### GitHub & Deployment
+- GitHub account: **joaoricardo15**
+- Email for commits: **joaoricardo15@hotmail.com**
+- Use `gh` CLI (GitHub CLI) for all GitHub operations
+- Auth method: OAuth via `gh auth login` (persists in macOS Keychain)
+- Always set `git config user.email "joaoricardo15@hotmail.com"` on this repo
+- Deploy: push to `main` triggers GitHub Actions → deploys `app/` to GitHub Pages
+- Live URL: https://joaoricardo15.github.io/english/
