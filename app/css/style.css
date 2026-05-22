@@ -88,7 +88,7 @@ header h1 {
     grid-template-columns: 44px 1fr auto;
     grid-template-rows: auto auto;
     align-items: center;
-    gap: 0 12px;
+    gap: 2px 12px;
     padding: 16px;
     min-height: var(--min-touch);
     background: var(--bg);
@@ -122,6 +122,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;

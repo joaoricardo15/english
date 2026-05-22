@@ -116,8 +116,10 @@ function formatDatePT(dateStr) {
 }
 
 function getClassLockReason(classNum) {
+    if (classNum === 1) return null;
+
     var completed = getCompletedClasses();
-    var prevCompleted = classNum === 1 || completed.indexOf(classNum - 1) !== -1;
+    var prevCompleted = completed.indexOf(classNum - 1) !== -1;
     var dateReached = isClassDateReached(classNum);
 
     if (!prevCompleted && !dateReached) {
