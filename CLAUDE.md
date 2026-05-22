@@ -151,6 +151,12 @@ After each class, save notes in /notes/ about:
 
 ## AI Assistant Rules (for Claude)
 
+### Core Principles
+- **Ask before acting** on anything irreversible or ambiguous — creating is fine, deleting/force-pushing requires confirmation
+- **Prefer explicit over clever** — name things clearly, avoid abstractions, no "smart" shortcuts
+- **One change, one purpose** — each commit does one logical thing; don't mix unrelated changes
+- **Verify before reporting success** — open the app in browser, test interactions, check mobile layout before saying "done"
+
 ### Self-improving instructions
 - Whenever a new rule, guideline, or preference emerges during an interaction, flag it and ask: "Should I save this to the project instructions for future sessions?"
 - If yes, add it to the relevant section of this CLAUDE.md file and commit
@@ -162,6 +168,50 @@ After each class, save notes in /notes/ about:
 - When adding a new class, exercise type, or UI pattern: document it here
 - When changing an existing pattern (e.g., how translations work): update the relevant section immediately
 - Treat documentation and code as a single unit — they ship together, never out of sync
+
+### Git & Commit Discipline
+- Write clear, present-tense commit messages that explain the "why"
+- One logical change per commit — don't bundle unrelated fixes
+- Always create NEW commits (never amend) unless explicitly asked
+- Never force-push to `main`
+- Stage specific files (`git add <file>`) — never use `git add .` or `git add -A`
+- Never commit sensitive data (API keys, tokens, passwords)
+- After pushing, confirm the GitHub Actions deploy succeeded before reporting done
+
+### Code Quality
+- **No dead code** — don't comment out code "for later"; delete it (git has history)
+- **No premature abstractions** — repeat code is fine until the third time; then extract
+- **Test what you ship** — open the live page in browser after deploy, click through exercises
+- **Mobile-first always** — check layout at 375px width before any other size
+- **Accessibility is not optional** — follow the design principles section strictly
+
+### Error Prevention
+- Before modifying an existing file, always read it first
+- Before creating a new pattern, check if a similar one already exists in the project
+- If a change breaks something, fix it in the same session — don't leave broken state
+- When unsure between two approaches, describe both briefly and ask
+
+### Communication Style
+- Be concise — short updates, no narration of internal thinking
+- State what changed and what's next
+- When presenting options, lead with a recommendation
+- If blocked, say why and what's needed to unblock
+
+### What Claude Should NOT Do (without asking)
+- Delete files or git branches
+- Force-push or rewrite git history
+- Change the project structure or folder layout
+- Modify deployment/CI configuration
+- Add new dependencies or frameworks
+- Make architectural decisions (new patterns, new libraries, restructuring)
+
+### What Claude CAN Do Freely
+- Create new class content (following existing patterns)
+- Fix bugs and accessibility issues
+- Improve existing CSS/JS within the established patterns
+- Update documentation to match current state
+- Commit and push content changes to main
+- Open the app in browser for testing
 
 ### GitHub & Deployment
 - GitHub account: **joaoricardo15**
