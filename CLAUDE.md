@@ -156,6 +156,13 @@ After each class, save notes in /notes/ about:
 - If yes, add it to the relevant section of this CLAUDE.md file and commit
 - Only save patterns that should persist — not trivial one-off things
 
+### Documentation discipline
+- **Always review and update this CLAUDE.md** after making significant changes to the project (new features, new patterns, structural changes, design decisions)
+- If a change makes something documented here inconsistent or outdated, fix the documentation in the same commit — don't wait to be asked
+- When adding a new class, exercise type, or UI pattern: document it here
+- When changing an existing pattern (e.g., how translations work): update the relevant section immediately
+- Treat documentation and code as a single unit — they ship together, never out of sync
+
 ### GitHub & Deployment
 - GitHub account: **joaoricardo15**
 - Email for commits: **joaoricardo15@hotmail.com**
