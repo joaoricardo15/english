@@ -50,6 +50,44 @@ A 10-week English course for a beginner Brazilian student (60yo). All materials,
 5. **Chunks over rules** — teach "I'd like a coffee" not "conditional + infinitive"
 6. **Portuguese as scaffolding** — heavy PT early, reduce gradually
 
+### Lesson Structure Rules
+Each class page must follow this structure (in order):
+
+1. **Vocabulary section** (8-10 words, tap-to-reveal translation)
+2. **Micro-dialogue 1** (2-3 exchanges, practical scenario, tap-to-reveal translation)
+3. **Exercises block 1** — Receptive (3-4 exercises: matching, multiple choice, word-bank fill-in)
+4. **Short reading text** (40-60 words max, bilingual, about the student's daily life using the vocabulary)
+5. **Micro-dialogue 2** (different scenario with same vocabulary, slightly harder)
+6. **Exercises block 2** — Productive (3-4 exercises: free-fill-in-the-blank, translate short sentences, reorder words)
+7. **Fun material** (song, video, optional challenge)
+8. **Self-study tip** (one tool or method)
+
+Total: ~10-12 exercises per class (split into 2 blocks of ~5-6)
+
+### Exercise Design Rules
+- **Scaffolding order:** Receptive first (recognition) → Productive second (recall/construction)
+- **Bidirectional practice:** Always include both EN→PT and PT→EN exercises
+- **Word bank for beginners:** In classes 1-4, fill-in-the-blank exercises should offer a word bank (tappable options) to reduce spelling burden
+- **Max 2 new grammar concepts per class** — teach through pattern examples, never through explicit rules
+- **Each new word must appear in at least 3 different exercises** within the same class
+- **Comprehension before production:** Student reads/understands dialogues before constructing sentences
+- **40-word max chunks:** Break any reading text into short paragraphs with visual breaks
+- **No exercise should require more than 8 words as answer** — keep production tasks short
+
+### Dialogue Rules
+- **2-3 exchanges max per dialogue** (micro-dialogues, not long conversations)
+- **Two dialogues per class** showing different scenarios with the same vocabulary
+- **Always use family character names** (see Characters section above)
+- **Each dialogue models one practical situation** the student might encounter
+- **Comprehension check after each dialogue** (1 multiple-choice question about what happened)
+
+### Repetition Strategy
+- Every class reviews at least 5 words from previous weeks
+- Core verbs (like, have, go, want, need, feel) appear in EVERY class after introduction
+- Same sentence structures repeat in new contexts across classes
+- Exercises block 2 always includes 1-2 review items from past classes
+- A word is considered "learned" after 6+ correct exposures across different sessions
+
 ### What to Create (formats I can produce well)
 - **Interactive exercises** (HTML/JS): fill-in-the-blank, matching, multiple choice, drag-and-drop
 - **Vocabulary pages** with images (use free image URLs), PT/EN, audio links (Forvo/Google TTS)

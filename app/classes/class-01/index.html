@@ -64,164 +64,299 @@
         </ul>
     </section>
 
-    <!-- DIALOGUE -->
+    <!-- DIALOGUE 1 -->
     <section class="section">
-        <h2>Dialogue / Dialogo</h2>
+        <h2>Dialogue 1 / Dialogo 1</h2>
         <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
-            Leia o dialogo abaixo. Toque em cada frase para ver a tradução.<br>
-            Na aula, vamos praticar a pronuncia juntos!
+            Marina e Cleci se encontram de manha. Toque para ver a tradução.
         </p>
         <div class="dialogue">
             <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Marina</div>
-                <div class="dialogue-text">Good morning! How are you?</div>
-                <div class="dialogue-translation hidden">Bom dia! Como voce esta?</div>
+                <div class="dialogue-text">Good morning, Cleci! How are you?</div>
+                <div class="dialogue-translation hidden">Bom dia, Cleci! Como voce esta?</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Cleci</div>
-                <div class="dialogue-text">Good morning! I'm fine, thank you.</div>
-                <div class="dialogue-translation hidden">Bom dia! Estou bem, obrigada.</div>
+                <div class="dialogue-text">Good morning! I'm fine, thank you. And you?</div>
+                <div class="dialogue-translation hidden">Bom dia! Estou bem, obrigada. E voce?</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Marina</div>
-                <div class="dialogue-text">Do you like coffee?</div>
-                <div class="dialogue-translation hidden">Voce gosta de cafe?</div>
+                <div class="dialogue-text">I'm great! Do you like coffee?</div>
+                <div class="dialogue-translation hidden">Estou otima! Voce gosta de cafe?</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Cleci</div>
-                <div class="dialogue-text">Yes! I like coffee with bread and butter.</div>
-                <div class="dialogue-translation hidden">Sim! Eu gosto de cafe com pao e manteiga.</div>
-            </div>
-            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
-                <div class="dialogue-speaker">Marina</div>
-                <div class="dialogue-text">Me too! Breakfast is delicious.</div>
-                <div class="dialogue-translation hidden">Eu tambem! O cafe da manha e delicioso.</div>
+                <div class="dialogue-text">Yes! I like coffee with bread and butter. Delicious!</div>
+                <div class="dialogue-translation hidden">Sim! Eu gosto de cafe com pao e manteiga. Delicioso!</div>
             </div>
         </div>
     </section>
 
-    <!-- EXERCISES -->
+    <!-- EXERCISES BLOCK 1: Receptive -->
     <section class="section">
-        <h2>Exercises / Exercicios</h2>
-        <p style="margin-bottom: 16px; color: var(--text-light); font-size: 0.9rem;">
-            Complete os exercicios abaixo. Voce pode tentar quantas vezes quiser!
+        <h2>Exercises — Part 1 / Exercicios — Parte 1</h2>
+        <p style="margin-bottom: 16px; color: var(--text-light); font-size: 0.95rem;">
+            Reconhecimento — escolha a resposta correta!
         </p>
 
-        <!-- Exercise 1: Fill in the blank -->
-        <div class="exercise" data-exercise="ex1">
-            <div class="exercise-prompt">1. Complete: "Bom dia" in English is: <strong>Good ___</strong></div>
-            <input type="text" id="ex1" placeholder="type here / escreva aqui">
-            <div class="exercise-feedback" id="fb1"></div>
-            <button class="check-btn" onclick="checkFillBlank('ex1', 'morning', 'fb1')">Check / Verificar</button>
+        <!-- Ex 1: Comprehension check on dialogue 1 -->
+        <div class="exercise" data-exercise="ex1" id="ex1-mc">
+            <div class="exercise-prompt">1. In the dialogue, what does Cleci like for breakfast?</div>
+            <div class="choices">
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex1-mc'))">Juice and fruit</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex1-mc'))">Bread and juice</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex1-mc'))">Coffee with bread and butter</button>
+            </div>
+            <div class="exercise-feedback"></div>
         </div>
 
-        <!-- Exercise 2: Fill in the blank -->
+        <!-- Ex 2: Matching EN → PT -->
         <div class="exercise" data-exercise="ex2">
-            <div class="exercise-prompt">2. Complete: "Eu gosto de cafe" = "I ___ coffee"</div>
-            <input type="text" id="ex2" placeholder="type here / escreva aqui">
-            <div class="exercise-feedback" id="fb2"></div>
-            <button class="check-btn" onclick="checkFillBlank('ex2', 'like', 'fb2')">Check / Verificar</button>
-        </div>
-
-        <!-- Exercise 3: Multiple Choice -->
-        <div class="exercise" data-exercise="ex3" id="ex3">
-            <div class="exercise-prompt">3. What is "pao" in English?</div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Butter</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Juice</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Bread</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Fruit</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Exercise 4: Multiple Choice -->
-        <div class="exercise" data-exercise="ex4" id="ex4">
-            <div class="exercise-prompt">4. What is "suco" in English?</div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Coffee</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Juice</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Milk</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Water</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Exercise 5: Fill in the blank -->
-        <div class="exercise" data-exercise="ex5">
-            <div class="exercise-prompt">5. "Eu nao gosto de fruta" = "I ___ like fruit"</div>
-            <input type="text" id="ex5" placeholder="type here / escreva aqui">
-            <div class="exercise-feedback" id="fb5"></div>
-            <button class="check-btn" onclick="checkFillBlank('ex5', \"don't\", 'fb5')">Check / Verificar</button>
-        </div>
-
-        <!-- Exercise 6: Matching -->
-        <div class="exercise" data-exercise="ex6">
-            <div class="exercise-prompt">6. Connect the words / Conecte as palavras:</div>
+            <div class="exercise-prompt">2. Connect the words / Conecte as palavras:</div>
             <div class="matching-container" id="matching1">
                 <div class="matching-row">
                     <span class="word">Coffee</span>
                     <span>→</span>
                     <select>
-                        <option value="">choose / escolha</option>
+                        <option value="">escolha</option>
                         <option value="cafe">Cafe</option>
                         <option value="pao">Pao</option>
                         <option value="manteiga">Manteiga</option>
                         <option value="suco">Suco</option>
-                        <option value="fruta">Fruta</option>
                     </select>
                 </div>
                 <div class="matching-row">
                     <span class="word">Bread</span>
                     <span>→</span>
                     <select>
-                        <option value="">choose / escolha</option>
+                        <option value="">escolha</option>
                         <option value="cafe">Cafe</option>
                         <option value="pao">Pao</option>
                         <option value="manteiga">Manteiga</option>
                         <option value="suco">Suco</option>
-                        <option value="fruta">Fruta</option>
                     </select>
                 </div>
                 <div class="matching-row">
                     <span class="word">Butter</span>
                     <span>→</span>
                     <select>
-                        <option value="">choose / escolha</option>
+                        <option value="">escolha</option>
                         <option value="cafe">Cafe</option>
                         <option value="pao">Pao</option>
                         <option value="manteiga">Manteiga</option>
                         <option value="suco">Suco</option>
-                        <option value="fruta">Fruta</option>
                     </select>
                 </div>
                 <div class="matching-row">
                     <span class="word">Juice</span>
                     <span>→</span>
                     <select>
-                        <option value="">choose / escolha</option>
+                        <option value="">escolha</option>
                         <option value="cafe">Cafe</option>
                         <option value="pao">Pao</option>
                         <option value="manteiga">Manteiga</option>
                         <option value="suco">Suco</option>
-                        <option value="fruta">Fruta</option>
-                    </select>
-                </div>
-                <div class="matching-row">
-                    <span class="word">Fruit</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">choose / escolha</option>
-                        <option value="cafe">Cafe</option>
-                        <option value="pao">Pao</option>
-                        <option value="manteiga">Manteiga</option>
-                        <option value="suco">Suco</option>
-                        <option value="fruta">Fruta</option>
                     </select>
                 </div>
             </div>
-            <div class="exercise-feedback" id="fb-match"></div>
-            <button class="check-btn" onclick="checkMatchingEx()">Check / Verificar</button>
+            <div class="exercise-feedback" id="fb-match1"></div>
+            <button class="check-btn" onclick="checkMatch1()">Check / Verificar</button>
+        </div>
+
+        <!-- Ex 3: Multiple choice PT → EN -->
+        <div class="exercise" data-exercise="ex3" id="ex3-mc">
+            <div class="exercise-prompt">3. "Cafe da manha" in English is:</div>
+            <div class="choices">
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex3-mc'))">Coffee</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex3-mc'))">Breakfast</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex3-mc'))">Bread</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex3-mc'))">Good morning</button>
+            </div>
+            <div class="exercise-feedback"></div>
+        </div>
+
+        <!-- Ex 4: Multiple choice EN → PT -->
+        <div class="exercise" data-exercise="ex4" id="ex4-mc">
+            <div class="exercise-prompt">4. What does "I like juice" mean?</div>
+            <div class="choices">
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex4-mc'))">Eu gosto de suco</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex4-mc'))">Eu nao gosto de suco</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex4-mc'))">Eu gosto de cafe</button>
+            </div>
+            <div class="exercise-feedback"></div>
+        </div>
+
+        <!-- Ex 5: Multiple choice -->
+        <div class="exercise" data-exercise="ex5" id="ex5-mc">
+            <div class="exercise-prompt">5. How do you say "Bom dia" in English?</div>
+            <div class="choices">
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex5-mc'))">Good night</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex5-mc'))">Good afternoon</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex5-mc'))">Good morning</button>
+            </div>
+            <div class="exercise-feedback"></div>
+        </div>
+    </section>
+
+    <!-- SHORT TEXT -->
+    <section class="section">
+        <h2>Reading / Leitura</h2>
+        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
+            Leia o texto. Toque em cada frase para ver a tradução.
+        </p>
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-text">Every morning, Cleci has breakfast.</div>
+                <div class="dialogue-translation hidden">Toda manha, Cleci toma cafe da manha.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-text">She likes coffee with bread and butter.</div>
+                <div class="dialogue-translation hidden">Ela gosta de cafe com pao e manteiga.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-text">She doesn't like juice. She likes fruit.</div>
+                <div class="dialogue-translation hidden">Ela nao gosta de suco. Ela gosta de fruta.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-text">Breakfast is delicious!</div>
+                <div class="dialogue-translation hidden">O cafe da manha e delicioso!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIALOGUE 2 -->
+    <section class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
+            Nelson oferece cafe da manha para Joao.
+        </p>
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good morning, Joao! Do you like coffee?</div>
+                <div class="dialogue-translation hidden">Bom dia, Joao! Voce gosta de cafe?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-speaker">Joao</div>
+                <div class="dialogue-text">No, I don't like coffee. I like juice.</div>
+                <div class="dialogue-translation hidden">Nao, eu nao gosto de cafe. Eu gosto de suco.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">And bread with butter?</div>
+                <div class="dialogue-translation hidden">E pao com manteiga?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
+                <div class="dialogue-speaker">Joao</div>
+                <div class="dialogue-text">Yes! I like bread. Bread is delicious!</div>
+                <div class="dialogue-translation hidden">Sim! Eu gosto de pao. Pao e delicioso!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXERCISES BLOCK 2: Productive -->
+    <section class="section">
+        <h2>Exercises — Part 2 / Exercicios — Parte 2</h2>
+        <p style="margin-bottom: 16px; color: var(--text-light); font-size: 0.95rem;">
+            Agora e sua vez de escrever! / Now it's your turn to write!
+        </p>
+
+        <!-- Ex 6: Comprehension check on dialogue 2 -->
+        <div class="exercise" data-exercise="ex6" id="ex6-mc">
+            <div class="exercise-prompt">6. In dialogue 2, what does Joao like?</div>
+            <div class="choices">
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex6-mc'))">Coffee and butter</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex6-mc'))">Juice and bread</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex6-mc'))">Fruit and juice</button>
+            </div>
+            <div class="exercise-feedback"></div>
+        </div>
+
+        <!-- Ex 7: Fill in the blank -->
+        <div class="exercise" data-exercise="ex7">
+            <div class="exercise-prompt">7. Complete: "Bom dia" = "Good ___"</div>
+            <input type="text" id="input-ex7" placeholder="type here / escreva aqui">
+            <div class="exercise-feedback" id="fb-ex7"></div>
+            <button class="check-btn" onclick="checkFillBlank('input-ex7', 'morning', 'fb-ex7')">Check / Verificar</button>
+        </div>
+
+        <!-- Ex 8: Fill in the blank -->
+        <div class="exercise" data-exercise="ex8">
+            <div class="exercise-prompt">8. Complete: "Eu gosto de cafe" = "I ___ coffee"</div>
+            <input type="text" id="input-ex8" placeholder="type here / escreva aqui">
+            <div class="exercise-feedback" id="fb-ex8"></div>
+            <button class="check-btn" onclick="checkFillBlank('input-ex8', 'like', 'fb-ex8')">Check / Verificar</button>
+        </div>
+
+        <!-- Ex 9: Fill in the blank -->
+        <div class="exercise" data-exercise="ex9">
+            <div class="exercise-prompt">9. Complete: "Eu nao gosto de fruta" = "I ___ like fruit"</div>
+            <input type="text" id="input-ex9" placeholder="type here / escreva aqui">
+            <div class="exercise-feedback" id="fb-ex9"></div>
+            <button class="check-btn" onclick="checkFillBlank('input-ex9', \"don't\", 'fb-ex9')">Check / Verificar</button>
+        </div>
+
+        <!-- Ex 10: Translate full sentence -->
+        <div class="exercise" data-exercise="ex10">
+            <div class="exercise-prompt">10. Translate: "Pao e delicioso" = "___ is ___"</div>
+            <input type="text" id="input-ex10" placeholder="type the full sentence">
+            <div class="exercise-feedback" id="fb-ex10"></div>
+            <button class="check-btn" onclick="checkFillBlank('input-ex10', 'bread is delicious', 'fb-ex10')">Check / Verificar</button>
+        </div>
+
+        <!-- Ex 11: Matching PT → EN (reverse direction) -->
+        <div class="exercise" data-exercise="ex11">
+            <div class="exercise-prompt">11. Now the other way! Connect PT → EN:</div>
+            <div class="matching-container" id="matching2">
+                <div class="matching-row">
+                    <span class="word">Fruta</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="juice">Juice</option>
+                        <option value="delicious">Delicious</option>
+                        <option value="breakfast">Breakfast</option>
+                    </select>
+                </div>
+                <div class="matching-row">
+                    <span class="word">Suco</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="juice">Juice</option>
+                        <option value="delicious">Delicious</option>
+                        <option value="breakfast">Breakfast</option>
+                    </select>
+                </div>
+                <div class="matching-row">
+                    <span class="word">Delicioso</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="juice">Juice</option>
+                        <option value="delicious">Delicious</option>
+                        <option value="breakfast">Breakfast</option>
+                    </select>
+                </div>
+                <div class="matching-row">
+                    <span class="word">Cafe da manha</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="juice">Juice</option>
+                        <option value="delicious">Delicious</option>
+                        <option value="breakfast">Breakfast</option>
+                    </select>
+                </div>
+            </div>
+            <div class="exercise-feedback" id="fb-match2"></div>
+            <button class="check-btn" onclick="checkMatch2()">Check / Verificar</button>
         </div>
     </section>
 
@@ -232,7 +367,7 @@
             <span class="media-icon">🎵</span>
             <div class="media-info">
                 <h3>Song: "Good Morning" — Singin' in the Rain</h3>
-                <p>A classic, fun song to practice the greeting!</p>
+                <p>A classic, fun song! Try to hear "good morning" in the lyrics.</p>
                 <a href="https://www.youtube.com/watch?v=GB2yiIoEtXo" target="_blank">Watch on YouTube →</a>
             </div>
         </div>
@@ -271,16 +406,30 @@
             translation.classList.toggle('hidden');
         }
 
-        function checkMatchingEx() {
-            var correct = checkMatching('matching1', ['cafe', 'pao', 'manteiga', 'suco', 'fruta']);
-            var fb = document.getElementById('fb-match');
+        function checkMatch1() {
+            var correct = checkMatching('matching1', ['cafe', 'pao', 'manteiga', 'suco']);
+            var fb = document.getElementById('fb-match1');
             if (correct) {
                 fb.textContent = 'Perfeito! All correct!';
                 fb.className = 'exercise-feedback correct';
-                var exercise = document.querySelector('[data-exercise="ex6"]');
+                var exercise = document.querySelector('[data-exercise="ex2"]');
                 onExerciseCorrect(exercise.querySelector('.check-btn'));
             } else {
-                fb.textContent = 'Some are wrong. Try again! / Alguns estao errados. Tente de novo!';
+                fb.textContent = 'Some are wrong. Try again! / Tente de novo!';
+                fb.className = 'exercise-feedback incorrect';
+            }
+        }
+
+        function checkMatch2() {
+            var correct = checkMatching('matching2', ['fruit', 'juice', 'delicious', 'breakfast']);
+            var fb = document.getElementById('fb-match2');
+            if (correct) {
+                fb.textContent = 'Perfeito! All correct!';
+                fb.className = 'exercise-feedback correct';
+                var exercise = document.querySelector('[data-exercise="ex11"]');
+                onExerciseCorrect(exercise.querySelector('.check-btn'));
+            } else {
+                fb.textContent = 'Some are wrong. Try again! / Tente de novo!';
                 fb.className = 'exercise-feedback incorrect';
             }
         }
