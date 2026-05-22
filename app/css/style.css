@@ -1,16 +1,17 @@
 :root {
-    --text: #2d2d2d;
-    --text-light: #666;
+    --text: #1a1a1a;
+    --text-light: #4a4a4a;
     --bg: #ffffff;
-    --bg-soft: #f8f9fa;
-    --border: #e9ecef;
-    --accent: #4a90d9;
+    --bg-soft: #f5f6f7;
+    --border: #d4d8dc;
+    --accent: #2b6cb0;
     --accent-light: #e8f1fb;
-    --success: #4caf50;
+    --success: #2e7d32;
     --success-light: #e8f5e9;
-    --warning: #ff9800;
+    --warning: #e65100;
     --radius: 12px;
-    --shadow: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --min-touch: 48px;
 }
 
 * {
@@ -23,8 +24,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text);
     background: var(--bg);
+    font-size: 18px;
     line-height: 1.6;
-    padding: 20px;
+    padding: 16px;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -42,14 +44,14 @@ header h1 {
 
 .subtitle {
     color: var(--text-light);
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 /* Progress Bar */
 .progress-bar {
     background: var(--bg-soft);
     border-radius: 20px;
-    height: 36px;
+    height: var(--min-touch);
     position: relative;
     margin-bottom: 30px;
     border: 1px solid var(--border);
@@ -69,7 +71,7 @@ header h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text);
 }
@@ -83,11 +85,12 @@ header h1 {
 
 .class-card {
     display: grid;
-    grid-template-columns: 40px 1fr auto;
+    grid-template-columns: 44px 1fr auto;
     grid-template-rows: auto auto;
     align-items: center;
     gap: 0 12px;
     padding: 16px;
+    min-height: var(--min-touch);
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -119,13 +122,13 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--accent-light);
     color: var(--accent);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .class-card.completed .class-number {
@@ -135,20 +138,20 @@ header h1 {
 
 .class-title {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 .class-theme {
     grid-column: 2;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-light);
 }
 
 .class-status {
     grid-row: 1 / 3;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--success);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Footer */
@@ -156,7 +159,7 @@ footer {
     text-align: center;
     padding: 40px 0 20px;
     color: var(--text-light);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 /* === Class Page Styles === */
@@ -206,27 +209,52 @@ footer {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .vocab-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 16px;
+    padding: 14px 16px;
+    min-height: var(--min-touch);
     background: var(--bg-soft);
     border-radius: 8px;
     border: 1px solid var(--border);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .vocab-en {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 .vocab-pt {
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    text-align: right;
+    transition: opacity 0.2s;
+}
+
+.vocab-pt.hidden {
+    opacity: 0;
+    user-select: none;
+}
+
+.vocab-hint {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-align: right;
+}
+
+.vocab-pt.hidden + .vocab-hint,
+.vocab-item .vocab-hint {
+    display: none;
+}
+
+.vocab-item.reveal-mode .vocab-hint {
+    display: block;
 }
 
 /* Dialogue */
@@ -263,9 +291,22 @@ footer {
 }
 
 .dialogue-translation {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-light);
     font-style: italic;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.dialogue-translation.hidden {
+    opacity: 0;
+    user-select: none;
+}
+
+.dialogue-reveal-hint {
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 2px;
 }
 
 /* Exercises */
@@ -278,17 +319,18 @@ footer {
 }
 
 .exercise-prompt {
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-bottom: 12px;
     font-weight: 500;
 }
 
 .exercise input[type="text"] {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 16px;
     border: 2px solid var(--border);
     border-radius: 8px;
     font-size: 1.1rem;
+    min-height: var(--min-touch);
     outline: none;
     transition: border-color 0.2s;
 }
@@ -326,18 +368,20 @@ footer {
 .choices {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .choice-btn {
-    padding: 12px 16px;
+    padding: 14px 16px;
+    min-height: var(--min-touch);
     border: 2px solid var(--border);
     border-radius: 8px;
     background: var(--bg);
-    font-size: 1rem;
+    font-size: 1.05rem;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .choice-btn:hover {
@@ -363,16 +407,18 @@ footer {
 /* Check Button */
 .check-btn {
     display: inline-block;
-    padding: 10px 24px;
+    padding: 14px 28px;
+    min-height: var(--min-touch);
     background: var(--accent);
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 10px;
     transition: background 0.2s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .check-btn:hover {
@@ -448,7 +494,11 @@ footer {
 }
 
 .matching-row .word {
-    padding: 10px 14px;
+    padding: 12px 14px;
+    min-height: var(--min-touch);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--bg);
     border: 2px solid var(--border);
     border-radius: 8px;
@@ -457,10 +507,11 @@ footer {
 }
 
 .matching-row select {
-    padding: 10px;
+    padding: 12px 10px;
+    min-height: var(--min-touch);
     border: 2px solid var(--border);
     border-radius: 8px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     background: var(--bg);
 }
 

@@ -17,46 +17,49 @@
     <!-- VOCABULARY -->
     <section class="section">
         <h2>Vocabulary / Vocabulario</h2>
+        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
+            Toque na palavra para ver a tradução / Tap to see translation
+        </p>
         <ul class="vocab-list">
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Good morning</span>
-                <span class="vocab-pt">Bom dia</span>
+                <span class="vocab-pt hidden">Bom dia</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Breakfast</span>
-                <span class="vocab-pt">Cafe da manha</span>
+                <span class="vocab-pt hidden">Cafe da manha</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Coffee</span>
-                <span class="vocab-pt">Cafe</span>
+                <span class="vocab-pt hidden">Cafe</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Bread</span>
-                <span class="vocab-pt">Pao</span>
+                <span class="vocab-pt hidden">Pao</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Butter</span>
-                <span class="vocab-pt">Manteiga</span>
+                <span class="vocab-pt hidden">Manteiga</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Fruit</span>
-                <span class="vocab-pt">Fruta</span>
+                <span class="vocab-pt hidden">Fruta</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Juice</span>
-                <span class="vocab-pt">Suco</span>
+                <span class="vocab-pt hidden">Suco</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">I like...</span>
-                <span class="vocab-pt">Eu gosto de...</span>
+                <span class="vocab-pt hidden">Eu gosto de...</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">I don't like...</span>
-                <span class="vocab-pt">Eu nao gosto de...</span>
+                <span class="vocab-pt hidden">Eu nao gosto de...</span>
             </li>
-            <li class="vocab-item">
+            <li class="vocab-item" onclick="toggleTranslation(this)">
                 <span class="vocab-en">Delicious</span>
-                <span class="vocab-pt">Delicioso(a)</span>
+                <span class="vocab-pt hidden">Delicioso(a)</span>
             </li>
         </ul>
     </section>
@@ -64,34 +67,35 @@
     <!-- DIALOGUE -->
     <section class="section">
         <h2>Dialogue / Dialogo</h2>
-        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.9rem;">
-            Leia o dialogo abaixo. Na aula, vamos praticar a pronuncia juntos!
+        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
+            Leia o dialogo abaixo. Toque em cada frase para ver a tradução.<br>
+            Na aula, vamos praticar a pronuncia juntos!
         </p>
         <div class="dialogue">
-            <div class="dialogue-line">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Ana</div>
                 <div class="dialogue-text">Good morning! How are you?</div>
-                <div class="dialogue-translation">Bom dia! Como voce esta?</div>
+                <div class="dialogue-translation hidden">Bom dia! Como voce esta?</div>
             </div>
-            <div class="dialogue-line">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Maria</div>
                 <div class="dialogue-text">Good morning! I'm fine, thank you.</div>
-                <div class="dialogue-translation">Bom dia! Estou bem, obrigada.</div>
+                <div class="dialogue-translation hidden">Bom dia! Estou bem, obrigada.</div>
             </div>
-            <div class="dialogue-line">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Ana</div>
                 <div class="dialogue-text">Do you like coffee?</div>
-                <div class="dialogue-translation">Voce gosta de cafe?</div>
+                <div class="dialogue-translation hidden">Voce gosta de cafe?</div>
             </div>
-            <div class="dialogue-line">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Maria</div>
                 <div class="dialogue-text">Yes! I like coffee with bread and butter.</div>
-                <div class="dialogue-translation">Sim! Eu gosto de cafe com pao e manteiga.</div>
+                <div class="dialogue-translation hidden">Sim! Eu gosto de cafe com pao e manteiga.</div>
             </div>
-            <div class="dialogue-line">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(this)">
                 <div class="dialogue-speaker">Ana</div>
                 <div class="dialogue-text">Me too! Breakfast is delicious.</div>
-                <div class="dialogue-translation">Eu tambem! O cafe da manha e delicioso.</div>
+                <div class="dialogue-translation hidden">Eu tambem! O cafe da manha e delicioso.</div>
             </div>
         </div>
     </section>
@@ -256,6 +260,16 @@
 
     <script src="../../js/exercises.js"></script>
     <script>
+        function toggleTranslation(item) {
+            var pt = item.querySelector('.vocab-pt');
+            pt.classList.toggle('hidden');
+        }
+
+        function toggleDialogueTranslation(line) {
+            var translation = line.querySelector('.dialogue-translation');
+            translation.classList.toggle('hidden');
+        }
+
         function checkMatchingEx() {
             const correct = checkMatching('matching1', ['cafe', 'pao', 'manteiga', 'suco', 'fruta']);
             const fb = document.getElementById('fb-match');

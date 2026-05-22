@@ -70,6 +70,7 @@ A 10-week English course for a beginner Brazilian student (60yo). All materials,
 - Large font, lots of white space
 - One concept per screen/section
 - Always include Portuguese translation for new words (classes 1-6)
+- **Translations are hidden by default** — student taps to reveal (forces active recall)
 - Use emojis and icons as visual anchors for vocabulary
 - Celebratory feedback on exercises ("Great job! / Muito bem!")
 
