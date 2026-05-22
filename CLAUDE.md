@@ -7,6 +7,10 @@ A 10-week English course for a beginner Brazilian student (60yo). All materials,
 ```
 /English
 ├── CLAUDE.md              (this file - project instructions)
+├── package.json           (dev server config)
+├── .gitignore             (excludes node_modules/)
+├── scripts/
+│   └── screenshot.py      (browser window capture utility)
 ├── app/                   (GitHub Pages web app)
 │   ├── index.html         (home/dashboard)
 │   ├── css/
@@ -151,7 +155,34 @@ Use these names instead of generic characters:
 - Vanilla HTML/CSS/JS (no frameworks — keep it simple and fast)
 - Responsive (mobile-first — student will likely use phone/tablet)
 - localStorage for progress tracking and student data
-- No backend, no dependencies, no build step
+- No backend, no runtime dependencies, no build step
+- Dev server: `live-server` for auto-reload during development (devDependency only)
+
+### Dev Server & Visual Verification
+
+**Setup:**
+```bash
+npm install          # installs live-server (one-time)
+npm run dev:open     # starts server + opens browser
+npm run dev          # starts server without opening browser
+```
+
+**Port:** `8080` (configured in `package.json` → `config.port`)
+**URL:** http://127.0.0.1:8080
+
+**MANDATORY: Visual verification after layout/CSS changes.**
+After any change to CSS, HTML structure, or layout, you MUST verify the result visually:
+
+1. Ensure the dev server is running (`npm run dev`)
+2. Ensure the browser has the page open at http://127.0.0.1:8080 (or the specific class page)
+3. Take a screenshot of the browser window (NOT the full screen):
+   ```bash
+   python3 scripts/screenshot.py /tmp/check.png
+   ```
+4. Read the screenshot file to verify the layout looks correct
+5. If you cannot capture the screenshot (permissions), ask the user to open the browser at the dev server URL so you can capture it
+
+Never report a layout change as "done" without visually confirming the result. If screenshot capture fails entirely, explicitly tell the user you could not verify and ask them to check.
 
 ### Storage System (localStorage)
 - **Single key:** `english-course-data`
