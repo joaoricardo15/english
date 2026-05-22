@@ -663,3 +663,27 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* Lock message popup */
+.lock-message-popup {
+    position: fixed;
+    bottom: 24px;
+    left: 16px;
+    right: 16px;
+    background: var(--text);
+    color: white;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    text-align: center;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.lock-message-popup.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

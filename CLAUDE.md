@@ -40,6 +40,25 @@ A 10-week English course for a beginner Brazilian student (60yo). All materials,
 - Flipped classroom: async content sent at start of week, live class for practice
 - Language gradient: heavy PT support in classes 1-3, medium 4-6, light 7-10
 
+### Class Schedule (date-gated)
+Each class unlocks only when: (1) previous class is completed AND (2) the class week has started.
+
+| Class | Available from (Friday) |
+|-------|------------------------|
+| 1 | May 30, 2026 |
+| 2 | Jun 6, 2026 |
+| 3 | Jun 13, 2026 |
+| 4 | Jun 20, 2026 |
+| 5 | Jun 27, 2026 |
+| 6 | Jul 4, 2026 |
+| 7 | Jul 11, 2026 |
+| 8 | Jul 18, 2026 |
+| 9 | Jul 25, 2026 |
+| 10 | Aug 1, 2026 |
+
+Dates are defined in `js/storage.js` → `CLASS_SCHEDULE` object.
+Locked classes show a toast message when tapped explaining why they're locked.
+
 ## Content Creation Guidelines
 
 ### Principles
@@ -109,6 +128,7 @@ Total: ~10-12 exercises per class (split into 2 blocks of ~5-6)
 - One concept per screen/section
 - Always include Portuguese translation for new words (classes 1-6)
 - **Translations are hidden by default** — student taps to reveal (forces active recall)
+- **Every piece of text must have a translation** — section headers use "English / Portugues" format, exercise prompts include PT translation after a "/", dialogues/reading use tap-to-reveal, feedback messages are bilingual
 - Use emojis and icons as visual anchors for vocabulary
 - Celebratory feedback on exercises ("Great job! / Muito bem!")
 

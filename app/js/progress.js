@@ -69,8 +69,54 @@ function updateCardStates() {
             card.classList.add('completed');
             var status = document.getElementById('status-' + classNum);
             if (status) status.textContent = 'Done';
-        } else if (classNum === 1 || completed.indexOf(classNum - 1) !== -1) {
-            card.classList.remove('locked');
+            card.onclick = null;
+        } else {
+            var lockReason = getClassLockReason(classNum);
+
+            if (lockReason === null) {
+                card.classList.remove('locked');
+                card.onclick = null;
+            } else {
+                card.classList.add('locked');
+                card.href = '#';
+                card.onclick = function(e) {
+                    e.preventDefault();
+                    showLockMessage(parseInt(this.dataset.class));
+                };
+            }
         }
     });
+}
+
+function showLockMessage(classNum) {
+    var existing = document.getElementById('lock-message');
+    if (existing) existing.remove();
+
+    var reason = getClassLockReason(classNum);
+    var message = '';
+
+    if (reason === 'previous') {
+        message = 'Complete the previous class first! / Complete a aula anterior primeiro!';
+    } else if (reason === 'date') {
+        var dateStr = getClassStartDate(classNum);
+        var formatted = formatDatePT(dateStr);
+        message = 'This class starts on ' + formatted + ' / Esta aula comeca em ' + formatted;
+    } else {
+        message = 'Complete the previous class first! / Complete a aula anterior primeiro!';
+    }
+
+    var msg = document.createElement('div');
+    msg.id = 'lock-message';
+    msg.className = 'lock-message-popup';
+    msg.textContent = message;
+    document.body.appendChild(msg);
+
+    setTimeout(function() {
+        msg.classList.add('visible');
+    }, 10);
+
+    setTimeout(function() {
+        msg.classList.remove('visible');
+        setTimeout(function() { msg.remove(); }, 300);
+    }, 3000);
 }
