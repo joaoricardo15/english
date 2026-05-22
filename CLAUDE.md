@@ -1,0 +1,134 @@
+# English Course Project
+
+## What This Is
+A 10-week English course for a beginner Brazilian student (60yo). All materials, lesson plans, and a web app for interactive exercises are managed here.
+
+## Project Structure
+```
+/English
+├── CLAUDE.md              (this file - project instructions)
+├── app/                   (GitHub Pages web app)
+│   ├── index.html         (home/dashboard)
+│   ├── css/
+│   ├── js/
+│   └── classes/           (one folder per class)
+│       ├── class-01/
+│       ├── class-02/
+│       └── ...
+├── plans/                 (lesson plans for the teacher)
+│   ├── class-01.md
+│   └── ...
+└── notes/                 (class notes, progress, observations)
+```
+
+## Profiles
+
+### Teacher
+- Native Portuguese (Brazilian), fluent English, first-time English teacher
+- Needs structured materials and guidance on pedagogy
+- Classes are remote (video call)
+
+### Student
+- 60-year-old Brazilian woman, beginner level
+- Knows isolated words but can't structure basic sentences
+- **Key challenge:** memorizing vocabulary (retention)
+- **Goal:** communicate in everyday situations
+- **Daily life/interests:** breakfast rituals, biking, visiting family, gossiping, Netflix, personal training at home, cooking lunch, doing dishes by hand, home chores, weekend restaurant trips (beautiful views), supermarket, doctor visits
+
+## Course Structure
+- 10 classes, once a week, 60 minutes each (remote)
+- Flipped classroom: async content sent at start of week, live class for practice
+- Language gradient: heavy PT support in classes 1-3, medium 4-6, light 7-10
+
+## Content Creation Guidelines
+
+### Principles
+1. **Less is more** — max 8-10 new vocabulary items per week
+2. **Repetition is everything** — vocabulary from past weeks MUST reappear in new materials
+3. **Fun first** — songs, videos, memes, relatable situations
+4. **Her life** — all examples and scenarios come from the student's actual routines
+5. **Chunks over rules** — teach "I'd like a coffee" not "conditional + infinitive"
+6. **Portuguese as scaffolding** — heavy PT early, reduce gradually
+
+### What to Create (formats I can produce well)
+- **Interactive exercises** (HTML/JS): fill-in-the-blank, matching, multiple choice, drag-and-drop
+- **Vocabulary pages** with images (use free image URLs), PT/EN, audio links (Forvo/Google TTS)
+- **Dialogues/texts** formatted as bilingual readers
+- **Lesson plans** (for the teacher) with timing and objectives
+- **Embedded media** — YouTube videos, Spotify song links
+- **Quizzes** with instant feedback
+- **Progress dashboard** — track which classes/exercises are done (localStorage)
+
+### What NOT to create
+- Physical materials (flashcards, printed boards)
+- Materials requiring special apps or purchases
+- Long grammar explanations or rules
+- Anything overwhelming or text-heavy
+
+### Writing Style for Student Materials
+- Short sentences (max 8 words in English examples)
+- Large font, lots of white space
+- One concept per screen/section
+- Always include Portuguese translation for new words (classes 1-6)
+- Use emojis and icons as visual anchors for vocabulary
+- Celebratory feedback on exercises ("Great job! / Muito bem!")
+
+### Tone
+- Warm, encouraging, patient
+- Never condescending — she's an adult learner
+- Casual and fun, not academic
+- Errors are fine and expected — the app should never feel punitive
+
+## Web App (GitHub Pages)
+
+### Tech Stack
+- Vanilla HTML/CSS/JS (no frameworks — keep it simple and fast)
+- Responsive (mobile-first — student will likely use phone/tablet)
+- localStorage for progress tracking
+- No backend, no dependencies, no build step
+
+### Design Principles
+- Large text, large buttons (accessibility for 60yo user)
+- Clean, uncluttered layout
+- Clear navigation between classes
+- Visual progress indicators
+- Works offline after first load (optional: service worker)
+
+### Exercise Types to Implement
+1. **Fill-in-the-blank** — type the missing word
+2. **Multiple choice** — tap the correct answer
+3. **Matching** — connect EN word to PT translation
+4. **Ordering** — put words in the right order to form a sentence
+5. **Listen & repeat** — embed audio, student practices (no recording needed)
+6. **Mini quiz** — end-of-class review combining all types
+
+## Class Themes (10 weeks)
+1. "Good Morning!" — Breakfast routine, greetings, "I like..."
+2. "What do you do?" — Daily routine, present simple
+3. "I love this show!" — Netflix, opinions, likes/dislikes
+4. "Let's go to the supermarket!" — Shopping, "I need...", "How much...?"
+5. "A table for two, please!" — Restaurant, polite requests
+6. "How are you feeling?" — Health, body, doctor visit
+7. "My family is crazy!" — Family, describing people, gossiping
+8. "Clean the house, then relax!" — Chores, sequencing words
+9. "Let's go for a trip!" — Travel, plans, "going to"
+10. "I can do this!" — Full review, autonomy plan, celebration
+
+## Self-Study Tools to Introduce (one per class)
+1. Anki (spaced repetition flashcards)
+2. Google Translate (voice feature)
+3. Netflix subtitle trick
+4. Duolingo (5 min/day)
+5. Post-its at home
+6. YouTube channels for beginners
+7. BBC 6-Minute English podcast
+8. Changing phone language
+9. Forvo (pronunciation)
+10. Study plan for continuing alone
+
+## Progress & Notes
+After each class, save notes in /notes/ about:
+- What worked well
+- What the student struggled with
+- Vocabulary she needs more repetition on
+- Any adjustments for next week

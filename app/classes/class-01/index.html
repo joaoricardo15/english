@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 1 — Good Morning!</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+    <a href="../../index.html" class="back-link">← Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 1 — Good Morning! ☀️</h1>
+        <p>Breakfast, greetings & things you like</p>
+    </div>
+
+    <!-- VOCABULARY -->
+    <section class="section">
+        <h2>Vocabulary / Vocabulario</h2>
+        <ul class="vocab-list">
+            <li class="vocab-item">
+                <span class="vocab-en">Good morning</span>
+                <span class="vocab-pt">Bom dia</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">Breakfast</span>
+                <span class="vocab-pt">Cafe da manha</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">Coffee</span>
+                <span class="vocab-pt">Cafe</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">Bread</span>
+                <span class="vocab-pt">Pao</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">Butter</span>
+                <span class="vocab-pt">Manteiga</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">Fruit</span>
+                <span class="vocab-pt">Fruta</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">Juice</span>
+                <span class="vocab-pt">Suco</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">I like...</span>
+                <span class="vocab-pt">Eu gosto de...</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">I don't like...</span>
+                <span class="vocab-pt">Eu nao gosto de...</span>
+            </li>
+            <li class="vocab-item">
+                <span class="vocab-en">Delicious</span>
+                <span class="vocab-pt">Delicioso(a)</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- DIALOGUE -->
+    <section class="section">
+        <h2>Dialogue / Dialogo</h2>
+        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.9rem;">
+            Leia o dialogo abaixo. Na aula, vamos praticar a pronuncia juntos!
+        </p>
+        <div class="dialogue">
+            <div class="dialogue-line">
+                <div class="dialogue-speaker">Ana</div>
+                <div class="dialogue-text">Good morning! How are you?</div>
+                <div class="dialogue-translation">Bom dia! Como voce esta?</div>
+            </div>
+            <div class="dialogue-line">
+                <div class="dialogue-speaker">Maria</div>
+                <div class="dialogue-text">Good morning! I'm fine, thank you.</div>
+                <div class="dialogue-translation">Bom dia! Estou bem, obrigada.</div>
+            </div>
+            <div class="dialogue-line">
+                <div class="dialogue-speaker">Ana</div>
+                <div class="dialogue-text">Do you like coffee?</div>
+                <div class="dialogue-translation">Voce gosta de cafe?</div>
+            </div>
+            <div class="dialogue-line">
+                <div class="dialogue-speaker">Maria</div>
+                <div class="dialogue-text">Yes! I like coffee with bread and butter.</div>
+                <div class="dialogue-translation">Sim! Eu gosto de cafe com pao e manteiga.</div>
+            </div>
+            <div class="dialogue-line">
+                <div class="dialogue-speaker">Ana</div>
+                <div class="dialogue-text">Me too! Breakfast is delicious.</div>
+                <div class="dialogue-translation">Eu tambem! O cafe da manha e delicioso.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXERCISES -->
+    <section class="section">
+        <h2>Exercises / Exercicios</h2>
+        <p style="margin-bottom: 16px; color: var(--text-light); font-size: 0.9rem;">
+            Complete os exercicios abaixo. Voce pode tentar quantas vezes quiser!
+        </p>
+
+        <!-- Exercise 1: Fill in the blank -->
+        <div class="exercise">
+            <div class="exercise-prompt">1. Complete: "Bom dia" in English is: <strong>Good ___</strong></div>
+            <input type="text" id="ex1" placeholder="type here / escreva aqui">
+            <div class="exercise-feedback" id="fb1"></div>
+            <button class="check-btn" onclick="checkFillBlank('ex1', 'morning', 'fb1')">Check / Verificar</button>
+        </div>
+
+        <!-- Exercise 2: Fill in the blank -->
+        <div class="exercise">
+            <div class="exercise-prompt">2. Complete: "Eu gosto de cafe" = "I ___ coffee"</div>
+            <input type="text" id="ex2" placeholder="type here / escreva aqui">
+            <div class="exercise-feedback" id="fb2"></div>
+            <button class="check-btn" onclick="checkFillBlank('ex2', 'like', 'fb2')">Check / Verificar</button>
+        </div>
+
+        <!-- Exercise 3: Multiple Choice -->
+        <div class="exercise" id="ex3">
+            <div class="exercise-prompt">3. What is "pao" in English?</div>
+            <div class="choices">
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Butter</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Juice</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Bread</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Fruit</button>
+            </div>
+            <div class="exercise-feedback"></div>
+        </div>
+
+        <!-- Exercise 4: Multiple Choice -->
+        <div class="exercise" id="ex4">
+            <div class="exercise-prompt">4. What is "suco" in English?</div>
+            <div class="choices">
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Coffee</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Juice</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Milk</button>
+                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Water</button>
+            </div>
+            <div class="exercise-feedback"></div>
+        </div>
+
+        <!-- Exercise 5: Fill in the blank -->
+        <div class="exercise">
+            <div class="exercise-prompt">5. "Eu nao gosto de fruta" = "I ___ like fruit"</div>
+            <input type="text" id="ex5" placeholder="type here / escreva aqui">
+            <div class="exercise-feedback" id="fb5"></div>
+            <button class="check-btn" onclick="checkFillBlank('ex5', \"don't\", 'fb5')">Check / Verificar</button>
+        </div>
+
+        <!-- Exercise 6: Matching -->
+        <div class="exercise">
+            <div class="exercise-prompt">6. Connect the words / Conecte as palavras:</div>
+            <div class="matching-container" id="matching1">
+                <div class="matching-row">
+                    <span class="word">Coffee</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose / escolha</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="pao">Pao</option>
+                        <option value="manteiga">Manteiga</option>
+                        <option value="suco">Suco</option>
+                        <option value="fruta">Fruta</option>
+                    </select>
+                </div>
+                <div class="matching-row">
+                    <span class="word">Bread</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose / escolha</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="pao">Pao</option>
+                        <option value="manteiga">Manteiga</option>
+                        <option value="suco">Suco</option>
+                        <option value="fruta">Fruta</option>
+                    </select>
+                </div>
+                <div class="matching-row">
+                    <span class="word">Butter</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose / escolha</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="pao">Pao</option>
+                        <option value="manteiga">Manteiga</option>
+                        <option value="suco">Suco</option>
+                        <option value="fruta">Fruta</option>
+                    </select>
+                </div>
+                <div class="matching-row">
+                    <span class="word">Juice</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose / escolha</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="pao">Pao</option>
+                        <option value="manteiga">Manteiga</option>
+                        <option value="suco">Suco</option>
+                        <option value="fruta">Fruta</option>
+                    </select>
+                </div>
+                <div class="matching-row">
+                    <span class="word">Fruit</span>
+                    <span>→</span>
+                    <select>
+                        <option value="">choose / escolha</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="pao">Pao</option>
+                        <option value="manteiga">Manteiga</option>
+                        <option value="suco">Suco</option>
+                        <option value="fruta">Fruta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="exercise-feedback" id="fb-match"></div>
+            <button class="check-btn" onclick="checkMatchingEx()">Check / Verificar</button>
+        </div>
+    </section>
+
+    <!-- FUN MATERIAL -->
+    <section class="section">
+        <h2>Fun Material / Material Divertido</h2>
+        <div class="media-card">
+            <span class="media-icon">🎵</span>
+            <div class="media-info">
+                <h3>Song: "Good Morning" — Singin' in the Rain</h3>
+                <p>A classic, fun song to practice the greeting!</p>
+                <a href="https://www.youtube.com/watch?v=GB2yiIoEtXo" target="_blank">Watch on YouTube →</a>
+            </div>
+        </div>
+        <div class="media-card">
+            <span class="media-icon">📺</span>
+            <div class="media-info">
+                <h3>Video: Breakfast vocabulary (3 min)</h3>
+                <p>Vocabulario visual de cafe da manha em ingles</p>
+                <a href="https://www.youtube.com/watch?v=hVCBrkrFrBE" target="_blank">Watch on YouTube →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELF-STUDY TIP -->
+    <section class="section">
+        <div class="tip-box">
+            <h3>Dica da semana: Anki (flashcards gratuito)</h3>
+            <p>
+                Baixe o aplicativo <strong>Anki</strong> no celular (gratis para Android, pago no iPhone — alternativa gratis: <strong>AnkiDroid</strong>).
+                Crie cartoes com as palavras desta semana: de um lado a palavra em ingles, do outro em portugues.
+                Revise 5 minutos por dia. O app vai repetir as palavras que voce erra mais vezes — isso se chama <em>repeticao espacada</em> e e o melhor metodo para memorizar!
+            </p>
+        </div>
+    </section>
+
+    <script src="../../js/exercises.js"></script>
+    <script>
+        function checkMatchingEx() {
+            const correct = checkMatching('matching1', ['cafe', 'pao', 'manteiga', 'suco', 'fruta']);
+            const fb = document.getElementById('fb-match');
+            if (correct) {
+                fb.textContent = 'Perfeito! All correct!';
+                fb.className = 'exercise-feedback correct';
+            } else {
+                fb.textContent = 'Some are wrong. Try again! / Alguns estao errados. Tente de novo!';
+                fb.className = 'exercise-feedback incorrect';
+            }
+        }
+    </script>
+</body>
+</html>
