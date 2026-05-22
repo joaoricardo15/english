@@ -1,14 +1,16 @@
 function checkFillBlank(inputId, correctAnswer, feedbackId) {
-    const input = document.getElementById(inputId);
-    const feedback = document.getElementById(feedbackId);
-    const value = input.value.trim().toLowerCase();
-    const correct = correctAnswer.toLowerCase();
+    var input = document.getElementById(inputId);
+    var feedback = document.getElementById(feedbackId);
+    var value = input.value.trim().toLowerCase();
+    var correct = correctAnswer.toLowerCase();
 
     if (value === correct) {
         input.classList.remove('incorrect');
         input.classList.add('correct');
+        input.disabled = true;
         feedback.textContent = 'Muito bem! Correct!';
         feedback.className = 'exercise-feedback correct';
+        onExerciseCorrect(input);
         return true;
     } else {
         input.classList.remove('correct');
@@ -20,23 +22,24 @@ function checkFillBlank(inputId, correctAnswer, feedbackId) {
 }
 
 function checkMultipleChoice(buttonEl, correctIndex, exerciseEl) {
-    const buttons = exerciseEl.querySelectorAll('.choice-btn');
-    const clickedIndex = Array.from(buttons).indexOf(buttonEl);
+    var buttons = exerciseEl.querySelectorAll('.choice-btn');
+    var clickedIndex = Array.from(buttons).indexOf(buttonEl);
 
     buttons.forEach(function(btn) { btn.disabled = true; });
 
     if (clickedIndex === correctIndex) {
         buttonEl.classList.add('correct');
-        const fb = exerciseEl.querySelector('.exercise-feedback');
+        var fb = exerciseEl.querySelector('.exercise-feedback');
         if (fb) {
             fb.textContent = 'Muito bem! Correct!';
             fb.className = 'exercise-feedback correct';
         }
+        onExerciseCorrect(buttonEl);
         return true;
     } else {
         buttonEl.classList.add('incorrect');
         buttons[correctIndex].classList.add('correct');
-        const fb = exerciseEl.querySelector('.exercise-feedback');
+        var fb = exerciseEl.querySelector('.exercise-feedback');
         if (fb) {
             fb.textContent = 'The correct answer is highlighted. / A resposta correta esta destacada.';
             fb.className = 'exercise-feedback incorrect';
@@ -46,14 +49,14 @@ function checkMultipleChoice(buttonEl, correctIndex, exerciseEl) {
 }
 
 function checkMatching(containerId, correctPairs) {
-    const container = document.getElementById(containerId);
-    const rows = container.querySelectorAll('.matching-row');
-    let allCorrect = true;
+    var container = document.getElementById(containerId);
+    var rows = container.querySelectorAll('.matching-row');
+    var allCorrect = true;
 
     rows.forEach(function(row, index) {
-        const select = row.querySelector('select');
-        const selected = select.value;
-        const expected = correctPairs[index];
+        var select = row.querySelector('select');
+        var selected = select.value;
+        var expected = correctPairs[index];
 
         if (selected === expected) {
             row.classList.remove('incorrect');
@@ -68,11 +71,124 @@ function checkMatching(containerId, correctPairs) {
     return allCorrect;
 }
 
+function onExerciseCorrect(element) {
+    var exercise = element.closest('[data-exercise]');
+    if (!exercise) return;
+
+    var exerciseId = exercise.dataset.exercise;
+    var classId = getPageClassId();
+    if (!classId) return;
+
+    markExerciseComplete(classId, exerciseId);
+    unlockNextExercise(exercise);
+    checkClassCompletion();
+}
+
+function getPageClassId() {
+    var body = document.querySelector('[data-class-id]');
+    return body ? body.dataset.classId : null;
+}
+
+function initExerciseLocking() {
+    var classId = getPageClassId();
+    if (!classId) return;
+
+    var exercises = document.querySelectorAll('[data-exercise]');
+    var totalExercises = exercises.length;
+
+    exercises.forEach(function(exercise, index) {
+        var exerciseId = exercise.dataset.exercise;
+        var completed = isExerciseComplete(classId, exerciseId);
+
+        if (completed) {
+            exercise.classList.add('exercise-completed');
+            exercise.classList.remove('exercise-locked');
+            markExerciseVisualComplete(exercise);
+        } else if (index === 0) {
+            exercise.classList.remove('exercise-locked');
+        } else {
+            var prevExercise = exercises[index - 1];
+            var prevId = prevExercise.dataset.exercise;
+            if (isExerciseComplete(classId, prevId)) {
+                exercise.classList.remove('exercise-locked');
+            } else {
+                exercise.classList.add('exercise-locked');
+            }
+        }
+    });
+}
+
+function markExerciseVisualComplete(exercise) {
+    var inputs = exercise.querySelectorAll('input[type="text"]');
+    inputs.forEach(function(input) { input.disabled = true; });
+
+    var buttons = exercise.querySelectorAll('.choice-btn');
+    buttons.forEach(function(btn) { btn.disabled = true; });
+
+    var selects = exercise.querySelectorAll('select');
+    selects.forEach(function(sel) { sel.disabled = true; });
+
+    var checkBtns = exercise.querySelectorAll('.check-btn');
+    checkBtns.forEach(function(btn) { btn.disabled = true; btn.textContent = 'Done'; });
+}
+
+function unlockNextExercise(currentExercise) {
+    var exercises = document.querySelectorAll('[data-exercise]');
+    var exercisesArray = Array.from(exercises);
+    var currentIndex = exercisesArray.indexOf(currentExercise);
+
+    if (currentIndex < exercisesArray.length - 1) {
+        var next = exercisesArray[currentIndex + 1];
+        next.classList.remove('exercise-locked');
+        next.style.animation = 'slideIn 0.4s ease';
+        next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function checkClassCompletion() {
+    var classId = getPageClassId();
+    if (!classId) return;
+
+    var exercises = document.querySelectorAll('[data-exercise]');
+    var allDone = true;
+
+    exercises.forEach(function(exercise) {
+        var exerciseId = exercise.dataset.exercise;
+        if (!isExerciseComplete(classId, exerciseId)) {
+            allDone = false;
+        }
+    });
+
+    if (allDone) {
+        var classNum = parseInt(classId.replace('class-', ''));
+        markClassComplete(classNum);
+        showClassCompleteMessage();
+    }
+}
+
+function showClassCompleteMessage() {
+    var existing = document.getElementById('class-complete-msg');
+    if (existing) return;
+
+    var msg = document.createElement('div');
+    msg.id = 'class-complete-msg';
+    msg.className = 'class-complete-message';
+    msg.innerHTML = '<h2>Parabens! 🎉</h2><p>You completed this class!</p><a href="../../index.html" class="check-btn" style="display:inline-block;text-decoration:none;margin-top:12px;">Back to classes</a>';
+
+    var sections = document.querySelectorAll('.section');
+    var lastSection = sections[sections.length - 1];
+    lastSection.parentNode.insertBefore(msg, lastSection.nextSibling);
+
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 function shuffleArray(array) {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    var shuffled = array.slice();
+    for (var i = shuffled.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = shuffled[i];
+        shuffled[i] = shuffled[j];
+        shuffled[j] = temp;
     }
     return shuffled;
 }

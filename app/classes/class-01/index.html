@@ -6,7 +6,7 @@
     <title>Class 1 — Good Morning!</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body class="class-page">
+<body class="class-page" data-class-id="class-01">
     <a href="../../index.html" class="back-link">← Back to classes</a>
 
     <div class="class-header">
@@ -108,7 +108,7 @@
         </p>
 
         <!-- Exercise 1: Fill in the blank -->
-        <div class="exercise">
+        <div class="exercise" data-exercise="ex1">
             <div class="exercise-prompt">1. Complete: "Bom dia" in English is: <strong>Good ___</strong></div>
             <input type="text" id="ex1" placeholder="type here / escreva aqui">
             <div class="exercise-feedback" id="fb1"></div>
@@ -116,7 +116,7 @@
         </div>
 
         <!-- Exercise 2: Fill in the blank -->
-        <div class="exercise">
+        <div class="exercise" data-exercise="ex2">
             <div class="exercise-prompt">2. Complete: "Eu gosto de cafe" = "I ___ coffee"</div>
             <input type="text" id="ex2" placeholder="type here / escreva aqui">
             <div class="exercise-feedback" id="fb2"></div>
@@ -124,7 +124,7 @@
         </div>
 
         <!-- Exercise 3: Multiple Choice -->
-        <div class="exercise" id="ex3">
+        <div class="exercise" data-exercise="ex3" id="ex3">
             <div class="exercise-prompt">3. What is "pao" in English?</div>
             <div class="choices">
                 <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex3'))">Butter</button>
@@ -136,7 +136,7 @@
         </div>
 
         <!-- Exercise 4: Multiple Choice -->
-        <div class="exercise" id="ex4">
+        <div class="exercise" data-exercise="ex4" id="ex4">
             <div class="exercise-prompt">4. What is "suco" in English?</div>
             <div class="choices">
                 <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4'))">Coffee</button>
@@ -148,7 +148,7 @@
         </div>
 
         <!-- Exercise 5: Fill in the blank -->
-        <div class="exercise">
+        <div class="exercise" data-exercise="ex5">
             <div class="exercise-prompt">5. "Eu nao gosto de fruta" = "I ___ like fruit"</div>
             <input type="text" id="ex5" placeholder="type here / escreva aqui">
             <div class="exercise-feedback" id="fb5"></div>
@@ -156,7 +156,7 @@
         </div>
 
         <!-- Exercise 6: Matching -->
-        <div class="exercise">
+        <div class="exercise" data-exercise="ex6">
             <div class="exercise-prompt">6. Connect the words / Conecte as palavras:</div>
             <div class="matching-container" id="matching1">
                 <div class="matching-row">
@@ -258,6 +258,7 @@
         </div>
     </section>
 
+    <script src="../../js/storage.js"></script>
     <script src="../../js/exercises.js"></script>
     <script>
         function toggleTranslation(item) {
@@ -271,16 +272,22 @@
         }
 
         function checkMatchingEx() {
-            const correct = checkMatching('matching1', ['cafe', 'pao', 'manteiga', 'suco', 'fruta']);
-            const fb = document.getElementById('fb-match');
+            var correct = checkMatching('matching1', ['cafe', 'pao', 'manteiga', 'suco', 'fruta']);
+            var fb = document.getElementById('fb-match');
             if (correct) {
                 fb.textContent = 'Perfeito! All correct!';
                 fb.className = 'exercise-feedback correct';
+                var exercise = document.querySelector('[data-exercise="ex6"]');
+                onExerciseCorrect(exercise.querySelector('.check-btn'));
             } else {
                 fb.textContent = 'Some are wrong. Try again! / Alguns estao errados. Tente de novo!';
                 fb.className = 'exercise-feedback incorrect';
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initExerciseLocking();
+        });
     </script>
 </body>
 </html>

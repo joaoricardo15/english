@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Welcome overlay (first visit only) -->
+    <div class="overlay" id="welcome-overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1>Bem-vinda! 👋</h1>
+            <h2>Welcome!</h2>
+            <p>Qual e o seu nome? / What is your name?</p>
+            <input type="text" id="welcome-name" placeholder="Your name / Seu nome" autofocus>
+            <button class="check-btn overlay-btn" onclick="submitWelcome()">Start / Comecar</button>
+        </div>
+    </div>
+
     <header>
         <h1>English Course</h1>
-        <p class="subtitle">10 weeks to communicate with confidence</p>
+        <p class="subtitle" id="greeting">10 weeks to communicate with confidence</p>
     </header>
 
     <main>
@@ -86,6 +97,7 @@
         <p>Made with care for learning</p>
     </footer>
 
+    <script src="js/storage.js"></script>
     <script src="js/progress.js"></script>
 </body>
 </html>

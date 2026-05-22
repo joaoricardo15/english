@@ -1,47 +1,76 @@
 document.addEventListener('DOMContentLoaded', function() {
-    updateProgress();
-    updateCardStates();
+    if (isFirstVisit()) {
+        showWelcomeOverlay();
+    } else {
+        showDashboard();
+    }
+
+    var nameInput = document.getElementById('welcome-name');
+    if (nameInput) {
+        nameInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') submitWelcome();
+        });
+    }
 });
 
-function updateProgress() {
-    const completed = getCompletedClasses().length;
-    const total = 10;
-    const pct = (completed / total) * 100;
+function showWelcomeOverlay() {
+    var overlay = document.getElementById('welcome-overlay');
+    if (overlay) overlay.style.display = 'flex';
+}
 
-    const fill = document.getElementById('progress-fill');
-    const text = document.getElementById('progress-text');
+function hideWelcomeOverlay() {
+    var overlay = document.getElementById('welcome-overlay');
+    if (overlay) overlay.style.display = 'none';
+}
+
+function submitWelcome() {
+    var input = document.getElementById('welcome-name');
+    var name = input.value.trim();
+    if (name.length === 0) {
+        input.style.borderColor = '#ef5350';
+        return;
+    }
+    initStudentData(name);
+    hideWelcomeOverlay();
+    showDashboard();
+}
+
+function showDashboard() {
+    var greeting = document.getElementById('greeting');
+    if (greeting) {
+        var name = getStudentName();
+        greeting.textContent = 'Hello, ' + name + '!';
+    }
+    updateProgress();
+    updateCardStates();
+}
+
+function updateProgress() {
+    var completed = getCompletedClasses().length;
+    var total = 10;
+    var pct = (completed / total) * 100;
+
+    var fill = document.getElementById('progress-fill');
+    var text = document.getElementById('progress-text');
 
     if (fill) fill.style.width = pct + '%';
     if (text) text.textContent = completed + ' / ' + total + ' classes';
 }
 
 function updateCardStates() {
-    const completed = getCompletedClasses();
-    const cards = document.querySelectorAll('.class-card');
+    var completed = getCompletedClasses();
+    var cards = document.querySelectorAll('.class-card');
 
     cards.forEach(function(card) {
-        const classNum = parseInt(card.dataset.class);
+        var classNum = parseInt(card.dataset.class);
 
-        if (completed.includes(classNum)) {
+        if (completed.indexOf(classNum) !== -1) {
             card.classList.remove('locked');
             card.classList.add('completed');
-            const status = document.getElementById('status-' + classNum);
+            var status = document.getElementById('status-' + classNum);
             if (status) status.textContent = 'Done';
-        } else if (classNum === 1 || completed.includes(classNum - 1)) {
+        } else if (classNum === 1 || completed.indexOf(classNum - 1) !== -1) {
             card.classList.remove('locked');
         }
     });
-}
-
-function getCompletedClasses() {
-    const data = localStorage.getItem('english-course-progress');
-    return data ? JSON.parse(data) : [];
-}
-
-function markClassComplete(classNum) {
-    const completed = getCompletedClasses();
-    if (!completed.includes(classNum)) {
-        completed.push(classNum);
-        localStorage.setItem('english-course-progress', JSON.stringify(completed));
-    }
 }

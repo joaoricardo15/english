@@ -85,8 +85,25 @@ A 10-week English course for a beginner Brazilian student (60yo). All materials,
 ### Tech Stack
 - Vanilla HTML/CSS/JS (no frameworks — keep it simple and fast)
 - Responsive (mobile-first — student will likely use phone/tablet)
-- localStorage for progress tracking
+- localStorage for progress tracking and student data
 - No backend, no dependencies, no build step
+
+### Storage System (localStorage)
+- **Single key:** `english-course-data`
+- **Schema:** `{ student: { name }, progress: { "class-01": { ex1: true, ... } }, completedClasses: [1, 2] }`
+- **Module:** `js/storage.js` — all localStorage access goes through this file
+- **First visit:** Welcome overlay captures student name
+- **Exercise progress:** Each correct answer is saved; exercises unlock sequentially
+- **Class completion:** When all exercises in a class are done, class is marked complete and next class unlocks
+- **Personalization:** Dashboard shows "Hello, [name]!" after first visit
+
+### Exercise Pattern (for new class pages)
+Every class page must:
+1. Add `data-class-id="class-XX"` to the `<body>` tag
+2. Add `data-exercise="exN"` to each exercise `<div>`
+3. Load `storage.js` before `exercises.js`
+4. Call `initExerciseLocking()` on DOMContentLoaded
+5. For matching exercises: manually call `onExerciseCorrect()` in the success handler
 
 ### Design Principles (MUST FOLLOW)
 
