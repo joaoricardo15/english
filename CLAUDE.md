@@ -85,7 +85,19 @@ Each class page must follow this structure (in order):
 7. **Fun material** (song, video, optional challenge)
 8. **Self-study tip** (one tool or method)
 
-Total: ~10-12 exercises per class (split into 2 blocks of ~5-6)
+Total: ~15-18 exercises per class (split into 2 blocks of ~7-9)
+
+### Exercise Types Available
+1. **Multiple choice** — tap the correct answer (EN→PT and PT→EN)
+2. **Matching** — connect word to translation (dropdown selects)
+3. **Fill-in-the-blank (typing)** — type the missing word
+4. **Word bank** — tap the correct word from options (no typing required)
+5. **Word ordering** — tap words in correct order to build a sentence
+6. **Listen & choose** — hear pronunciation via 🔊, pick the matching written word/sentence
+7. **True/False** — based on reading text comprehension
+8. **Translate sentence (typing)** — type full short sentence translation
+
+Mix at least 5 different types per class. Focus on repetition: the same word/phrase should appear across different exercise formats.
 
 ### Exercise Design Rules
 - **Scaffolding order:** Receptive first (recognition) → Productive second (recall/construction)
@@ -112,13 +124,42 @@ Total: ~10-12 exercises per class (split into 2 blocks of ~5-6)
 - A word is considered "learned" after 6+ correct exposures across different sessions
 
 ### What to Create (formats I can produce well)
-- **Interactive exercises** (HTML/JS): fill-in-the-blank, matching, multiple choice, drag-and-drop
-- **Vocabulary pages** with images (use free image URLs), PT/EN, audio links (Forvo/Google TTS)
-- **Dialogues/texts** formatted as bilingual readers
+- **Interactive exercises** (HTML/JS): fill-in-the-blank, matching, multiple choice, word bank, word ordering, listen-and-choose
+- **Vocabulary pages** with pronunciation (Web Speech API), PT/EN, tap-to-reveal
+- **Dialogues/texts** formatted as bilingual readers with audio buttons
 - **Lesson plans** (for the teacher) with timing and objectives
-- **Embedded media** — YouTube videos, Spotify song links
+- **Embedded media** — YouTube videos (embedded iframes), Spotify song links
 - **Quizzes** with instant feedback
 - **Progress dashboard** — track which classes/exercises are done (localStorage)
+
+### YouTube Video Rules (MUST FOLLOW)
+- **Always verify before adding:** Before embedding any YouTube video, verify it is available and embeddable using the oEmbed API:
+  ```bash
+  curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=VIDEO_ID&format=json"
+  ```
+  If it returns "Not Found" or an error, the video is unavailable or not embeddable — do NOT use it.
+- **Always embed as iframe** — never use external links (they break, get blocked, or confuse the student):
+  ```html
+  <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video title"></iframe>
+  </div>
+  ```
+- **Verify the video content matches** — check the oEmbed response title to confirm the video is what you expect (correct topic, language, etc.)
+- **Prefer established educational channels** — The Singing Walrus, Super Simple Songs, English with Lucy, BBC Learning English, etc.
+
+### Pronunciation System
+- Uses the **Web Speech API** (SpeechSynthesis) — browser-built-in, zero dependencies, works offline
+- Module: `js/pronunciation.js` — loaded in every class page
+- **How to add pronunciation:** Add `data-pronounce="text to speak"` attribute to any clickable element
+- **Audio button pattern:**
+  ```html
+  <button class="audio-btn" data-pronounce="Good morning" aria-label="Listen">🔊</button>
+  ```
+- **Every vocabulary word** must have an audio button
+- **Every dialogue line** must have an audio button
+- **Every reading text sentence** must have an audio button
+- Speech rate is set to 0.8 (slower for learners). Add `data-slow` attribute for extra-slow (0.55 rate)
+- Works on iOS Safari, Android Chrome, all desktop browsers — requires user tap (which is the intended UX)
 
 ### What NOT to create
 - Physical materials (flashcards, printed boards)
@@ -183,6 +224,17 @@ After any change to CSS, HTML structure, or layout, you MUST verify the result v
 5. If you cannot capture the screenshot (permissions), ask the user to open the browser at the dev server URL so you can capture it
 
 Never report a layout change as "done" without visually confirming the result. If screenshot capture fails entirely, explicitly tell the user you could not verify and ask them to check.
+
+**Layout Checklist (verify BEFORE reporting done):**
+After taking a screenshot, check for these common layout flaws:
+1. **Alignment** — Are all items in a row/column properly aligned? No accidental centering or spreading when items should be left-aligned (or vice versa).
+2. **Spacing** — Are gaps consistent between sibling elements? No unexpected large gaps or cramped items.
+3. **Overflow** — Do any elements overflow their container or get clipped? Check especially on narrow widths.
+4. **Flex/grid conflicts** — When adding new elements to an existing flex container, verify that existing `justify-content`, `align-items`, or `gap` rules still produce the intended layout with the new child count.
+5. **Touch targets** — Are all interactive elements at least 48px tall/wide with enough spacing to avoid mis-taps?
+6. **Text truncation** — Is any text cut off or wrapped awkwardly?
+
+If any of these are off, fix them BEFORE reporting the feature as done. A feature with broken layout is not complete.
 
 ### Storage System (localStorage)
 - **Single key:** `english-course-data`

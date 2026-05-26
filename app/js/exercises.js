@@ -192,3 +192,130 @@ function shuffleArray(array) {
     }
     return shuffled;
 }
+
+// Word Bank Fill-in-the-Blank
+function initWordBank(containerId, correctWord) {
+    var container = document.getElementById(containerId);
+    var slot = container.querySelector('.blank-slot');
+    var options = container.querySelectorAll('.word-bank-option');
+
+    options.forEach(function(option) {
+        option.addEventListener('click', function() {
+            if (container.classList.contains('exercise-done')) return;
+
+            options.forEach(function(o) { o.classList.remove('selected'); });
+            option.classList.add('selected');
+            slot.textContent = option.textContent;
+            slot.classList.add('filled');
+        });
+    });
+}
+
+function checkWordBank(containerId, correctWord) {
+    var container = document.getElementById(containerId);
+    var slot = container.querySelector('.blank-slot');
+    var fb = container.querySelector('.exercise-feedback');
+    var selected = container.querySelector('.word-bank-option.selected');
+
+    if (!selected) {
+        fb.textContent = 'Tap a word first! / Toque em uma palavra primeiro!';
+        fb.className = 'exercise-feedback incorrect';
+        return;
+    }
+
+    var answer = selected.textContent.trim().toLowerCase();
+    if (answer === correctWord.toLowerCase()) {
+        fb.textContent = 'Muito bem! Correct!';
+        fb.className = 'exercise-feedback correct';
+        selected.classList.add('correct-word');
+        container.classList.add('exercise-done');
+        var exercise = container.closest('[data-exercise]');
+        onExerciseCorrect(exercise.querySelector('.check-btn'));
+    } else {
+        fb.textContent = 'Try again! / Tente de novo!';
+        fb.className = 'exercise-feedback incorrect';
+        selected.classList.add('incorrect-word');
+        setTimeout(function() { selected.classList.remove('incorrect-word', 'selected'); }, 800);
+        slot.textContent = '___';
+        slot.classList.remove('filled');
+    }
+}
+
+// Word Ordering Exercise
+function initWordOrder(containerId) {
+    var container = document.getElementById(containerId);
+    var wordPool = container.querySelector('.word-order-container');
+    var answerZone = container.querySelector('.word-order-answer');
+    var tiles = wordPool.querySelectorAll('.word-tile');
+
+    tiles.forEach(function(tile) {
+        tile.addEventListener('click', function() {
+            if (container.classList.contains('exercise-done')) return;
+
+            if (tile.classList.contains('in-answer')) {
+                tile.classList.remove('in-answer');
+                var clone = answerZone.querySelector('[data-word="' + tile.dataset.word + '"]');
+                if (clone) answerZone.removeChild(clone);
+            } else {
+                tile.classList.add('in-answer');
+                var answerTile = document.createElement('span');
+                answerTile.className = 'word-tile';
+                answerTile.textContent = tile.textContent;
+                answerTile.dataset.word = tile.dataset.word;
+                answerTile.addEventListener('click', function() {
+                    tile.classList.remove('in-answer');
+                    answerZone.removeChild(answerTile);
+                });
+                answerZone.appendChild(answerTile);
+            }
+        });
+    });
+}
+
+function checkWordOrder(containerId, correctSentence) {
+    var container = document.getElementById(containerId);
+    var answerZone = container.querySelector('.word-order-answer');
+    var fb = container.querySelector('.exercise-feedback');
+    var answerTiles = answerZone.querySelectorAll('.word-tile');
+
+    if (answerTiles.length === 0) {
+        fb.textContent = 'Tap words to build the sentence! / Toque nas palavras!';
+        fb.className = 'exercise-feedback incorrect';
+        return;
+    }
+
+    var answer = Array.from(answerTiles).map(function(t) { return t.textContent.trim(); }).join(' ');
+    if (answer.toLowerCase() === correctSentence.toLowerCase()) {
+        fb.textContent = 'Muito bem! Correct!';
+        fb.className = 'exercise-feedback correct';
+        answerZone.classList.add('correct-answer');
+        container.classList.add('exercise-done');
+        var exercise = container.closest('[data-exercise]');
+        onExerciseCorrect(exercise.querySelector('.check-btn'));
+    } else {
+        fb.textContent = 'Not quite. Try again! / Tente de novo!';
+        fb.className = 'exercise-feedback incorrect';
+        answerZone.classList.add('incorrect-answer');
+        setTimeout(function() { answerZone.classList.remove('incorrect-answer'); }, 800);
+    }
+}
+
+// True/False Exercise
+function checkTrueFalse(buttonEl, isCorrect, exerciseEl) {
+    var buttons = exerciseEl.querySelectorAll('.choice-btn');
+    buttons.forEach(function(btn) { btn.disabled = true; });
+
+    var fb = exerciseEl.querySelector('.exercise-feedback');
+    if (isCorrect) {
+        buttonEl.classList.add('correct');
+        fb.textContent = 'Muito bem! Correct!';
+        fb.className = 'exercise-feedback correct';
+        onExerciseCorrect(buttonEl);
+    } else {
+        buttonEl.classList.add('incorrect');
+        fb.textContent = 'Not quite! / Nao foi dessa vez!';
+        fb.className = 'exercise-feedback incorrect';
+        var other = Array.from(buttons).find(function(b) { return b !== buttonEl; });
+        if (other) other.classList.add('correct');
+    }
+}
