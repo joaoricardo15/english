@@ -24,9 +24,7 @@ function saveStudentData(data) {
 
 function initStudentData(name) {
     var data = {
-        student: { name: name },
-        progress: {},
-        completedClasses: []
+        student: { name: name }
     };
     saveStudentData(data);
     return data;
@@ -51,52 +49,6 @@ function setStudentName(name) {
     }
 }
 
-function markExerciseComplete(classId, exerciseId) {
-    var data = getStudentData();
-    if (!data) return;
-
-    if (!data.progress[classId]) {
-        data.progress[classId] = {};
-    }
-    data.progress[classId][exerciseId] = true;
-    saveStudentData(data);
-}
-
-function isExerciseComplete(classId, exerciseId) {
-    var data = getStudentData();
-    if (!data || !data.progress[classId]) return false;
-    return data.progress[classId][exerciseId] === true;
-}
-
-function getClassProgress(classId) {
-    var data = getStudentData();
-    if (!data || !data.progress[classId]) return {};
-    return data.progress[classId];
-}
-
-function isClassComplete(classId, totalExercises) {
-    var progress = getClassProgress(classId);
-    var completed = Object.keys(progress).filter(function(key) {
-        return progress[key] === true;
-    }).length;
-    return completed >= totalExercises;
-}
-
-function markClassComplete(classNum) {
-    var data = getStudentData();
-    if (!data) return;
-
-    if (data.completedClasses.indexOf(classNum) === -1) {
-        data.completedClasses.push(classNum);
-        saveStudentData(data);
-    }
-}
-
-function getCompletedClasses() {
-    var data = getStudentData();
-    return data ? data.completedClasses : [];
-}
-
 function isClassDateReached(classNum) {
     var dateStr = CLASS_SCHEDULE[classNum];
     if (!dateStr) return false;
@@ -113,21 +65,4 @@ function getClassStartDate(classNum) {
 function formatDatePT(dateStr) {
     var parts = dateStr.split('-');
     return parts[2] + '/' + parts[1] + '/' + parts[0];
-}
-
-function getClassLockReason(classNum) {
-    if (classNum === 1) return null;
-
-    var completed = getCompletedClasses();
-    var prevCompleted = completed.indexOf(classNum - 1) !== -1;
-    var dateReached = isClassDateReached(classNum);
-
-    if (!prevCompleted && !dateReached) {
-        return 'both';
-    } else if (!prevCompleted) {
-        return 'previous';
-    } else if (!dateReached) {
-        return 'date';
-    }
-    return null;
 }

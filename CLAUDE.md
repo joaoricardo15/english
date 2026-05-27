@@ -76,61 +76,51 @@ Locked classes show a toast message when tapped explaining why they're locked.
 ### Lesson Structure Rules
 Each class page must follow this structure (in order):
 
-1. **Vocabulary section** (8-10 words, tap-to-reveal translation)
-2. **Micro-dialogue 1** (2-3 exchanges, practical scenario, tap-to-reveal translation)
-3. **Exercises block 1** — Receptive (3-4 exercises: matching, multiple choice, word-bank fill-in)
-4. **Short reading text** (40-60 words max, bilingual, about the student's daily life using the vocabulary)
-5. **Micro-dialogue 2** (different scenario with same vocabulary, slightly harder)
-6. **Exercises block 2** — Productive (3-4 exercises: free-fill-in-the-blank, translate short sentences, reorder words)
-7. **Fun material** (song, video, optional challenge)
-8. **Self-study tip** (one tool or method)
-
-Total: ~15-18 exercises per class (split into 2 blocks of ~7-9)
-
-### Exercise Types Available
-1. **Multiple choice** — tap the correct answer (EN→PT and PT→EN)
-2. **Matching** — connect word to translation (dropdown selects)
-3. **Fill-in-the-blank (typing)** — type the missing word
-4. **Word bank** — tap the correct word from options (no typing required)
-5. **Word ordering** — tap words in correct order to build a sentence
-6. **Listen & choose** — hear pronunciation via 🔊, pick the matching written word/sentence
-7. **True/False** — based on reading text comprehension
-8. **Translate sentence (typing)** — type full short sentence translation
-
-Mix at least 5 different types per class. Focus on repetition: the same word/phrase should appear across different exercise formats.
-
-### Exercise Design Rules
-- **Scaffolding order:** Receptive first (recognition) → Productive second (recall/construction)
-- **Bidirectional practice:** Always include both EN→PT and PT→EN exercises
-- **Word bank for beginners:** In classes 1-4, fill-in-the-blank exercises should offer a word bank (tappable options) to reduce spelling burden
-- **Max 2 new grammar concepts per class** — teach through pattern examples, never through explicit rules
-- **Each new word must appear in at least 3 different exercises** within the same class
-- **Comprehension before production:** Student reads/understands dialogues before constructing sentences
-- **40-word max chunks:** Break any reading text into short paragraphs with visual breaks
-- **No exercise should require more than 8 words as answer** — keep production tasks short
+1. **Header** — Back link + class title + personalized greeting
+2. **Story intro** — Scene-setting paragraph (bilingual, centered)
+3. **Vocabulary section** (8-10 words, tap-to-reveal translation, audio buttons)
+4. **Dialogue 1** — Scene description + simplest conversation (greetings/opening)
+5. **Cultural note** — Interesting fact about English-speaking countries (bilingual)
+6. **Dialogue 2** — Scene continues, introduces core vocabulary in context
+7. **Video embed** — Relevant YouTube video with bilingual description
+8. **Dialogue 3** — More complex, introduces sentence patterns ("I like / I don't like")
+9. **Fun fact** — Light, entertaining tidbit (bilingual)
+10. **Dialogue 4** — Wrapping up the story, closing phrases
+11. **Video/Song** — Fun musical or cultural content
+12. **Self-study tip** — Tool of the week
+13. **Closing** — Encouraging bilingual message + back link
 
 ### Dialogue Rules
-- **2-3 exchanges max per dialogue** (micro-dialogues, not long conversations)
-- **Two dialogues per class** showing different scenarios with the same vocabulary
-- **Always use family character names** (see Characters section above)
+- **3-4 connected dialogues per class** that tell a story arc (not independent scenarios)
+- **4-6 lines per dialogue** — short sentences, especially in early classes
+- **Progressive complexity:** Dialogue 1 is simplest, Dialogue 4 can use all vocabulary
+- **Always use family character names** (see Characters section)
 - **Each dialogue models one practical situation** the student might encounter
-- **Comprehension check after each dialogue** (1 multiple-choice question about what happened)
+- **Scene descriptions** are bilingual and set the context before each dialogue
+- **All dialogue lines have audio buttons** with `data-pronounce` attribute
+- **Translations are hidden by default** — student taps the dialogue line to reveal
+
+### Content Between Dialogues
+Intersperse dialogues with rich multimedia and cultural content:
+- **Cultural notes** (`.cultural-note`) — "Did you know?" facts about English-speaking cultures
+- **Fun facts** (`.fun-fact`) — Light, surprising language tidbits
+- **YouTube videos** — Educational + fun (songs, short lessons, cultural content)
+- **Section dividers** (`.section-divider`) — Emoji-based visual breaks between sections
 
 ### Repetition Strategy
 - Every class reviews at least 5 words from previous weeks
 - Core verbs (like, have, go, want, need, feel) appear in EVERY class after introduction
 - Same sentence structures repeat in new contexts across classes
-- Exercises block 2 always includes 1-2 review items from past classes
-- A word is considered "learned" after 6+ correct exposures across different sessions
+- Key vocabulary appears in multiple dialogues within the same class
+- A word is considered "learned" after 6+ exposures across different sessions
 
 ### What to Create (formats I can produce well)
-- **Interactive exercises** (HTML/JS): fill-in-the-blank, matching, multiple choice, word bank, word ordering, listen-and-choose
 - **Vocabulary pages** with pronunciation (Web Speech API), PT/EN, tap-to-reveal
-- **Dialogues/texts** formatted as bilingual readers with audio buttons
+- **Connected dialogues** formatted as bilingual readers with audio buttons and scene descriptions
+- **Cultural notes** and fun facts (bilingual cards)
 - **Lesson plans** (for the teacher) with timing and objectives
-- **Embedded media** — YouTube videos (embedded iframes), Spotify song links
-- **Quizzes** with instant feedback
-- **Progress dashboard** — track which classes/exercises are done (localStorage)
+- **Embedded media** — YouTube videos (embedded iframes), songs with context
+- **Dashboard** — class listing with date-gated access (localStorage for student name)
 
 ### YouTube Video Rules (MUST FOLLOW)
 - **Always verify before adding:** Before embedding any YouTube video, verify it is available and embeddable using the oEmbed API:
@@ -146,6 +136,15 @@ Mix at least 5 different types per class. Focus on repetition: the same word/phr
   ```
 - **Verify the video content matches** — check the oEmbed response title to confirm the video is what you expect (correct topic, language, etc.)
 - **Prefer established educational channels** — The Singing Walrus, Super Simple Songs, English with Lucy, BBC Learning English, etc.
+- **MANDATORY VISUAL CHECK:** oEmbed passing does NOT guarantee the video works (region-blocks, login walls, and embed restrictions are invisible to the API). After adding any video, you MUST:
+  1. Open the page in the browser (dev server)
+  2. Scroll to the video embed
+  3. Take a screenshot and visually confirm the video player loads (not "Video unavailable" or a blank/error frame)
+  4. If you cannot see the screenshot, ask the user to confirm the video plays
+  5. If a video fails visual check, replace it immediately — never ship a broken embed
+- **Avoid VEVO/major label music videos** — these are frequently region-blocked or have embedding disabled. Prefer: educational channels (BBC Learning English, Woodward English), official movie studio clips (Warner Bros), or Creative Commons content. Stick to channels already confirmed to work.
+- **Never trust automated checks alone** — YouTube determines embed permission client-side via JavaScript. Server-side checks (curl, oEmbed API, embed page HTML parsing) CANNOT detect embedding restrictions. The ONLY reliable check is loading the actual page in a real browser and visually confirming the player loads.
+- **Reuse confirmed channels** — If a video from a specific channel works (e.g., BBC Learning English), other videos from that same channel are very likely to also work. When replacing a broken video, prefer a video from an already-confirmed channel.
 
 ### Pronunciation System
 - Uses the **Web Speech API** (SpeechSynthesis) — browser-built-in, zero dependencies, works offline
@@ -173,9 +172,9 @@ Mix at least 5 different types per class. Focus on repetition: the same word/phr
 - One concept per screen/section
 - Always include Portuguese translation for new words (classes 1-6)
 - **Translations are hidden by default** — student taps to reveal (forces active recall)
-- **Every piece of text must have a translation** — section headers use "English / Portugues" format, exercise prompts include PT translation after a "/", dialogues/reading use tap-to-reveal, feedback messages are bilingual
+- **Every piece of text must have a translation** — section headers use "English / Portugues" format, dialogue scene descriptions are bilingual, dialogues use tap-to-reveal
 - Use emojis and icons as visual anchors for vocabulary
-- Celebratory feedback on exercises ("Great job! / Muito bem!")
+- Encouraging bilingual messages throughout
 
 ### Tone
 - Warm, encouraging, patient
@@ -195,7 +194,7 @@ Use these names instead of generic characters:
 ### Tech Stack
 - Vanilla HTML/CSS/JS (no frameworks — keep it simple and fast)
 - Responsive (mobile-first — student will likely use phone/tablet)
-- localStorage for progress tracking and student data
+- localStorage for student name and date-gating
 - No backend, no runtime dependencies, no build step
 - Dev server: `live-server` for auto-reload during development (devDependency only)
 
@@ -238,20 +237,20 @@ If any of these are off, fix them BEFORE reporting the feature as done. A featur
 
 ### Storage System (localStorage)
 - **Single key:** `english-course-data`
-- **Schema:** `{ student: { name }, progress: { "class-01": { ex1: true, ... } }, completedClasses: [1, 2] }`
+- **Schema:** `{ student: { name } }`
 - **Module:** `js/storage.js` — all localStorage access goes through this file
 - **First visit:** Welcome overlay captures student name
-- **Exercise progress:** Each correct answer is saved; exercises unlock sequentially
-- **Class completion:** When all exercises in a class are done, class is marked complete and next class unlocks
+- **Date-gating:** Classes unlock on their scheduled Friday (no sequential prerequisite)
 - **Personalization:** Dashboard shows "Hello, [name]!" after first visit
+- **No exercise tracking** — student browses content freely at their own pace
 
-### Exercise Pattern (for new class pages)
+### Class Page Pattern (for new class pages)
 Every class page must:
-1. Add `data-class-id="class-XX"` to the `<body>` tag
-2. Add `data-exercise="exN"` to each exercise `<div>`
-3. Load `storage.js` before `exercises.js`
-4. Call `initExerciseLocking()` on DOMContentLoaded
-5. For matching exercises: manually call `onExerciseCorrect()` in the success handler
+1. Load `storage.js` for student name retrieval
+2. Load `pronunciation.js` for audio buttons
+3. Include inline `toggleTranslation` and `toggleDialogueTranslation` functions
+4. Use personalized greeting with `getStudentName()`
+5. Follow the section structure defined in Lesson Structure Rules
 
 ### Design Principles (MUST FOLLOW)
 
@@ -274,14 +273,6 @@ Every class page must:
 - Forgiving input — accept lowercase/uppercase, ignore trailing spaces, accept common typos where reasonable.
 
 **Litmus test:** "Would a 60-year-old who mostly uses WhatsApp and Netflix understand this without instructions?" If not, simplify.
-
-### Exercise Types to Implement
-1. **Fill-in-the-blank** — type the missing word
-2. **Multiple choice** — tap the correct answer
-3. **Matching** — connect EN word to PT translation
-4. **Ordering** — put words in the right order to form a sentence
-5. **Listen & repeat** — embed audio, student practices (no recording needed)
-6. **Mini quiz** — end-of-class review combining all types
 
 ## Class Themes (10 weeks)
 1. "Good Morning!" — Breakfast routine, greetings, "I like..."

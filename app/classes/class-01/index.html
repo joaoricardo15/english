@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 1 — Good Morning!</title>
+    <title>Class 1 - Good Morning!</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body class="class-page" data-class-id="class-01">
-    <a href="../../index.html" class="back-link">← Back to classes / Voltar</a>
+<body class="class-page">
+    <a href="../../index.html" class="back-link">Back to classes</a>
 
     <div class="class-header">
-        <h1>Class 1 — Good Morning! ☀️</h1>
-        <p>Breakfast, greetings & things you like / Cafe da manha, cumprimentos e coisas que voce gosta</p>
+        <h1>Class 1: Good Morning! ☀️</h1>
+        <p id="class-greeting">Breakfast, greetings & "I like..."</p>
     </div>
 
-    <!-- VOCABULARY -->
-    <section class="section">
-        <h2>Vocabulary / Vocabulario</h2>
-        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
-            Toque na palavra para ver a traducao. Toque no 🔊 para ouvir. / Tap to see translation. Tap 🔊 to listen.
-        </p>
+    <div class="story-intro">
+        <p class="story-intro-en">Follow Cleci through her morning — from waking up to saying goodbye!</p>
+        <p class="story-intro-pt">Acompanhe a Cleci pela manha dela — de acordar ate dizer tchau!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">Tap to see the translation / Toque para ver a traducao</p>
         <ul class="vocab-list">
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
                 <button class="audio-btn" data-pronounce="Good morning" aria-label="Listen">🔊</button>
@@ -27,587 +30,330 @@
                 <span class="vocab-pt hidden">Bom dia</span>
             </li>
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Breakfast" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="How are you?" aria-label="Listen">🔊</button>
+                <span class="vocab-en">How are you?</span>
+                <span class="vocab-pt hidden">Como voce esta?</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I'm fine" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I'm fine</span>
+                <span class="vocab-pt hidden">Estou bem</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="breakfast" aria-label="Listen">🔊</button>
                 <span class="vocab-en">Breakfast</span>
                 <span class="vocab-pt hidden">Cafe da manha</span>
             </li>
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Coffee" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="coffee" aria-label="Listen">🔊</button>
                 <span class="vocab-en">Coffee</span>
                 <span class="vocab-pt hidden">Cafe</span>
             </li>
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Bread" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="bread" aria-label="Listen">🔊</button>
                 <span class="vocab-en">Bread</span>
                 <span class="vocab-pt hidden">Pao</span>
             </li>
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Butter" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="butter" aria-label="Listen">🔊</button>
                 <span class="vocab-en">Butter</span>
                 <span class="vocab-pt hidden">Manteiga</span>
             </li>
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Fruit" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="fruit" aria-label="Listen">🔊</button>
                 <span class="vocab-en">Fruit</span>
                 <span class="vocab-pt hidden">Fruta</span>
             </li>
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Juice" aria-label="Listen">🔊</button>
-                <span class="vocab-en">Juice</span>
-                <span class="vocab-pt hidden">Suco</span>
-            </li>
-            <li class="vocab-item" onclick="toggleTranslation(event, this)">
                 <button class="audio-btn" data-pronounce="I like" aria-label="Listen">🔊</button>
-                <span class="vocab-en">I like...</span>
-                <span class="vocab-pt hidden">Eu gosto de...</span>
+                <span class="vocab-en">I like</span>
+                <span class="vocab-pt hidden">Eu gosto</span>
             </li>
             <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="I don't like" aria-label="Listen">🔊</button>
-                <span class="vocab-en">I don't like...</span>
-                <span class="vocab-pt hidden">Eu nao gosto de...</span>
-            </li>
-            <li class="vocab-item" onclick="toggleTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Delicious" aria-label="Listen">🔊</button>
-                <span class="vocab-en">Delicious</span>
-                <span class="vocab-pt hidden">Delicioso(a)</span>
+                <button class="audio-btn" data-pronounce="goodbye" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Goodbye</span>
+                <span class="vocab-pt hidden">Tchau / Adeus</span>
             </li>
         </ul>
-    </section>
+    </div>
 
-    <!-- DIALOGUE 1 -->
-    <section class="section">
+    <div class="section-divider">☀️</div>
+
+    <!-- Dialogue 1: Good morning! -->
+    <div class="section">
         <h2>Dialogue 1 / Dialogo 1</h2>
-        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
-            Marina e Cleci se encontram de manha. Toque para ver a traducao. / Tap to see translation.
-        </p>
+        <p class="scene-description">It's early morning. Cleci walks into the kitchen. Nelson is already there making coffee. / E de manha cedo. Cleci entra na cozinha. Nelson ja esta la fazendo cafe.</p>
+
         <div class="dialogue">
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Good morning, Cleci! How are you?" aria-label="Listen">🔊</button>
-                <div class="dialogue-speaker">Marina</div>
-                <div class="dialogue-text">Good morning, Cleci! How are you?</div>
-                <div class="dialogue-translation hidden">Bom dia, Cleci! Como voce esta?</div>
+                <button class="audio-btn" data-pronounce="Good morning, Cleci!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good morning, Cleci!</div>
+                <div class="dialogue-translation hidden">Bom dia, Cleci!</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Good morning! I'm fine, thank you. And you?" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="Good morning! How are you?" aria-label="Listen">🔊</button>
                 <div class="dialogue-speaker">Cleci</div>
-                <div class="dialogue-text">Good morning! I'm fine, thank you. And you?</div>
-                <div class="dialogue-translation hidden">Bom dia! Estou bem, obrigada. E voce?</div>
+                <div class="dialogue-text">Good morning! How are you?</div>
+                <div class="dialogue-translation hidden">Bom dia! Como voce esta?</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="I'm great! Do you like coffee?" aria-label="Listen">🔊</button>
-                <div class="dialogue-speaker">Marina</div>
-                <div class="dialogue-text">I'm great! Do you like coffee?</div>
-                <div class="dialogue-translation hidden">Estou otima! Voce gosta de cafe?</div>
+                <button class="audio-btn" data-pronounce="I'm great! And you?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I'm great! And you?</div>
+                <div class="dialogue-translation hidden">Estou otimo! E voce?</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Yes! I like coffee with bread and butter. Delicious!" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="I'm fine, thank you." aria-label="Listen">🔊</button>
                 <div class="dialogue-speaker">Cleci</div>
-                <div class="dialogue-text">Yes! I like coffee with bread and butter. Delicious!</div>
-                <div class="dialogue-translation hidden">Sim! Eu gosto de cafe com pao e manteiga. Delicioso!</div>
+                <div class="dialogue-text">I'm fine, thank you.</div>
+                <div class="dialogue-translation hidden">Estou bem, obrigada.</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- EXERCISES BLOCK 1: Receptive -->
-    <section class="section">
-        <h2>Exercises — Part 1 / Exercicios — Parte 1</h2>
-        <p style="margin-bottom: 16px; color: var(--text-light); font-size: 0.95rem;">
-            Reconhecimento — escolha a resposta correta!
-        </p>
+    <!-- Cultural Note 1 -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>In English, <strong>"How are you?"</strong> is more like a greeting than a real question! People usually just say <strong>"I'm fine"</strong> or <strong>"Good, thanks!"</strong> — they don't expect a long answer.</p>
+        <p>Em ingles, "How are you?" e mais uma saudacao do que uma pergunta de verdade! As pessoas geralmente so dizem "I'm fine" ou "Good, thanks!" — nao esperam uma resposta longa.</p>
+    </div>
 
-        <!-- Ex 1: Comprehension check on dialogue 1 -->
-        <div class="exercise" data-exercise="ex1" id="ex1-mc">
-            <div class="exercise-prompt">1. In the dialogue, what does Cleci like for breakfast? / No dialogo, o que a Cleci gosta no cafe da manha?</div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex1-mc'))">Juice and fruit / Suco e fruta</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex1-mc'))">Bread and juice / Pao e suco</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex1-mc'))">Coffee with bread and butter / Cafe com pao e manteiga</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
+    <div class="section-divider">☕</div>
 
-        <!-- Ex 2: Listen & Choose -->
-        <div class="exercise" data-exercise="ex2" id="ex2-listen">
-            <div class="exercise-prompt">2. Listen and choose the correct word / Ouca e escolha a palavra correta:</div>
-            <div class="listen-prompt">
-                <button class="audio-btn" data-pronounce="Breakfast" aria-label="Listen">🔊</button>
-                <p>Tap to listen / Toque para ouvir</p>
-            </div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex2-listen'))">Bread</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex2-listen'))">Breakfast</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex2-listen'))">Butter</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Ex 3: Matching EN → PT -->
-        <div class="exercise" data-exercise="ex3">
-            <div class="exercise-prompt">3. Connect the words / Conecte as palavras:</div>
-            <div class="matching-container" id="matching1">
-                <div class="matching-row">
-                    <span class="word">Coffee</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">escolha</option>
-                        <option value="cafe">Cafe</option>
-                        <option value="pao">Pao</option>
-                        <option value="manteiga">Manteiga</option>
-                        <option value="suco">Suco</option>
-                    </select>
-                </div>
-                <div class="matching-row">
-                    <span class="word">Bread</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">escolha</option>
-                        <option value="cafe">Cafe</option>
-                        <option value="pao">Pao</option>
-                        <option value="manteiga">Manteiga</option>
-                        <option value="suco">Suco</option>
-                    </select>
-                </div>
-                <div class="matching-row">
-                    <span class="word">Butter</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">escolha</option>
-                        <option value="cafe">Cafe</option>
-                        <option value="pao">Pao</option>
-                        <option value="manteiga">Manteiga</option>
-                        <option value="suco">Suco</option>
-                    </select>
-                </div>
-                <div class="matching-row">
-                    <span class="word">Juice</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">escolha</option>
-                        <option value="cafe">Cafe</option>
-                        <option value="pao">Pao</option>
-                        <option value="manteiga">Manteiga</option>
-                        <option value="suco">Suco</option>
-                    </select>
-                </div>
-            </div>
-            <div class="exercise-feedback" id="fb-match1"></div>
-            <button class="check-btn" onclick="checkMatch1()">Check / Verificar</button>
-        </div>
-
-        <!-- Ex 4: Multiple choice PT → EN -->
-        <div class="exercise" data-exercise="ex4" id="ex4-mc">
-            <div class="exercise-prompt">4. "Cafe da manha" in English is: / "Cafe da manha" em ingles e:</div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4-mc'))">Coffee</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4-mc'))">Breakfast</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4-mc'))">Bread</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex4-mc'))">Good morning</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Ex 5: Listen & Choose -->
-        <div class="exercise" data-exercise="ex5" id="ex5-listen">
-            <div class="exercise-prompt">5. Listen and choose / Ouca e escolha:</div>
-            <div class="listen-prompt">
-                <button class="audio-btn" data-pronounce="I like juice" aria-label="Listen">🔊</button>
-                <p>Tap to listen / Toque para ouvir</p>
-            </div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex5-listen'))">I like juice / Eu gosto de suco</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex5-listen'))">I like coffee / Eu gosto de cafe</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex5-listen'))">I don't like juice / Eu nao gosto de suco</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Ex 6: Word Bank -->
-        <div class="exercise" data-exercise="ex6">
-            <div class="exercise-prompt">6. Choose the correct word / Escolha a palavra correta:</div>
-            <p style="font-size: 1.1rem; margin-bottom: 12px;">How do you say "Bom dia" in English? = "Good <span class="blank-slot" id="slot-ex6">___</span>"</p>
-            <div id="wb-ex6">
-                <div class="word-bank">
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex6', 'slot-ex6')">night</button>
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex6', 'slot-ex6')">morning</button>
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex6', 'slot-ex6')">afternoon</button>
-                </div>
-                <div class="exercise-feedback"></div>
-                <button class="check-btn" onclick="checkWordBank('wb-ex6', 'morning')">Check / Verificar</button>
-            </div>
-        </div>
-
-        <!-- Ex 7: Multiple choice EN → PT -->
-        <div class="exercise" data-exercise="ex7" id="ex7-mc">
-            <div class="exercise-prompt">7. What does "I don't like butter" mean? / O que significa "I don't like butter"?</div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex7-mc'))">Eu gosto de manteiga</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex7-mc'))">Eu gosto de pao</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 2, document.getElementById('ex7-mc'))">Eu nao gosto de manteiga</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-    </section>
-
-    <!-- SHORT TEXT -->
-    <section class="section">
-        <h2>Reading / Leitura</h2>
-        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
-            Leia o texto. Toque em cada frase para ver a traducao. Toque no 🔊 para ouvir.
-        </p>
-        <div class="dialogue">
-            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Every morning, Cleci has breakfast." aria-label="Listen">🔊</button>
-                <div class="dialogue-text">Every morning, Cleci has breakfast.</div>
-                <div class="dialogue-translation hidden">Toda manha, Cleci toma cafe da manha.</div>
-            </div>
-            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="She likes coffee with bread and butter." aria-label="Listen">🔊</button>
-                <div class="dialogue-text">She likes coffee with bread and butter.</div>
-                <div class="dialogue-translation hidden">Ela gosta de cafe com pao e manteiga.</div>
-            </div>
-            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="She doesn't like juice. She likes fruit." aria-label="Listen">🔊</button>
-                <div class="dialogue-text">She doesn't like juice. She likes fruit.</div>
-                <div class="dialogue-translation hidden">Ela nao gosta de suco. Ela gosta de fruta.</div>
-            </div>
-            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Breakfast is delicious!" aria-label="Listen">🔊</button>
-                <div class="dialogue-text">Breakfast is delicious!</div>
-                <div class="dialogue-translation hidden">O cafe da manha e delicioso!</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DIALOGUE 2 -->
-    <section class="section">
+    <!-- Dialogue 2: Breakfast time -->
+    <div class="section">
         <h2>Dialogue 2 / Dialogo 2</h2>
-        <p style="margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem;">
-            Nelson oferece cafe da manha para Joao. / Nelson offers breakfast to Joao.
-        </p>
+        <p class="scene-description">They sit down at the breakfast table. Nelson pours coffee. / Eles sentam na mesa do cafe. Nelson serve o cafe.</p>
+
         <div class="dialogue">
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Good morning, Joao! Do you like coffee?" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="It's breakfast time! Do you want coffee?" aria-label="Listen">🔊</button>
                 <div class="dialogue-speaker">Nelson</div>
-                <div class="dialogue-text">Good morning, Joao! Do you like coffee?</div>
-                <div class="dialogue-translation hidden">Bom dia, Joao! Voce gosta de cafe?</div>
+                <div class="dialogue-text">It's breakfast time! Do you want coffee?</div>
+                <div class="dialogue-translation hidden">E hora do cafe da manha! Voce quer cafe?</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="No, I don't like coffee. I like juice." aria-label="Listen">🔊</button>
-                <div class="dialogue-speaker">Joao</div>
-                <div class="dialogue-text">No, I don't like coffee. I like juice.</div>
-                <div class="dialogue-translation hidden">Nao, eu nao gosto de cafe. Eu gosto de suco.</div>
+                <button class="audio-btn" data-pronounce="Yes! I like coffee." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! I like coffee.</div>
+                <div class="dialogue-translation hidden">Sim! Eu gosto de cafe.</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="And bread with butter?" aria-label="Listen">🔊</button>
+                <button class="audio-btn" data-pronounce="Bread and butter?" aria-label="Listen">🔊</button>
                 <div class="dialogue-speaker">Nelson</div>
-                <div class="dialogue-text">And bread with butter?</div>
-                <div class="dialogue-translation hidden">E pao com manteiga?</div>
+                <div class="dialogue-text">Bread and butter?</div>
+                <div class="dialogue-translation hidden">Pao e manteiga?</div>
             </div>
             <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
-                <button class="audio-btn" data-pronounce="Yes! I like bread. Bread is delicious!" aria-label="Listen">🔊</button>
-                <div class="dialogue-speaker">Joao</div>
-                <div class="dialogue-text">Yes! I like bread. Bread is delicious!</div>
-                <div class="dialogue-translation hidden">Sim! Eu gosto de pao. Pao e delicioso!</div>
+                <button class="audio-btn" data-pronounce="Yes, please. I like bread with butter." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes, please. I like bread with butter.</div>
+                <div class="dialogue-translation hidden">Sim, por favor. Eu gosto de pao com manteiga.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And juice?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">And juice?</div>
+                <div class="dialogue-translation hidden">E suco?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="No, thank you. I don't like juice. I like fruit." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">No, thank you. I don't like juice. I like fruit.</div>
+                <div class="dialogue-translation hidden">Nao, obrigada. Eu nao gosto de suco. Eu gosto de fruta.</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- EXERCISES BLOCK 2: Productive -->
-    <section class="section">
-        <h2>Exercises — Part 2 / Exercicios — Parte 2</h2>
-        <p style="margin-bottom: 16px; color: var(--text-light); font-size: 0.95rem;">
-            Agora e sua vez! / Now it's your turn!
-        </p>
-
-        <!-- Ex 8: Comprehension check on dialogue 2 -->
-        <div class="exercise" data-exercise="ex8" id="ex8-mc">
-            <div class="exercise-prompt">8. In dialogue 2, what does Joao like? / No dialogo 2, o que o Joao gosta?</div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex8-mc'))">Coffee and butter / Cafe e manteiga</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex8-mc'))">Juice and bread / Suco e pao</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 1, document.getElementById('ex8-mc'))">Fruit and juice / Fruta e suco</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Ex 9: True/False from reading -->
-        <div class="exercise" data-exercise="ex9" id="ex9-tf">
-            <div class="exercise-prompt">9. True or False? / Verdadeiro ou Falso?<br>"Cleci likes juice." (from the reading text)</div>
-            <div class="tf-choices">
-                <button class="choice-btn" onclick="checkTrueFalse(this, false, document.getElementById('ex9-tf'))">True / Verdadeiro</button>
-                <button class="choice-btn" onclick="checkTrueFalse(this, true, document.getElementById('ex9-tf'))">False / Falso</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Ex 10: Word Order -->
-        <div class="exercise" data-exercise="ex10">
-            <div class="exercise-prompt">10. Put the words in order to make a sentence / Coloque as palavras na ordem correta:</div>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px;">"Eu gosto de cafe"</p>
-            <div id="wo-ex10">
-                <div class="word-order-answer" id="answer-ex10"></div>
-                <div class="word-order-container">
-                    <span class="word-tile" data-word="coffee">coffee</span>
-                    <span class="word-tile" data-word="like">like</span>
-                    <span class="word-tile" data-word="I">I</span>
-                </div>
-                <div class="exercise-feedback"></div>
-                <button class="check-btn" onclick="checkWordOrder('wo-ex10', 'I like coffee')">Check / Verificar</button>
-            </div>
-        </div>
-
-        <!-- Ex 11: Word Bank fill-in -->
-        <div class="exercise" data-exercise="ex11">
-            <div class="exercise-prompt">11. Complete the sentence / Complete a frase:</div>
-            <p style="font-size: 1.1rem; margin-bottom: 12px;">"I <span class="blank-slot" id="slot-ex11">___</span> like juice" = "Eu nao gosto de suco"</p>
-            <div id="wb-ex11">
-                <div class="word-bank">
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex11', 'slot-ex11')">like</button>
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex11', 'slot-ex11')">don't</button>
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex11', 'slot-ex11')">do</button>
-                </div>
-                <div class="exercise-feedback"></div>
-                <button class="check-btn" onclick="checkWordBank('wb-ex11', 'don\'t')">Check / Verificar</button>
-            </div>
-        </div>
-
-        <!-- Ex 12: Word Order -->
-        <div class="exercise" data-exercise="ex12">
-            <div class="exercise-prompt">12. Put the words in order / Coloque na ordem correta:</div>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px;">"Pao e delicioso"</p>
-            <div id="wo-ex12">
-                <div class="word-order-answer" id="answer-ex12"></div>
-                <div class="word-order-container">
-                    <span class="word-tile" data-word="delicious">delicious</span>
-                    <span class="word-tile" data-word="is">is</span>
-                    <span class="word-tile" data-word="Bread">Bread</span>
-                </div>
-                <div class="exercise-feedback"></div>
-                <button class="check-btn" onclick="checkWordOrder('wo-ex12', 'Bread is delicious')">Check / Verificar</button>
-            </div>
-        </div>
-
-        <!-- Ex 13: Listen & Choose -->
-        <div class="exercise" data-exercise="ex13" id="ex13-listen">
-            <div class="exercise-prompt">13. Listen and choose what you hear / Ouca e escolha o que voce ouviu:</div>
-            <div class="listen-prompt">
-                <button class="audio-btn" data-pronounce="Good morning" aria-label="Listen">🔊</button>
-                <p>Tap to listen / Toque para ouvir</p>
-            </div>
-            <div class="choices">
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex13-listen'))">Good morning</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex13-listen'))">Good night</button>
-                <button class="choice-btn" onclick="checkMultipleChoice(this, 0, document.getElementById('ex13-listen'))">Good afternoon</button>
-            </div>
-            <div class="exercise-feedback"></div>
-        </div>
-
-        <!-- Ex 14: Fill in the blank (typing) -->
-        <div class="exercise" data-exercise="ex14">
-            <div class="exercise-prompt">14. Complete / Complete: "Eu gosto de pao" = "I ___ bread"</div>
-            <input type="text" id="input-ex14" placeholder="type here / escreva aqui">
-            <div class="exercise-feedback" id="fb-ex14"></div>
-            <button class="check-btn" onclick="checkFillBlank('input-ex14', 'like', 'fb-ex14')">Check / Verificar</button>
-        </div>
-
-        <!-- Ex 15: Translate full sentence -->
-        <div class="exercise" data-exercise="ex15">
-            <div class="exercise-prompt">15. Translate / Traduza: "Cafe e delicioso" = "___ is ___"</div>
-            <input type="text" id="input-ex15" placeholder="type the full sentence / escreva a frase completa">
-            <div class="exercise-feedback" id="fb-ex15"></div>
-            <button class="check-btn" onclick="checkFillBlank('input-ex15', 'coffee is delicious', 'fb-ex15')">Check / Verificar</button>
-        </div>
-
-        <!-- Ex 16: Matching PT → EN (reverse direction) -->
-        <div class="exercise" data-exercise="ex16">
-            <div class="exercise-prompt">16. Now the other way! / Agora ao contrario! Connect PT → EN:</div>
-            <div class="matching-container" id="matching2">
-                <div class="matching-row">
-                    <span class="word">Fruta</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">choose</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="juice">Juice</option>
-                        <option value="delicious">Delicious</option>
-                        <option value="breakfast">Breakfast</option>
-                    </select>
-                </div>
-                <div class="matching-row">
-                    <span class="word">Suco</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">choose</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="juice">Juice</option>
-                        <option value="delicious">Delicious</option>
-                        <option value="breakfast">Breakfast</option>
-                    </select>
-                </div>
-                <div class="matching-row">
-                    <span class="word">Delicioso</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">choose</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="juice">Juice</option>
-                        <option value="delicious">Delicious</option>
-                        <option value="breakfast">Breakfast</option>
-                    </select>
-                </div>
-                <div class="matching-row">
-                    <span class="word">Cafe da manha</span>
-                    <span>→</span>
-                    <select>
-                        <option value="">choose</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="juice">Juice</option>
-                        <option value="delicious">Delicious</option>
-                        <option value="breakfast">Breakfast</option>
-                    </select>
-                </div>
-            </div>
-            <div class="exercise-feedback" id="fb-match2"></div>
-            <button class="check-btn" onclick="checkMatch2()">Check / Verificar</button>
-        </div>
-
-        <!-- Ex 17: Word Order (longer) -->
-        <div class="exercise" data-exercise="ex17">
-            <div class="exercise-prompt">17. Put the words in order / Coloque na ordem correta:</div>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px;">"Eu nao gosto de suco"</p>
-            <div id="wo-ex17">
-                <div class="word-order-answer" id="answer-ex17"></div>
-                <div class="word-order-container">
-                    <span class="word-tile" data-word="juice">juice</span>
-                    <span class="word-tile" data-word="don't">don't</span>
-                    <span class="word-tile" data-word="I">I</span>
-                    <span class="word-tile" data-word="like">like</span>
-                </div>
-                <div class="exercise-feedback"></div>
-                <button class="check-btn" onclick="checkWordOrder('wo-ex17', 'I don\'t like juice')">Check / Verificar</button>
-            </div>
-        </div>
-
-        <!-- Ex 18: Word Bank -->
-        <div class="exercise" data-exercise="ex18">
-            <div class="exercise-prompt">18. Choose the word / Escolha a palavra:</div>
-            <p style="font-size: 1.1rem; margin-bottom: 12px;">"Good morning! <span class="blank-slot" id="slot-ex18">___</span> is delicious!" = "Bom dia! Fruta e deliciosa!"</p>
-            <div id="wb-ex18">
-                <div class="word-bank">
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex18', 'slot-ex18')">Bread</button>
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex18', 'slot-ex18')">Fruit</button>
-                    <button class="word-bank-option" onclick="selectWordBank(this, 'wb-ex18', 'slot-ex18')">Coffee</button>
-                </div>
-                <div class="exercise-feedback"></div>
-                <button class="check-btn" onclick="checkWordBank('wb-ex18', 'Fruit')">Check / Verificar</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- FUN MATERIAL -->
-    <section class="section">
-        <h2>Fun Material / Material Divertido 🎵</h2>
-
-        <div class="media-card" style="flex-direction: column; align-items: stretch;">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <span class="media-icon">🎵</span>
-                <div class="media-info">
-                    <h3>Song: "Good Morning" — The Singing Walrus</h3>
-                    <p>A fun song to practice "Good morning"! Listen for the words you learned. / Uma musica divertida para praticar! Ouca as palavras que voce aprendeu.</p>
-                </div>
-            </div>
+    <!-- Video: Breakfast Vocabulary -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 Breakfast words / Palavras do cafe da manha</h3>
+            <p>Watch this video to learn more breakfast words! Don't worry about understanding everything — just listen and look at the images. / Assista para aprender mais palavras do cafe! Nao se preocupe em entender tudo — so ouca e olhe as imagens.</p>
             <div class="video-embed">
-                <iframe src="https://www.youtube.com/embed/CuI_p7a9VGs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Good Morning Song for Kids - The Singing Walrus"></iframe>
+                <iframe src="https://www.youtube.com/embed/tz7wM03Nsy8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Breakfast Vocabulary in English"></iframe>
             </div>
         </div>
+    </div>
 
-        <div class="media-card" style="flex-direction: column; align-items: stretch;">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <span class="media-icon">🍎</span>
-                <div class="media-info">
-                    <h3>Song: "Do You Like...?" — Super Simple Songs</h3>
-                    <p>Practice "I like" and "I don't like" with food! / Pratique "I like" e "I don't like" com comida!</p>
-                </div>
+    <!-- Fun Fact 1 -->
+    <div class="fun-fact">
+        <h3>🍳 Fun Fact / Curiosidade</h3>
+        <p>The word <strong>"breakfast"</strong> = <strong>"break"</strong> + <strong>"fast"</strong>. You are "breaking" the overnight fast (jejum)! In Portuguese you say "cafe da manha" (morning coffee), but in English the focus is on ending the fast.</p>
+        <p>A palavra "breakfast" = "break" (quebrar) + "fast" (jejum). Voce esta "quebrando" o jejum da noite! Em portugues dizemos "cafe da manha", mas em ingles o foco e em terminar o jejum.</p>
+    </div>
+
+    <div class="section-divider">🍞</div>
+
+    <!-- Dialogue 3: What do you like? -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">Blue comes to the kitchen, still sleepy. She sits at the table with Cleci and Nelson. / Blue chega na cozinha, ainda com sono. Ela senta na mesa com Cleci e Nelson.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">Good morning!</div>
+                <div class="dialogue-translation hidden">Bom dia!</div>
             </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning, Blue! Do you want breakfast?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Good morning, Blue! Do you want breakfast?</div>
+                <div class="dialogue-translation hidden">Bom dia, Blue! Voce quer cafe da manha?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! I like juice. Juice is delicious!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">Yes! I like juice. Juice is delicious!</div>
+                <div class="dialogue-translation hidden">Sim! Eu gosto de suco. Suco e delicioso!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like juice. I like coffee." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I don't like juice. I like coffee.</div>
+                <div class="dialogue-translation hidden">Eu nao gosto de suco. Eu gosto de cafe.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like coffee and juice!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I like coffee and juice!</div>
+                <div class="dialogue-translation hidden">Eu gosto de cafe e suco!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And bread? Bread is delicious!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">And bread? Bread is delicious!</div>
+                <div class="dialogue-translation hidden">E pao? Pao e delicioso!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note 2 -->
+    <div class="cultural-note">
+        <h3>🇬🇧 Brazilian vs. English Breakfast / Cafe brasileiro vs. ingles</h3>
+        <p>In Brazil, breakfast is light and quick — coffee, bread, fruit. In England, a <strong>"Full English Breakfast"</strong> is a HUGE meal: eggs, bacon, sausages, beans, toast, and tea! It's a whole event!</p>
+        <p>No Brasil, cafe da manha e leve e rapido — cafe, pao, fruta. Na Inglaterra, um "Full English Breakfast" e uma refeicao ENORME: ovos, bacon, salsichas, feijao, torrada e cha! E um evento!</p>
+    </div>
+
+    <!-- Video: Good Morning from Singin' in the Rain -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Song: "Good Morning!" / Musica: "Good Morning!"</h3>
+            <p>This is from a famous 1952 movie called "Singin' in the Rain". Listen for "Good morning" — how many times do they say it? / Esse video e de um filme famoso de 1952 chamado "Cantando na Chuva". Ouca "Good morning" — quantas vezes eles falam?</p>
             <div class="video-embed">
-                <iframe src="https://www.youtube.com/embed/frN3nvhIHUk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Do You Like Broccoli Ice Cream - Super Simple Songs"></iframe>
+                <iframe src="https://www.youtube.com/embed/pyMU8O2B2Vs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Good Morning - Singin' in the Rain"></iframe>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- SELF-STUDY TIP -->
-    <section class="section">
+    <div class="section-divider">👋</div>
+
+    <!-- Dialogue 4: Bye bye! -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">Breakfast is over. Everyone is getting ready to leave the house. / O cafe acabou. Todos estao se preparando para sair de casa.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Goodbye, Cleci! Have a good day!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Goodbye, Cleci! Have a good day!</div>
+                <div class="dialogue-translation hidden">Tchau, Cleci! Tenha um bom dia!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Goodbye! Have a good day!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Goodbye! Have a good day!</div>
+                <div class="dialogue-translation hidden">Tchau! Tenha um bom dia!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Bye-bye!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">Bye-bye!</div>
+                <div class="dialogue-translation hidden">Tchau tchau!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Bye-bye, Blue! See you later!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Bye-bye, Blue! See you later!</div>
+                <div class="dialogue-translation hidden">Tchau tchau, Blue! Ate mais tarde!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact 2 -->
+    <div class="fun-fact">
+        <h3>🌙 Be careful! / Cuidado!</h3>
+        <p><strong>"Good night"</strong> in English is ONLY used when leaving or going to bed — NEVER as a greeting when you arrive! Unlike Portuguese "Boa noite" which works both ways.</p>
+        <p>"Good night" em ingles e usado SOMENTE ao sair ou ir dormir — NUNCA como saudacao ao chegar! Diferente do portugues "Boa noite" que funciona dos dois jeitos.</p>
+    </div>
+
+    <!-- Video: BBC Greetings -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 Learn more greetings / Aprenda mais saudacoes</h3>
+            <p>Watch how people introduce themselves in English. This is from BBC Learning English — slow and clear! / Veja como as pessoas se apresentam em ingles. Esse video e da BBC — devagar e claro!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/I_tRSrPru94" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="BBC Learning English - How to introduce yourself"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bonus Video -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎶 Bonus: Is breakfast important? / Bonus: O cafe da manha e importante?</h3>
+            <p>A fun BBC video about breakfast around the world. Don't worry about understanding everything — just listen for words you know: "breakfast", "coffee", "morning"! / Um video divertido da BBC sobre cafe da manha pelo mundo. Nao se preocupe em entender tudo — so ouca as palavras que voce ja sabe!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/C830bmzNjDc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="BBC 6 Minute English - Is breakfast the most important meal of the day?"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
         <div class="tip-box">
-            <h3>Dica da semana / Tip of the week: Anki (flashcards gratuito / free flashcards)</h3>
-            <p>
-                Baixe o aplicativo <strong>Anki</strong> no celular (gratis para Android, pago no iPhone — alternativa gratis: <strong>AnkiDroid</strong>).
-                Crie cartoes com as palavras desta semana: de um lado a palavra em ingles, do outro em portugues.
-                Revise 5 minutos por dia. O app vai repetir as palavras que voce erra mais vezes — isso se chama <em>repeticao espacada</em> e e o melhor metodo para memorizar!
-            </p>
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>Anki</strong> is a free flashcard app that helps you memorize words. Add today's vocabulary and review 5 minutes every day! The app shows you words right before you forget them.</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);"><strong>Anki</strong> e um app gratuito de flashcards que ajuda a memorizar palavras. Adicione o vocabulario de hoje e revise 5 minutos por dia! O app mostra as palavras na hora certa antes de voce esquecer.</p>
         </div>
-    </section>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">Great job exploring today's lesson! 🎉</p>
+        <p class="story-intro-pt">Otimo trabalho explorando a licao de hoje!</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">Back to classes / Voltar para aulas</a>
 
     <script src="../../js/storage.js"></script>
-    <script src="../../js/exercises.js"></script>
     <script src="../../js/pronunciation.js"></script>
     <script>
-        function toggleTranslation(ev, item) {
-            if (ev.target.closest('.audio-btn')) return;
-            var pt = item.querySelector('.vocab-pt');
-            pt.classList.toggle('hidden');
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Good morning, ' + name + '! ☀️';
         }
+    });
 
-        function toggleDialogueTranslation(ev, line) {
-            if (ev.target.closest('.audio-btn')) return;
-            var translation = line.querySelector('.dialogue-translation');
-            translation.classList.toggle('hidden');
-        }
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
 
-        function selectWordBank(option, containerId, slotId) {
-            var container = document.getElementById(containerId);
-            var slot = document.getElementById(slotId);
-            var options = container.querySelectorAll('.word-bank-option');
-            options.forEach(function(o) { o.classList.remove('selected'); });
-            option.classList.add('selected');
-            slot.textContent = option.textContent;
-            slot.classList.add('filled');
-        }
-
-        function checkMatch1() {
-            var correct = checkMatching('matching1', ['cafe', 'pao', 'manteiga', 'suco']);
-            var fb = document.getElementById('fb-match1');
-            if (correct) {
-                fb.textContent = 'Perfeito! All correct!';
-                fb.className = 'exercise-feedback correct';
-                var exercise = document.querySelector('[data-exercise="ex3"]');
-                onExerciseCorrect(exercise.querySelector('.check-btn'));
-            } else {
-                fb.textContent = 'Some are wrong. Try again! / Tente de novo!';
-                fb.className = 'exercise-feedback incorrect';
-            }
-        }
-
-        function checkMatch2() {
-            var correct = checkMatching('matching2', ['fruit', 'juice', 'delicious', 'breakfast']);
-            var fb = document.getElementById('fb-match2');
-            if (correct) {
-                fb.textContent = 'Perfeito! All correct!';
-                fb.className = 'exercise-feedback correct';
-                var exercise = document.querySelector('[data-exercise="ex16"]');
-                onExerciseCorrect(exercise.querySelector('.check-btn'));
-            } else {
-                fb.textContent = 'Some are wrong. Try again! / Tente de novo!';
-                fb.className = 'exercise-feedback incorrect';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            initExerciseLocking();
-            // Initialize word ordering exercises
-            initWordOrder('wo-ex10');
-            initWordOrder('wo-ex12');
-            initWordOrder('wo-ex17');
-        });
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
     </script>
 </body>
 </html>
