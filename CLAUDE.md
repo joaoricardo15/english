@@ -92,6 +92,7 @@ Each class page must follow this structure (in order):
 
 ### Dialogue Rules
 - **3-4 connected dialogues per class** that tell a story arc (not independent scenarios)
+- **Exactly 2 characters per dialogue** — each dialogue is a conversation between two people only (different dialogues can use different pairs)
 - **4-6 lines per dialogue** — short sentences, especially in early classes
 - **Progressive complexity:** Dialogue 1 is simplest, Dialogue 4 can use all vocabulary
 - **Always use family character names** (see Characters section)

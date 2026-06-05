@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 2 - What do you do?</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 2: What do you do? 🕐</h1>
+        <p id="class-greeting">Daily routine & "I wake up..."</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">Follow Cleci through her whole day — from the first coffee in the morning to her favorite show at night!</p>
+        <p class="story-intro-pt">Acompanhe a Cleci pelo dia inteiro dela — do primeiro cafe de manha ate o programa favorito dela a noite!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Good morning ☀️</span>
+                <span class="vocab-pt hidden">Bom dia</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Breakfast" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Breakfast 🥐</span>
+                <span class="vocab-pt hidden">Cafe da manha</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Coffee" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Coffee ☕</span>
+                <span class="vocab-pt hidden">Cafe</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I like ❤️</span>
+                <span class="vocab-pt hidden">Eu gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Goodbye" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Goodbye 👋</span>
+                <span class="vocab-pt hidden">Tchau</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Wake up" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Wake up ⏰</span>
+                <span class="vocab-pt hidden">Acordar</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Get up" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Get up 🛏️</span>
+                <span class="vocab-pt hidden">Levantar</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Cook" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Cook 🍳</span>
+                <span class="vocab-pt hidden">Cozinhar</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Watch TV" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Watch (TV) 📺</span>
+                <span class="vocab-pt hidden">Assistir (TV)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Go" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Go 🚶‍♀️</span>
+                <span class="vocab-pt hidden">Ir</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Ride a bike" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Ride (a bike) 🚴‍♀️</span>
+                <span class="vocab-pt hidden">Andar (de bicicleta)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Every day" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Every day 📅</span>
+                <span class="vocab-pt hidden">Todo dia</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="In the morning" aria-label="Listen">🔊</button>
+                <span class="vocab-en">In the morning 🌅</span>
+                <span class="vocab-pt hidden">De manha</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="In the afternoon" aria-label="Listen">🔊</button>
+                <span class="vocab-en">In the afternoon ☀️</span>
+                <span class="vocab-pt hidden">De tarde</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="At night" aria-label="Listen">🔊</button>
+                <span class="vocab-en">At night 🌙</span>
+                <span class="vocab-pt hidden">De noite</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">⏰</div>
+
+    <!-- Dialogue 1: Morning coffee -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">It's 7 in the morning. Cleci and Nelson are in the kitchen having coffee. They talk about the day ahead. / Sao 7 da manha. Cleci e Nelson estao na cozinha tomando cafe. Eles conversam sobre o dia.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning! Coffee?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good morning! Coffee?</div>
+                <div class="dialogue-translation hidden">Bom dia! Cafe?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! I like coffee in the morning." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! I like coffee in the morning.</div>
+                <div class="dialogue-translation hidden">Sim! Eu gosto de cafe de manha.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="What do you do today?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">What do you do today?</div>
+                <div class="dialogue-translation hidden">O que voce faz hoje?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I ride my bike in the morning!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I ride my bike in the morning!</div>
+                <div class="dialogue-translation hidden">Eu ando de bicicleta de manha!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>In English, <strong>"What do you do?"</strong> usually means <strong>"What is your job?"</strong> — NOT "What are you doing right now?" If someone asks you this at a party, they want to know your profession!</p>
+        <p>Em ingles, "What do you do?" normalmente significa "Qual e o seu trabalho?" — NAO "O que voce esta fazendo agora?" Se alguem te perguntar isso numa festa, quer saber sua profissao!</p>
+    </div>
+
+    <div class="section-divider">🚴‍♀️</div>
+
+    <!-- Dialogue 2: Phone call with Marina -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">Cleci is back from her bike ride. Her friend Marina calls her on the phone. They talk about their daily routines. / Cleci voltou do passeio de bicicleta. A amiga Marina liga pra ela. Elas conversam sobre a rotina.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hi Cleci! What do you do every day?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Hi Cleci! What do you do every day?</div>
+                <div class="dialogue-translation hidden">Oi Cleci! O que voce faz todo dia?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I wake up at seven. I ride my bike in the morning." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I wake up at seven. I ride my bike in the morning.</div>
+                <div class="dialogue-translation hidden">Eu acordo as sete. Eu ando de bicicleta de manha.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Nice! And in the afternoon?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Nice! And in the afternoon?</div>
+                <div class="dialogue-translation hidden">Legal! E de tarde?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I cook lunch. I like cooking!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I cook lunch. I like cooking!</div>
+                <div class="dialogue-translation hidden">Eu cozinho o almoco. Eu gosto de cozinhar!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too! And at night?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Me too! And at night?</div>
+                <div class="dialogue-translation hidden">Eu tambem! E a noite?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="At night I watch Netflix!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">At night I watch Netflix!</div>
+                <div class="dialogue-translation hidden">A noite eu assisto Netflix!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: BBC Daily Routine -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 Daily routine / Rotina diaria</h3>
+            <p>Watch this BBC video about daily routines. Listen for the words you just learned: "wake up", "in the morning", "at night". Don't worry about understanding everything! / Assista esse video da BBC sobre rotina diaria. Ouca as palavras que voce acabou de aprender: "wake up", "in the morning", "at night". Nao se preocupe em entender tudo!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/bq6GBbh3uhU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="BBC Learning English - Daily Routine Conversations"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>🛤️ Fun Fact / Curiosidade</h3>
+        <p>The word <strong>"routine"</strong> comes from the French word <strong>"route"</strong> (road, path). Your routine is the "path" you follow every day — like a road you walk again and again!</p>
+        <p>A palavra "routine" vem do frances "route" (estrada, caminho). Sua rotina e o "caminho" que voce segue todo dia — como uma estrada que voce percorre de novo e de novo! Em portugues e igual: "rotina" tambem vem de "rota".</p>
+    </div>
+
+    <div class="section-divider">🍳</div>
+
+    <!-- Dialogue 3: Afternoon cooking -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">It's afternoon. Cleci is in the kitchen cooking lunch. Blue comes in hungry. / E de tarde. Cleci esta na cozinha cozinhando o almoco. Blue chega com fome.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="What do you cook, Cleci?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">What do you cook, Cleci?</div>
+                <div class="dialogue-translation hidden">O que voce cozinha, Cleci?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Rice and beans! I cook every day." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Rice and beans! I cook every day.</div>
+                <div class="dialogue-translation hidden">Arroz e feijao! Eu cozinho todo dia.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like rice and beans!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">I like rice and beans!</div>
+                <div class="dialogue-translation hidden">Eu gosto de arroz e feijao!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And after lunch, I watch Netflix." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">And after lunch, I watch Netflix.</div>
+                <div class="dialogue-translation hidden">E depois do almoco, eu assisto Netflix.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="What do you watch?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">What do you watch?</div>
+                <div class="dialogue-translation hidden">O que voce assiste?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I watch a show every day. I like it!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I watch a show every day. I like it!</div>
+                <div class="dialogue-translation hidden">Eu assisto uma serie todo dia. Eu gosto!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">🌙</div>
+
+    <!-- Dialogue 4: Evening wind-down -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">It's 9 at night. Cleci and Nelson are on the sofa. They talk about the day. / Sao 9 da noite. Cleci e Nelson estao no sofa. Eles conversam sobre o dia.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="What a day! I'm tired." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">What a day! I'm tired.</div>
+                <div class="dialogue-translation hidden">Que dia! Estou cansado.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too. I cook, I ride my bike... every day!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Me too. I cook, I ride my bike... every day!</div>
+                <div class="dialogue-translation hidden">Eu tambem. Eu cozinho, ando de bicicleta... todo dia!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like Netflix at night." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I like Netflix at night.</div>
+                <div class="dialogue-translation hidden">Eu gosto de Netflix a noite.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too! Good night, Nelson." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Me too! Good night, Nelson.</div>
+                <div class="dialogue-translation hidden">Eu tambem! Boa noite, Nelson.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good night! See you in the morning." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good night! See you in the morning.</div>
+                <div class="dialogue-translation hidden">Boa noite! Ate de manha.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Goodbye! See you tomorrow!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Goodbye! See you tomorrow!</div>
+                <div class="dialogue-translation hidden">Tchau! Ate amanha!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Daily Routine Song -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Song: "My Daily Life" / Musica: "Minha Vida Diaria"</h3>
+            <p>A fun song about daily routine! Try to follow along. Can you hear "wake up" and "go"? / Uma musica divertida sobre a rotina diaria! Tente acompanhar. Voce consegue ouvir "wake up" e "go"?</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/-2qqDLoEH_E" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="My Daily Life - Daily Routine Song"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>Google Translate</strong> has a voice feature! Open the app on your phone, tap the microphone icon 🎤, and say a word in English. If Google understands you, your pronunciation is correct! Try: <em>"wake up"</em>, <em>"cook"</em>, <em>"every day"</em>.</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">
+                O <strong>Google Tradutor</strong> tem funcao de voz! Abra o app no celular, toque no icone do microfone 🎤, e diga uma palavra em ingles. Se o Google entender voce, sua pronuncia esta correta! Tente: <em>"wake up"</em>, <em>"cook"</em>, <em>"every day"</em>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">Amazing! Now you can talk about your whole day in English! 🎉</p>
+        <p class="story-intro-pt">Incrivel! Agora voce consegue falar sobre o dia inteiro em ingles!</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! 🕐';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>
