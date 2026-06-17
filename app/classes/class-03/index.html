@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 3 - I love this show!</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 3: I love this show! 📺</h1>
+        <p id="class-greeting">Netflix, opinions & likes/dislikes</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">Marina discovered a new show and can't stop talking about it. Let's see what everyone thinks!</p>
+        <p class="story-intro-pt">A Marina descobriu um programa novo e nao para de falar sobre ele. Vamos ver o que todo mundo acha!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I like ❤️</span>
+                <span class="vocab-pt hidden">Eu gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Watch" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Watch 📺</span>
+                <span class="vocab-pt hidden">Assistir</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="At night" aria-label="Listen">🔊</button>
+                <span class="vocab-en">At night 🌙</span>
+                <span class="vocab-pt hidden">De noite</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Coffee" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Coffee ☕</span>
+                <span class="vocab-pt hidden">Cafe</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Every day" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Every day 📅</span>
+                <span class="vocab-pt hidden">Todo dia</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Good morning ☀️</span>
+                <span class="vocab-pt hidden">Bom dia</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I love 😍</span>
+                <span class="vocab-pt hidden">Eu amo</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I don't like 👎</span>
+                <span class="vocab-pt hidden">Eu nao gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Show" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Show (TV) 📺</span>
+                <span class="vocab-pt hidden">Programa / Serie</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Movie" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Movie 🎬</span>
+                <span class="vocab-pt hidden">Filme</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Funny" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Funny 😂</span>
+                <span class="vocab-pt hidden">Engracado</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Sad" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Sad 😢</span>
+                <span class="vocab-pt hidden">Triste</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Really good" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Good / Really good 👍</span>
+                <span class="vocab-pt hidden">Bom / Muito bom</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Boring" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Boring 😴</span>
+                <span class="vocab-pt hidden">Chato</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Me too! 🤝</span>
+                <span class="vocab-pt hidden">Eu tambem!</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">📺</div>
+
+    <!-- Dialogue 1: Morning coffee chat -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">Cleci calls Marina in the morning. They talk about what Marina watched last night. / Cleci liga pra Marina de manha. Elas conversam sobre o que a Marina assistiu ontem a noite.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning, Marina!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Good morning, Marina!</div>
+                <div class="dialogue-translation hidden">Bom dia, Marina!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hi! I watch a new show every night." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Hi! I watch a new show every night.</div>
+                <div class="dialogue-translation hidden">Oi! Eu assisto um programa novo toda noite.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Oh! Is it good?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Oh! Is it good?</div>
+                <div class="dialogue-translation hidden">Ah! E bom?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="It's really good! It's funny." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">It's really good! It's funny.</div>
+                <div class="dialogue-translation hidden">E muito bom! E engracado.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like funny shows!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I like funny shows!</div>
+                <div class="dialogue-translation hidden">Eu gosto de programas engracados!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too! Watch it tonight!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Me too! Watch it tonight!</div>
+                <div class="dialogue-translation hidden">Eu tambem! Assiste hoje a noite!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>Americans invented the word <strong>"binge-watch"</strong> — it means watching many episodes in one sitting. Netflix made this word so famous that Oxford Dictionary named it <strong>Word of the Year</strong> in 2015! In Brazil we say "maratonar."</p>
+        <p>Os americanos inventaram a palavra "binge-watch" — significa assistir muitos episodios de uma vez so. A Netflix tornou essa palavra tao famosa que o Dicionario Oxford a elegeu como Palavra do Ano em 2015! No Brasil a gente fala "maratonar."</p>
+    </div>
+
+    <div class="section-divider">🎬</div>
+
+    <!-- Dialogue 2: The recommendation -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">Marina tells Nelson he MUST watch her show. Nelson isn't sure. / Marina insiste que o Nelson precisa assistir o programa dela. Nelson nao tem certeza.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Nelson! I love this show!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Nelson! I love this show!</div>
+                <div class="dialogue-translation hidden">Nelson! Eu amo esse programa!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hmm. Is it funny?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Hmm. Is it funny?</div>
+                <div class="dialogue-translation hidden">Hmm. E engracado?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! It's really good!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Yes! It's really good!</div>
+                <div class="dialogue-translation hidden">Sim! E muito bom!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like sad movies." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I don't like sad movies.</div>
+                <div class="dialogue-translation hidden">Eu nao gosto de filmes tristes.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="It's not a movie. It's a show!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">It's not a movie. It's a show!</div>
+                <div class="dialogue-translation hidden">Nao e um filme. E um programa!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Okay, okay. I watch it tonight." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Okay, okay. I watch it tonight.</div>
+                <div class="dialogue-translation hidden">Ta bom, ta bom. Assisto hoje a noite.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Do You Like song -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Song: "Do You Like...?" / Musica: "Voce gosta...?"</h3>
+            <p>A fun song about likes! Listen for "Do you like...?" and "Yes, I do!" / "No, I don't!" — these are very useful phrases! / Uma musica divertida sobre gostos! Ouca "Do you like...?" e "Yes, I do!" / "No, I don't!" — sao frases muito uteis!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/frN3nvhIHUk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Do You Like Broccoli Ice Cream - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>📺 Fun Fact / Curiosidade</h3>
+        <p>In English, we say <strong>"show"</strong> for TV series (never "program"). <strong>"Movie"</strong> = one film. In Portuguese, "programa" covers both — but in English you must choose!</p>
+        <p>Em ingles, dizemos "show" para series de TV (nunca "program"). "Movie" = um filme. Em portugues, "programa" serve pra tudo — mas em ingles voce precisa escolher!</p>
+    </div>
+
+    <div class="section-divider">💬</div>
+
+    <!-- Dialogue 3: Gossiping about Marina -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">Cleci tells Vanessa that Marina is obsessed with a show. Vanessa has different taste! / Cleci conta pra Vanessa que a Marina esta obcecada com um programa. A Vanessa tem gostos diferentes!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Marina loves a new show. She watches it every day!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Marina loves a new show. She watches it every day!</div>
+                <div class="dialogue-translation hidden">A Marina ama um programa novo. Ela assiste todo dia!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Is it good?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">Is it good?</div>
+                <div class="dialogue-translation hidden">E bom?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="It's funny! I love it too." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">It's funny! I love it too.</div>
+                <div class="dialogue-translation hidden">E engracado! Eu amo tambem.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like funny shows." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">I don't like funny shows.</div>
+                <div class="dialogue-translation hidden">Eu nao gosto de programas engracados.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Oh! What do you like?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Oh! What do you like?</div>
+                <div class="dialogue-translation hidden">Ah! Do que voce gosta?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like sad movies. They're good!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">I like sad movies. They're good!</div>
+                <div class="dialogue-translation hidden">Eu gosto de filmes tristes. Sao bons!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">😂</div>
+
+    <!-- Dialogue 4: The generation clash -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">Marina tries to convince Blue to watch her show. Blue is brutally honest! / Marina tenta convencer a Blue a assistir o programa dela. Blue e brutalmente honesta!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Blue, do you like my show?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Blue, do you like my show?</div>
+                <div class="dialogue-translation hidden">Blue, voce gosta do meu programa?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hmm... It's boring!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">Hmm... It's boring!</div>
+                <div class="dialogue-translation hidden">Hmm... E chato!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Boring?! I love this show!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Boring?! I love this show!</div>
+                <div class="dialogue-translation hidden">Chato?! Eu amo esse programa!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like funny movies. Your show is sad." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">I like funny movies. Your show is sad.</div>
+                <div class="dialogue-translation hidden">Eu gosto de filmes engracados. Seu programa e triste.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="It's not sad! It's really good!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">It's not sad! It's really good!</div>
+                <div class="dialogue-translation hidden">Nao e triste! E muito bom!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like it. Goodbye, Marina!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">I don't like it. Goodbye, Marina!</div>
+                <div class="dialogue-translation hidden">Eu nao gosto. Tchau, Marina!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Do You Like Spaghetti Yogurt -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Song: "Do You Like Spaghetti Yogurt?" / Musica</h3>
+            <p>Another fun song about likes and dislikes! Try to answer with the video: "Yes, I do!" or "No, I don't!" / Outra musica divertida sobre gostos! Tente responder junto com o video: "Yes, I do!" ou "No, I don't!"</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/ddDN30evKPc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Do You Like Spaghetti Yogurt - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>The Netflix Trick:</strong> Pick a show you already watched in Portuguese. Now switch: <strong>English audio + Portuguese subtitles.</strong> You know the story, so your brain connects the English sounds to meanings you already know. Just 15 minutes — you're not studying, you're watching TV!</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">
+                <strong>O Truque da Netflix:</strong> Escolha um programa que voce ja assistiu em portugues. Agora mude: <strong>audio em ingles + legendas em portugues.</strong> Voce ja conhece a historia, entao seu cerebro conecta os sons em ingles aos significados que voce ja sabe. So 15 minutos — voce nao esta estudando, esta assistindo TV!
+            </p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">Now you can say what you love, like, and don't like! 🎉</p>
+        <p class="story-intro-pt">Agora voce sabe dizer o que ama, gosta e nao gosta!</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! 📺';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>

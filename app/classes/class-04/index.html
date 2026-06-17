@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 4 - Let's go to the supermarket!</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 4: Let's go to the supermarket! 🛒</h1>
+        <p id="class-greeting">Shopping, "I need..." & prices</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">Cleci and Nelson need to buy food for the week. Let's go shopping with them!</p>
+        <p class="story-intro-pt">Cleci e Nelson precisam comprar comida pra semana. Vamos fazer compras com eles!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I like ❤️</span>
+                <span class="vocab-pt hidden">Eu gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I love 😍</span>
+                <span class="vocab-pt hidden">Eu amo</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Go" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Go 🚶‍♀️</span>
+                <span class="vocab-pt hidden">Ir</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Bread" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Bread 🍞</span>
+                <span class="vocab-pt hidden">Pao</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Fruit" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Fruit 🍎</span>
+                <span class="vocab-pt hidden">Fruta</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Coffee" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Coffee ☕</span>
+                <span class="vocab-pt hidden">Cafe</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Good morning ☀️</span>
+                <span class="vocab-pt hidden">Bom dia</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I need 🛒</span>
+                <span class="vocab-pt hidden">Eu preciso</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I want" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I want 👉</span>
+                <span class="vocab-pt hidden">Eu quero</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="How much is this?" aria-label="Listen">🔊</button>
+                <span class="vocab-en">How much is this? 💰</span>
+                <span class="vocab-pt hidden">Quanto e isso? / Quanto custa?</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Milk" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Milk 🥛</span>
+                <span class="vocab-pt hidden">Leite</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Rice" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Rice 🍚</span>
+                <span class="vocab-pt hidden">Arroz</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Chicken" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Chicken 🍗</span>
+                <span class="vocab-pt hidden">Frango</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Water" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Water 💧</span>
+                <span class="vocab-pt hidden">Agua</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Expensive" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Expensive 💸</span>
+                <span class="vocab-pt hidden">Caro</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Cheap" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Cheap 🏷️</span>
+                <span class="vocab-pt hidden">Barato</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">🛒</div>
+
+    <!-- Dialogue 1: Making the shopping list -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">Saturday morning. Cleci and Nelson check what they need to buy for the week. / Sabado de manha. Cleci e Nelson verificam o que precisam comprar pra semana.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="We need milk and bread." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">We need milk and bread.</div>
+                <div class="dialogue-translation hidden">Precisamos de leite e pao.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And rice. I need rice." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">And rice. I need rice.</div>
+                <div class="dialogue-translation hidden">E arroz. Eu preciso de arroz.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Do you want chicken?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Do you want chicken?</div>
+                <div class="dialogue-translation hidden">Voce quer frango?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yeah! I love chicken." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Yeah! I love chicken.</div>
+                <div class="dialogue-translation hidden">Sim! Eu amo frango.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need fruit too. And coffee!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I need fruit too. And coffee!</div>
+                <div class="dialogue-translation hidden">Preciso de fruta tambem. E cafe!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Okay! Let's go!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Okay! Let's go!</div>
+                <div class="dialogue-translation hidden">Ta! Vamos!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>In the US and UK, <strong>you bag your own groceries</strong> — there's no "embalador" like in Brazil! The cashier asks "Paper or plastic?" (for the bag type). Just say: <strong>"Plastic, please."</strong></p>
+        <p>Nos EUA e no Reino Unido, <strong>voce mesmo embala suas compras</strong> — nao tem embalador como no Brasil! O caixa pergunta "Paper or plastic?" (tipo de sacola). So diga: "Plastic, please."</p>
+    </div>
+
+    <div class="section-divider">💰</div>
+
+    <!-- Dialogue 2: At the supermarket -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">Cleci and Nelson are at the supermarket looking at prices. / Cleci e Nelson estao no supermercado olhando os precos.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="How much is this chicken?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">How much is this chicken?</div>
+                <div class="dialogue-translation hidden">Quanto e esse frango?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Oh! It's expensive!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Oh! It's expensive!</div>
+                <div class="dialogue-translation hidden">Ah! E caro!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yeah, it's expensive. And the rice?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yeah, it's expensive. And the rice?</div>
+                <div class="dialogue-translation hidden">E, e caro. E o arroz?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="The rice is cheap. Good!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">The rice is cheap. Good!</div>
+                <div class="dialogue-translation hidden">O arroz e barato. Bom!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need water too." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I need water too.</div>
+                <div class="dialogue-translation hidden">Preciso de agua tambem.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Water is cheap. Let's go!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Water is cheap. Let's go!</div>
+                <div class="dialogue-translation hidden">Agua e barata. Vamos!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Food vocabulary -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 Food words / Palavras de comida</h3>
+            <p>Watch this video about food vocabulary! How many words can you recognize? Listen for "milk", "bread", "rice", "chicken". / Assista esse video sobre vocabulario de comida! Quantas palavras voce reconhece? Ouca "milk", "bread", "rice", "chicken".</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/tz7wM03Nsy8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Food Vocabulary in English - Woodward English"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>🏷️ Fun Fact / Curiosidade</h3>
+        <p>In English, <strong>"cheap"</strong> for products is fine — "This rice is cheap!" But calling a PERSON "cheap" means <strong>"pao-duro" / "mao-de-vaca"</strong> (stingy)! So be careful: "The chicken is cheap" = good. "Nelson is cheap" = he doesn't want to spend money! 😄</p>
+        <p>Em ingles, "cheap" pra produtos e normal — "This rice is cheap!" Mas chamar uma PESSOA de "cheap" significa "pao-duro" / "mao-de-vaca"! Entao cuidado: "The chicken is cheap" = bom. "Nelson is cheap" = ele nao quer gastar dinheiro! 😄</p>
+    </div>
+
+    <div class="section-divider">📞</div>
+
+    <!-- Dialogue 3: Phone call about prices -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">Cleci calls Marina after shopping to complain about prices. / Cleci liga pra Marina depois das compras pra reclamar dos precos.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Marina! The chicken is so expensive!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Marina! The chicken is so expensive!</div>
+                <div class="dialogue-translation hidden">Marina! O frango e tao caro!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I know! How much is it?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">I know! How much is it?</div>
+                <div class="dialogue-translation hidden">Eu sei! Quanto e?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Too expensive! I don't like this supermarket." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Too expensive! I don't like this supermarket.</div>
+                <div class="dialogue-translation hidden">Muito caro! Eu nao gosto desse supermercado.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I want cheap chicken!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">I want cheap chicken!</div>
+                <div class="dialogue-translation hidden">Eu quero frango barato!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too! And the milk is expensive too." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Me too! And the milk is expensive too.</div>
+                <div class="dialogue-translation hidden">Eu tambem! E o leite e caro tambem.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Oh no! I need milk every day!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Oh no! I need milk every day!</div>
+                <div class="dialogue-translation hidden">Ah nao! Eu preciso de leite todo dia!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">🏠</div>
+
+    <!-- Dialogue 4: Back home -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">Back home. They unpack the groceries and realize they forgot something important! / De volta em casa. Eles guardam as compras e percebem que esqueceram algo importante!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I have rice, bread, and fruit." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I have rice, bread, and fruit.</div>
+                <div class="dialogue-translation hidden">Eu tenho arroz, pao e fruta.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good! And chicken and milk." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Good! And chicken and milk.</div>
+                <div class="dialogue-translation hidden">Bom! E frango e leite.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="But I want coffee! We need coffee!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">But I want coffee! We need coffee!</div>
+                <div class="dialogue-translation hidden">Mas eu quero cafe! Precisamos de cafe!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Oh no! I forgot the coffee!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Oh no! I forgot the coffee!</div>
+                <div class="dialogue-translation hidden">Ah nao! Esqueci o cafe!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need coffee in the morning!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I need coffee in the morning!</div>
+                <div class="dialogue-translation hidden">Eu preciso de cafe de manha!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Okay, okay! I go to the supermarket!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Okay, okay! I go to the supermarket!</div>
+                <div class="dialogue-translation hidden">Ta bom, ta bom! Eu vou ao supermercado!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Do You Like Broccoli (food + likes review) -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Song: "Do You Like...?" + Food! / Musica com comida!</h3>
+            <p>This song mixes food words with "Do you like...?" — practice both at the same time! Listen for food words you know: milk, bread, fruit. / Essa musica mistura comida com "Do you like...?" — pratique os dois ao mesmo tempo! Ouca palavras de comida que voce conhece: milk, bread, fruit.</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/ddDN30evKPc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Do You Like Spaghetti Yogurt - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>Duolingo</strong> — free app, 5 minutes a day! Set your daily goal to the minimum (5 minutes). Do it while your coffee brews in the morning. Focus on the "Food" and "Shopping" units. If you miss a day, no problem! It's a game, not homework.</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">
+                <strong>Duolingo</strong> — app gratuito, 5 minutos por dia! Coloque a meta diaria no minimo (5 minutos). Faca enquanto seu cafe esta passando de manha. Foque nas unidades de "Food" e "Shopping". Se perder um dia, sem problema! E um jogo, nao licao de casa.
+            </p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">Now you can go shopping in English! You know what you need, what you want, and how to ask prices! 🎉</p>
+        <p class="story-intro-pt">Agora voce pode fazer compras em ingles! Sabe o que precisa, o que quer, e como perguntar precos!</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! 🛒';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>
