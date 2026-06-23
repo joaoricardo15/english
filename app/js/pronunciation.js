@@ -21,7 +21,7 @@
         synth.cancel();
         var utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'en-US';
-        utterance.rate = slow ? 0.55 : 0.8;
+        utterance.rate = slow ? 0.55 : 0.65;
         utterance.pitch = 1.0;
         if (englishVoice) {
             utterance.voice = englishVoice;
