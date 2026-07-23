@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 7 - My family is crazy!</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 7: My family is crazy! 🤪</h1>
+        <p id="class-greeting">Family, describing people & gossiping</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">Cleci and Marina are having coffee together. Time to gossip about everyone! Who is funny? Who is crazy? Let's find out!</p>
+        <p class="story-intro-pt">Cleci e Marina estao tomando cafe juntas. Hora de fofocar sobre todo mundo! Quem e engracado? Quem e maluco? Vamos descobrir!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I love 😍</span>
+                <span class="vocab-pt hidden">Eu amo</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I like ❤️</span>
+                <span class="vocab-pt hidden">Eu gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I don't like 👎</span>
+                <span class="vocab-pt hidden">Eu nao gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Funny" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Funny 😂</span>
+                <span class="vocab-pt hidden">Engracado(a)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Really good" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Really good 👍</span>
+                <span class="vocab-pt hidden">Muito bom</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too!" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Me too! 🙋</span>
+                <span class="vocab-pt hidden">Eu tambem!</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Every day" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Every day 📅</span>
+                <span class="vocab-pt hidden">Todo dia</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Husband" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Husband 👨</span>
+                <span class="vocab-pt hidden">Marido</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Sister" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Sister 👩</span>
+                <span class="vocab-pt hidden">Irma</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Brother" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Brother 👦</span>
+                <span class="vocab-pt hidden">Irmao</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Tall" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Tall 📏</span>
+                <span class="vocab-pt hidden">Alto(a)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Short" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Short 🤏</span>
+                <span class="vocab-pt hidden">Baixo(a)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Crazy" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Crazy 🤪</span>
+                <span class="vocab-pt hidden">Maluco(a) / doido(a)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Beautiful" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Beautiful 🌸</span>
+                <span class="vocab-pt hidden">Bonito(a) / lindo(a)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Always" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Always 🔄</span>
+                <span class="vocab-pt hidden">Sempre</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Never" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Never 🚫</span>
+                <span class="vocab-pt hidden">Nunca</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">☕</div>
+
+    <!-- Dialogue 1: Cleci and Marina gossip about family -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">Saturday morning. Cleci and Marina are having coffee at Cleci's house. Marina asks about Cleci's family. / Sabado de manha. Cleci e Marina estao tomando cafe na casa da Cleci. Marina pergunta sobre a familia da Cleci.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Your brother is very tall!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Your brother is very tall!</div>
+                <div class="dialogue-translation hidden">Seu irmao e muito alto!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! And my sister is short." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! And my sister is short.</div>
+                <div class="dialogue-translation hidden">Sim! E minha irma e baixa.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Is she funny?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Is she funny?</div>
+                <div class="dialogue-translation hidden">Ela e engracada?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="She is SO funny! And crazy!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">She is SO funny! And crazy!</div>
+                <div class="dialogue-translation hidden">Ela e MUITO engracada! E maluca!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love crazy people!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">I love crazy people!</div>
+                <div class="dialogue-translation hidden">Eu amo gente maluca!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too! My family is crazy!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Me too! My family is crazy!</div>
+                <div class="dialogue-translation hidden">Eu tambem! Minha familia e maluca!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>In English, <strong>"crazy" can be affectionate!</strong> Saying "My family is crazy" is usually funny and loving — not mean. But be careful: <strong>"She is crazy"</strong> about a stranger can sound rude. With family and friends? It's a compliment! Also: <strong>"Like father, like son"</strong> is the English version of "Tal pai, tal filho."</p>
+        <p>Em ingles, <strong>"crazy" pode ser carinhoso!</strong> Dizer "My family is crazy" geralmente e engracado e amoroso — nao maldoso. Mas cuidado: "She is crazy" sobre uma desconhecida pode soar grosseiro. Com familia e amigos? E um elogio! Tambem: <strong>"Like father, like son"</strong> e a versao inglesa de "Tal pai, tal filho."</p>
+    </div>
+
+    <div class="section-divider">🗣️</div>
+
+    <!-- Dialogue 2: Gossiping about Nelson -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">The coffee is flowing! Now Cleci and Marina gossip about Nelson. / O cafe ta rolando! Agora Cleci e Marina fofocam sobre o Nelson.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And your husband? How is Nelson?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">And your husband? How is Nelson?</div>
+                <div class="dialogue-translation hidden">E seu marido? Como esta o Nelson?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="He is funny. But he ALWAYS watches TV!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">He is funny. But he ALWAYS watches TV!</div>
+                <div class="dialogue-translation hidden">Ele e engracado. Mas ele SEMPRE assiste TV!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Really? Every day?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Really? Every day?</div>
+                <div class="dialogue-translation hidden">Serio? Todo dia?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Every day! And he NEVER cooks!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Every day! And he NEVER cooks!</div>
+                <div class="dialogue-translation hidden">Todo dia! E ele NUNCA cozinha!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="My husband never cooks too!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">My husband never cooks too!</div>
+                <div class="dialogue-translation hidden">Meu marido nunca cozinha tambem!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Husbands! They are all the same!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Husbands! They are all the same!</div>
+                <div class="dialogue-translation hidden">Maridos! Sao todos iguais!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Family vocabulary -->
+    <div class="section">
+        <div class="video-section">
+            <h3>👨‍👩‍👧‍👦 Family words / Palavras de familia</h3>
+            <p>Watch and learn family words in English! Listen for: mom, dad, brother, sister. How many family members can you count? / Assista e aprenda palavras de familia em ingles! Ouca: mom, dad, brother, sister. Quantos membros da familia voce consegue contar?</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/FHaObkHEkHQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Meet My Family - Family Members - English Singsing"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>🗣️ Fun Fact / Curiosidade</h3>
+        <p>In English, adjectives have <strong>NO gender!</strong> You say "He is beautiful" AND "She is beautiful" — same word! In Portuguese you change "bonito/bonita", but in English? <strong>Never changes.</strong> One less thing to remember! The same with "tall", "short", "funny", "crazy" — always the same for men AND women.</p>
+        <p>Em ingles, adjetivos <strong>NAO tem genero!</strong> Voce diz "He is beautiful" E "She is beautiful" — mesma palavra! Em portugues voce muda "bonito/bonita", mas em ingles? <strong>Nunca muda.</strong> Uma coisa a menos pra lembrar! O mesmo com "tall", "short", "funny", "crazy" — sempre igual pra homens E mulheres.</p>
+    </div>
+
+    <div class="section-divider">📱</div>
+
+    <!-- Dialogue 3: Vanessa calls Cleci -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">Later that day, Vanessa calls Cleci. Now THEY gossip about Marina! / Mais tarde, Vanessa liga para Cleci. Agora ELAS fofocam sobre a Marina!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hi! Did you see Marina today?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">Hi! Did you see Marina today?</div>
+                <div class="dialogue-translation hidden">Oi! Voce viu a Marina hoje?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! She is always here for coffee." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! She is always here for coffee.</div>
+                <div class="dialogue-translation hidden">Sim! Ela esta sempre aqui pro cafe.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="She always talks! She never stops!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">She always talks! She never stops!</div>
+                <div class="dialogue-translation hidden">Ela sempre fala! Ela nunca para!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I know! But she is really funny." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I know! But she is really funny.</div>
+                <div class="dialogue-translation hidden">Eu sei! Mas ela e muito engracada.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And beautiful! I like her." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">And beautiful! I like her.</div>
+                <div class="dialogue-translation hidden">E bonita! Eu gosto dela.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too! She is crazy but I love her." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Me too! She is crazy but I love her.</div>
+                <div class="dialogue-translation hidden">Eu tambem! Ela e maluca mas eu amo ela.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">🍽️</div>
+
+    <!-- Dialogue 4: Family dinner surprise -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">Sunday dinner. Everyone is together! Nelson has a funny question for Cleci. / Jantar de domingo. Todos estao juntos! Nelson tem uma pergunta engracada para Cleci.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Cleci, am I tall?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Cleci, am I tall?</div>
+                <div class="dialogue-translation hidden">Cleci, eu sou alto?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="You? No! You are short!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">You? No! You are short!</div>
+                <div class="dialogue-translation hidden">Voce? Nao! Voce e baixo!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Am I funny?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Am I funny?</div>
+                <div class="dialogue-translation hidden">Eu sou engracado?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! Very funny. And crazy!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! Very funny. And crazy!</div>
+                <div class="dialogue-translation hidden">Sim! Muito engracado. E maluco!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Am I beautiful?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Am I beautiful?</div>
+                <div class="dialogue-translation hidden">Eu sou bonito?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Beautiful? You are CRAZY! I love you." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Beautiful? You are CRAZY! I love you.</div>
+                <div class="dialogue-translation hidden">Bonito? Voce e MALUCO! Eu te amo.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: If You're Happy -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Song: If You're Happy! / Musica: Se voce esta feliz!</h3>
+            <p>A fun song about feelings and actions! Clap your hands, stomp your feet! Great for learning "happy", "angry", "sad" — more feelings! / Uma musica divertida sobre sentimentos e acoes! Bata palmas, bata os pes! Otima para aprender "happy", "angry", "sad" — mais sentimentos!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/l4WNrvVjiTw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="If You're Happy - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>BBC 6 Minute English podcast!</strong> Search "BBC 6 Minute English" on YouTube. Each episode is only 6 minutes! Listen 3 times: (1) just listen, (2) with English subtitles, (3) try without subtitles. You won't understand everything — that's okay! Catching 3-4 words is already progress. Topics: family, food, travel, health — things you know!</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">
+                <strong>Podcast BBC 6 Minute English!</strong> Busque "BBC 6 Minute English" no YouTube. Cada episodio tem so 6 minutos! Ouca 3 vezes: (1) so ouca, (2) com legendas em ingles, (3) tente sem legendas. Voce nao vai entender tudo — tudo bem! Pegar 3-4 palavras ja e progresso. Temas: familia, comida, viagem, saude — coisas que voce conhece!
+            </p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">Now you can describe people and gossip in English! "She is..." + "He always..." 🤪🎉</p>
+        <p class="story-intro-pt">Agora voce pode descrever pessoas e fofocar em ingles! "She is..." + "He always..."</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! 🤪';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>

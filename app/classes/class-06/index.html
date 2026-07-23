@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 6 - How are you feeling?</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 6: How are you feeling? 🤒</h1>
+        <p id="class-greeting">Health, body & the doctor</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">Poor Cleci! She wakes up feeling sick. From home to the doctor — let's learn how to talk about health!</p>
+        <p class="story-intro-pt">Coitada da Cleci! Ela acorda se sentindo mal. De casa ate o medico — vamos aprender a falar sobre saude!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Good morning ☀️</span>
+                <span class="vocab-pt hidden">Bom dia</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="How are you?" aria-label="Listen">🔊</button>
+                <span class="vocab-en">How are you? 👋</span>
+                <span class="vocab-pt hidden">Como voce esta?</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I need 👉</span>
+                <span class="vocab-pt hidden">Eu preciso</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Please" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Please 🙏</span>
+                <span class="vocab-pt hidden">Por favor</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Thank you" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Thank you 😊</span>
+                <span class="vocab-pt hidden">Obrigado(a)</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I don't like 👎</span>
+                <span class="vocab-pt hidden">Eu nao gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Water" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Water 💧</span>
+                <span class="vocab-pt hidden">Agua</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I feel" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I feel... 😐</span>
+                <span class="vocab-pt hidden">Eu me sinto... / Eu estou...</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Tired" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Tired 😴</span>
+                <span class="vocab-pt hidden">Cansada</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Sick" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Sick 🤢</span>
+                <span class="vocab-pt hidden">Doente</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Better" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Better 💪</span>
+                <span class="vocab-pt hidden">Melhor</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Head" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Head 🧠</span>
+                <span class="vocab-pt hidden">Cabeca</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Stomach" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Stomach 🫃</span>
+                <span class="vocab-pt hidden">Estomago / barriga</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hurts" data-slow aria-label="Listen">🔊</button>
+                <span class="vocab-en">Hurts 🩹</span>
+                <span class="vocab-pt hidden">Doi</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Medicine" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Medicine 💊</span>
+                <span class="vocab-pt hidden">Remedio</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Doctor" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Doctor 👨‍⚕️</span>
+                <span class="vocab-pt hidden">Medico(a)</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">🤒</div>
+
+    <!-- Dialogue 1: Cleci wakes up sick -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">Monday morning. Cleci wakes up and doesn't feel well. Nelson notices something is wrong. / Segunda de manha. Cleci acorda e nao se sente bem. Nelson percebe que algo esta errado.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning! How are you?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good morning! How are you?</div>
+                <div class="dialogue-translation hidden">Bom dia! Como voce esta?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I feel sick." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I feel sick.</div>
+                <div class="dialogue-translation hidden">Eu me sinto doente.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Oh no! What hurts?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Oh no! What hurts?</div>
+                <div class="dialogue-translation hidden">Ah nao! O que doi?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="My head hurts. And I feel tired." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">My head hurts. And I feel tired.</div>
+                <div class="dialogue-translation hidden">Minha cabeca doi. E eu me sinto cansada.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Water? Coffee?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Water? Coffee?</div>
+                <div class="dialogue-translation hidden">Agua? Cafe?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Water, please. Thank you." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Water, please. Thank you.</div>
+                <div class="dialogue-translation hidden">Agua, por favor. Obrigada.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>In the UK, <strong>ALL doctor visits are free</strong> (the NHS — National Health Service). You don't pay anything — not even for surgery! But you need an appointment. In the US, doctor visits are expensive and most people need insurance. Americans often joke: <strong>"I can't afford to be sick!"</strong></p>
+        <p>No Reino Unido, <strong>TODAS as consultas medicas sao gratuitas</strong> (o NHS — Servico Nacional de Saude). Voce nao paga nada — nem cirurgia! Mas precisa de consulta marcada. Nos EUA, consultas sao caras e a maioria precisa de plano de saude. Americanos brincam: "I can't afford to be sick!" (Nao posso me dar ao luxo de ficar doente!)</p>
+    </div>
+
+    <div class="section-divider">📞</div>
+
+    <!-- Dialogue 2: Cleci calls Marina -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">Cleci calls her friend Marina for advice. Marina is worried! / Cleci liga para a amiga Marina pedindo conselho. Marina fica preocupada!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hi Cleci! How are you feeling?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Hi Cleci! How are you feeling?</div>
+                <div class="dialogue-translation hidden">Oi Cleci! Como voce esta se sentindo?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Not good. My head hurts." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Not good. My head hurts.</div>
+                <div class="dialogue-translation hidden">Nao estou bem. Minha cabeca doi.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Oh no! And your stomach?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Oh no! And your stomach?</div>
+                <div class="dialogue-translation hidden">Ah nao! E seu estomago?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="My stomach hurts too. I feel terrible." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">My stomach hurts too. I feel terrible.</div>
+                <div class="dialogue-translation hidden">Meu estomago doi tambem. Me sinto pessima.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="You need a doctor!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">You need a doctor!</div>
+                <div class="dialogue-translation hidden">Voce precisa de um medico!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't like doctors!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I don't like doctors!</div>
+                <div class="dialogue-translation hidden">Eu nao gosto de medicos!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Body Parts Vocabulary -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 Body parts vocabulary / Vocabulario de partes do corpo</h3>
+            <p>Learn body parts in English! Watch and repeat: head, shoulders, arms, legs, hands, feet. Point to each one as you hear it! / Aprenda partes do corpo em ingles! Assista e repita: head, shoulders, arms, legs, hands, feet. Aponte para cada uma quando ouvir!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/SUt8q0EKbms" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Body Parts - My Body Parts - Head to Toes English for Kids"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>🚑 Fun Fact / Curiosidade</h3>
+        <p>In Portuguese, you say <strong>"estou COM dor de cabeca"</strong> (I am WITH a headache). But in English, you say <strong>"I HAVE a headache"</strong> — never "I am with a headache"! The same for all symptoms: "I have a cold", "I have a fever." Remember: in English, symptoms use <strong>"I have"</strong>, not "I am with"!</p>
+        <p>Em portugues, voce diz "estou COM dor de cabeca". Mas em ingles, voce diz <strong>"I HAVE a headache"</strong> — nunca "I am with a headache"! O mesmo para todos os sintomas: "I have a cold", "I have a fever." Lembre: em ingles, sintomas usam <strong>"I have"</strong>, nao "I am with"!</p>
+    </div>
+
+    <div class="section-divider">👨‍⚕️</div>
+
+    <!-- Dialogue 3: At the doctor -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">Cleci goes to the doctor. Dr. Osni asks her questions. / Cleci vai ao medico. Dr. Osni faz perguntas.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning! How are you feeling?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Osni</div>
+                <div class="dialogue-text">Good morning! How are you feeling?</div>
+                <div class="dialogue-translation hidden">Bom dia! Como voce esta se sentindo?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I feel sick. My head hurts." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I feel sick. My head hurts.</div>
+                <div class="dialogue-translation hidden">Eu me sinto doente. Minha cabeca doi.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And your stomach?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Osni</div>
+                <div class="dialogue-text">And your stomach?</div>
+                <div class="dialogue-translation hidden">E o seu estomago?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="My stomach hurts too." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">My stomach hurts too.</div>
+                <div class="dialogue-translation hidden">Meu estomago doi tambem.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="You need medicine. And rest!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Osni</div>
+                <div class="dialogue-text">You need medicine. And rest!</div>
+                <div class="dialogue-translation hidden">Voce precisa de remedio. E descanso!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Thank you, doctor." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Thank you, doctor.</div>
+                <div class="dialogue-translation hidden">Obrigada, doutor.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">💊</div>
+
+    <!-- Dialogue 4: Cleci feels better! -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">The next day. Cleci took her medicine and slept well. Nelson checks on her. / No dia seguinte. Cleci tomou o remedio e dormiu bem. Nelson vem ver como ela esta.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning! How are you feeling?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good morning! How are you feeling?</div>
+                <div class="dialogue-translation hidden">Bom dia! Como voce esta se sentindo?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I feel better! Much better!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I feel better! Much better!</div>
+                <div class="dialogue-translation hidden">Eu me sinto melhor! Muito melhor!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Really? No more headache?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Really? No more headache?</div>
+                <div class="dialogue-translation hidden">Serio? Nao tem mais dor de cabeca?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="No! I feel good. I want coffee!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">No! I feel good. I want coffee!</div>
+                <div class="dialogue-translation hidden">Nao! Eu me sinto bem. Eu quero cafe!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Coffee? You feel REALLY better!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Coffee? You feel REALLY better!</div>
+                <div class="dialogue-translation hidden">Cafe? Voce esta REALMENTE melhor!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I always need coffee. Sick or not!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I always need coffee. Sick or not!</div>
+                <div class="dialogue-translation hidden">Eu sempre preciso de cafe. Doente ou nao!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video: Head Shoulders Knees and Toes -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Song: Head, Shoulders, Knees & Toes! / Musica: cabeca, ombros, joelhos e pes!</h3>
+            <p>The most famous body parts song in English! Sing along and point to each body part. Can you keep up? / A musica de partes do corpo mais famosa em ingles! Cante junto e aponte para cada parte. Voce consegue acompanhar?</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/ZanHgPprl-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Head Shoulders Knees and Toes - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>YouTube channels for beginners!</strong> Subscribe to ONE English channel and watch ONE short video (3-5 minutes) every day. Try: <strong>BBC Learning English</strong> (British, clear, short videos) or <strong>English with Lucy</strong> (fun, modern topics). Turn on English subtitles! Even understanding 3-4 words per video is progress.</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">
+                <strong>Canais do YouTube para iniciantes!</strong> Inscreva-se em UM canal de ingles e assista UM video curto (3-5 minutos) todo dia. Tente: <strong>BBC Learning English</strong> (britanico, claro, videos curtos) ou <strong>English with Lucy</strong> (divertido, temas modernos). Ative as legendas em ingles! Ate entender 3-4 palavras por video ja e progresso.
+            </p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">Now you can talk about your health in English! "I feel..." + "My ___ hurts." 💪</p>
+        <p class="story-intro-pt">Agora voce pode falar sobre sua saude em ingles! "I feel..." + "My ___ hurts."</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! 🤒';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>
