@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 8 - Clean the house, then relax!</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 8: Clean the house, then relax! 🧹</h1>
+        <p id="class-greeting">Chores and sequencing words</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">It's Saturday morning! The house is a mess. Cleci has a plan — first clean, then relax! But will Nelson help?</p>
+        <p class="story-intro-pt">E sabado de manha! A casa esta uma bagunca. Cleci tem um plano — primeiro limpar, depois relaxar! Mas sera que Nelson vai ajudar?</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Always" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Always 🔄</span>
+                <span class="vocab-pt hidden">Sempre</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Never" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Never 🚫</span>
+                <span class="vocab-pt hidden">Nunca</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Every day" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Every day 📅</span>
+                <span class="vocab-pt hidden">Todo dia</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I need 👉</span>
+                <span class="vocab-pt hidden">Eu preciso</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I feel tired" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I feel tired 😴</span>
+                <span class="vocab-pt hidden">Eu me sinto cansada</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Please" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Please 🙏</span>
+                <span class="vocab-pt hidden">Por favor</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Thank you" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Thank you 😊</span>
+                <span class="vocab-pt hidden">Obrigado/a</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Clean" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Clean 🧹</span>
+                <span class="vocab-pt hidden">Limpar</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Wash the dishes" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Wash the dishes 🍽️</span>
+                <span class="vocab-pt hidden">Lavar a louca</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Sweep" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Sweep 🧹</span>
+                <span class="vocab-pt hidden">Varrer</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="First" aria-label="Listen">🔊</button>
+                <span class="vocab-en">First ☝️</span>
+                <span class="vocab-pt hidden">Primeiro</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Then" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Then 👉</span>
+                <span class="vocab-pt hidden">Depois/entao</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="After that" aria-label="Listen">🔊</button>
+                <span class="vocab-en">After that ➡️</span>
+                <span class="vocab-pt hidden">Depois disso</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Finally" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Finally 🎉</span>
+                <span class="vocab-pt hidden">Finalmente</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Relax" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Relax 🛋️</span>
+                <span class="vocab-pt hidden">Relaxar</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I'm done!" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I'm done! ✅</span>
+                <span class="vocab-pt hidden">Terminei!</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">🧹</div>
+
+    <!-- Dialogue 1: Cleci sees the mess -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">Saturday morning. Cleci wakes up and sees the messy house. She calls Nelson. / Sabado de manha. Cleci acorda e ve a casa bagunçada. Ela chama o Nelson.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Nelson! Look! What a mess!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Nelson! Look! What a mess!</div>
+                <div class="dialogue-translation hidden">Nelson! Olha! Que bagunca!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="It's not that bad..." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">It's not that bad...</div>
+                <div class="dialogue-translation hidden">Nao esta tao ruim...</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="We need to clean. Now!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">We need to clean. Now!</div>
+                <div class="dialogue-translation hidden">Precisamos limpar. Agora!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I always clean!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I always clean!</div>
+                <div class="dialogue-translation hidden">Eu sempre limpo!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="You NEVER clean, Nelson!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">You NEVER clean, Nelson!</div>
+                <div class="dialogue-translation hidden">Voce NUNCA limpa, Nelson!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Okay, okay. What do I do?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Okay, okay. What do I do?</div>
+                <div class="dialogue-translation hidden">Ta bom, ta bom. O que eu faco?</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>In the US and UK, most families do ALL their own chores — no domestic help (empregada). Even children have chores! Kids often earn <strong>"pocket money"</strong> (mesada) by making their bed, taking out the trash, or washing the dishes.</p>
+        <p>Nos EUA e Reino Unido, a maioria das familias faz TODAS as tarefas domesticas sozinhas — sem empregada. Ate criancas ajudam! Criancas ganham <strong>"pocket money"</strong> (mesada) por arrumar a cama, tirar o lixo ou lavar a louca.</p>
+    </div>
+
+    <div class="section-divider">🗣️</div>
+
+    <!-- Dialogue 2: Cleci gives Nelson the sequence -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">Cleci gives Nelson a list of chores in order. Nelson is not happy! / Cleci da ao Nelson uma lista de tarefas em ordem. Nelson nao esta feliz!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="First, sweep the floor." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">First, sweep the floor.</div>
+                <div class="dialogue-translation hidden">Primeiro, varre o chao.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Okay. And then?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Okay. And then?</div>
+                <div class="dialogue-translation hidden">Ta. E depois?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Then, wash the dishes." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Then, wash the dishes.</div>
+                <div class="dialogue-translation hidden">Depois, lava a louca.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="The dishes? I don't like washing dishes!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">The dishes? I don't like washing dishes!</div>
+                <div class="dialogue-translation hidden">A louca? Eu nao gosto de lavar louca!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="After that, make the bed." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">After that, make the bed.</div>
+                <div class="dialogue-translation hidden">Depois disso, arruma a cama.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And finally?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">And finally?</div>
+                <div class="dialogue-translation hidden">E finalmente?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Finally... I relax. You cook!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Finally... I relax. You cook!</div>
+                <div class="dialogue-translation hidden">Finalmente... eu relaxo. Voce cozinha!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 1: This Is The Way -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 This Is The Way / Esse e o jeito</h3>
+            <p>Watch this fun song about daily routines! "This is the way we brush our teeth, wash our face..." What other chores can you hear? / Assista essa musica divertida sobre rotinas! "This is the way we brush our teeth, wash our face..." Que outras tarefas voce ouve?</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/4XLQpRI_wOQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="This Is The Way - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>🗣️ Fun Fact / Curiosidade</h3>
+        <p>The word <strong>"chore"</strong> originally meant "a turn" in Old English — as in "it's YOUR turn to clean!" In the US, the most HATED chore is ironing clothes. What about you — what chore do you hate?</p>
+        <p>A palavra <strong>"chore"</strong> originalmente significava "uma vez" em ingles antigo — como em "e a SUA vez de limpar!" Nos EUA, a tarefa mais ODIADA e passar roupa. E voce — que tarefa voce odeia?</p>
+    </div>
+
+    <div class="section-divider">📱</div>
+
+    <!-- Dialogue 3: Cleci calls Marina -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">After cleaning, Cleci calls Marina to tell her about the morning. / Depois de limpar, Cleci liga para Marina para contar sobre a manha.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hi! How are you feeling?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Hi! How are you feeling?</div>
+                <div class="dialogue-translation hidden">Oi! Como voce esta?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I'm tired! I cleaned all morning." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I'm tired! I cleaned all morning.</div>
+                <div class="dialogue-translation hidden">Estou cansada! Limpei a manha toda.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="What did you do?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">What did you do?</div>
+                <div class="dialogue-translation hidden">O que voce fez?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="First I swept. Then I washed the dishes." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">First I swept. Then I washed the dishes.</div>
+                <div class="dialogue-translation hidden">Primeiro varri. Depois lavei a louca.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And Nelson? Did he help?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">And Nelson? Did he help?</div>
+                <div class="dialogue-translation hidden">E o Nelson? Ele ajudou?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="He made the bed. Then he watched TV!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">He made the bed. Then he watched TV!</div>
+                <div class="dialogue-translation hidden">Ele arrumou a cama. Depois assistiu TV!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">🛋️</div>
+
+    <!-- Dialogue 4: Cleci and Nelson relax -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">Saturday afternoon. Nelson finished his one chore and offers coffee. Time to relax! / Sabado a tarde. Nelson terminou sua unica tarefa e oferece cafe. Hora de relaxar!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I'm done! The bed is clean." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">I'm done! The bed is clean.</div>
+                <div class="dialogue-translation hidden">Terminei! A cama esta arrumada.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="One bed, Nelson. I cleaned everything!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">One bed, Nelson. I cleaned everything!</div>
+                <div class="dialogue-translation hidden">Uma cama, Nelson. Eu limpei tudo!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Let me help. Coffee?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Let me help. Coffee?</div>
+                <div class="dialogue-translation hidden">Deixa eu ajudar. Cafe?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Coffee, please. Thank you!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Coffee, please. Thank you!</div>
+                <div class="dialogue-translation hidden">Cafe, por favor. Obrigada!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Now we relax?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Now we relax?</div>
+                <div class="dialogue-translation hidden">Agora a gente relaxa?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Finally! Yes! I love Saturday afternoons." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Finally! Yes! I love Saturday afternoons.</div>
+                <div class="dialogue-translation hidden">Finalmente! Sim! Amo sabados a tarde.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 2: My Day -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 My Day / Meu Dia</h3>
+            <p>A fun video about daily routine from morning to night! Notice the sequence: wake up, eat, go to school, come home... First, then, finally! / Um video divertido sobre rotina do dia, de manha ate a noite! Note a sequencia: acordar, comer, ir pra escola, voltar... Primeiro, depois, finalmente!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/qD1pnquN_DM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="My Day - Daily Routine - English Singsing"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>Change your phone language to English!</strong> Go to Settings → Language → English. You touch your phone 50+ times a day — that's 50 mini-lessons! You'll learn words like "Messages", "Settings", "Camera", "Photos" without even trying. Don't worry — you can change it back anytime!</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">
+                <strong>Mude o idioma do seu celular para ingles!</strong> Va em Ajustes → Idioma → English. Voce mexe no celular 50+ vezes por dia — sao 50 mini-licoes! Vai aprender palavras como "Messages", "Settings", "Camera", "Photos" sem nem tentar. Nao se preocupe — pode voltar a qualquer momento!
+            </p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">You can describe your chores AND put them in order! "First... Then... Finally... I relax!" 🎉</p>
+        <p class="story-intro-pt">Voce ja sabe descrever suas tarefas E colocar na ordem! "First... Then... Finally... I relax!"</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! 🧹';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>

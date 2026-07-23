@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10 - I can do this!</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 10: I can do this! 💪🎉</h1>
+        <p id="class-greeting">Final review, celebration & autonomy plan</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">This is it — the LAST class! But it's not the end. It's just the beginning! Let's celebrate everything you learned. You can do this!</p>
+        <p class="story-intro-pt">Chegou — a ULTIMA aula! Mas nao e o fim. E so o comeco! Vamos celebrar tudo que voce aprendeu. You can do this!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I feel" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I feel 😐</span>
+                <span class="vocab-pt hidden">Eu me sinto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I like" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I like ❤️</span>
+                <span class="vocab-pt hidden">Eu gosto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I love 😍</span>
+                <span class="vocab-pt hidden">Eu amo</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I need 👉</span>
+                <span class="vocab-pt hidden">Eu preciso</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Always" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Always 🔄</span>
+                <span class="vocab-pt hidden">Sempre</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Beautiful" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Beautiful 🌸</span>
+                <span class="vocab-pt hidden">Bonito/a</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Really good" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Really good 👍</span>
+                <span class="vocab-pt hidden">Muito bom</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I can" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I can 💪</span>
+                <span class="vocab-pt hidden">Eu consigo / Eu sei</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Congratulations!" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Congratulations! 🎉</span>
+                <span class="vocab-pt hidden">Parabens!</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I did it!" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I did it! 🏆</span>
+                <span class="vocab-pt hidden">Eu consegui!</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Keep going!" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Keep going! 🚀</span>
+                <span class="vocab-pt hidden">Continue!</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Practice" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Practice 📝</span>
+                <span class="vocab-pt hidden">Praticar</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Every day a little better" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Every day a little better 📈</span>
+                <span class="vocab-pt hidden">Todo dia um pouquinho melhor</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Can you repeat?" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Can you repeat? 🔁</span>
+                <span class="vocab-pt hidden">Pode repetir?</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't understand" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I don't understand 🤔</span>
+                <span class="vocab-pt hidden">Eu nao entendo</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="See you soon!" aria-label="Listen">🔊</button>
+                <span class="vocab-en">See you soon! 👋</span>
+                <span class="vocab-pt hidden">Ate logo!</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">💪</div>
+
+    <!-- Dialogue 1: Nelson tests Cleci -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">Morning. Nelson tests Cleci with a fun quiz to see how much she learned! / Manha. Nelson testa Cleci com um quiz divertido pra ver quanto ela aprendeu!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning! How are you feeling?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good morning! How are you feeling?</div>
+                <div class="dialogue-translation hidden">Bom dia! Como voce esta?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I feel happy! It's my last English class!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I feel happy! It's my last English class!</div>
+                <div class="dialogue-translation hidden">Me sinto feliz! E minha ultima aula de ingles!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="You can speak English now!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">You can speak English now!</div>
+                <div class="dialogue-translation hidden">Voce sabe falar ingles agora!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I can say 'Good morning!' I can order food!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I can say 'Good morning!' I can order food!</div>
+                <div class="dialogue-translation hidden">Eu sei dizer 'Good morning!' Eu sei pedir comida!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And you can describe me! Am I beautiful?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">And you can describe me! Am I beautiful?</div>
+                <div class="dialogue-translation hidden">E voce sabe me descrever! Eu sou bonito?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="You are short and crazy! But I love you." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">You are short and crazy! But I love you.</div>
+                <div class="dialogue-translation hidden">Voce e baixo e maluco! Mas eu te amo.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>In English, when you don't understand something, you can say: <strong>"Can you repeat, please?"</strong> or <strong>"More slowly, please."</strong> English speakers are VERY patient with learners! They appreciate you trying. Just say: <strong>"Sorry, I'm learning English"</strong> — and people will help you with a smile.</p>
+        <p>Em ingles, quando voce nao entende algo, pode dizer: <strong>"Can you repeat, please?"</strong> ou <strong>"More slowly, please."</strong> Falantes de ingles sao MUITO pacientes com quem esta aprendendo! Eles valorizam voce tentar. So diga: <strong>"Sorry, I'm learning English"</strong> — e as pessoas vao te ajudar com um sorriso.</p>
+    </div>
+
+    <div class="section-divider">🎉</div>
+
+    <!-- Dialogue 2: Cleci + Marina celebrating -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">Cleci meets Marina for coffee to celebrate finishing the course! / Cleci encontra Marina pra um cafe pra comemorar o fim do curso!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Congratulations! You finished the course!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Congratulations! You finished the course!</div>
+                <div class="dialogue-translation hidden">Parabens! Voce terminou o curso!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I did it! I can speak English!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I did it! I can speak English!</div>
+                <div class="dialogue-translation hidden">Eu consegui! Eu sei falar ingles!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="What can you do in English now?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">What can you do in English now?</div>
+                <div class="dialogue-translation hidden">O que voce sabe fazer em ingles agora?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I can order food. I can go to the doctor." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I can order food. I can go to the doctor.</div>
+                <div class="dialogue-translation hidden">Sei pedir comida. Sei ir ao medico.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And describe your crazy family!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">And describe your crazy family!</div>
+                <div class="dialogue-translation hidden">E descrever sua familia maluca!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I can do everything! Well... almost!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I can do everything! Well... almost!</div>
+                <div class="dialogue-translation hidden">Eu consigo tudo! Bom... quase!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 1: Hello Greeting Song -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 Hello! Greetings & Feelings / Ola! Saudacoes e Sentimentos</h3>
+            <p>One last song about greetings and feelings — where it all started! How many words do you know now? Listen and count! / Uma ultima musica sobre saudacoes e sentimentos — onde tudo comecou! Quantas palavras voce conhece agora? Ouca e conte!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/tVlcKp3bWH8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Hello! Greeting Song - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>🎓 Fun Fact / Curiosidade</h3>
+        <p>You learned about <strong>80 English words</strong> in 10 weeks! That's amazing. Native English speakers use only about <strong>800 words for 75% of daily conversation.</strong> You're already 10% of the way there! Keep going — every day a little better.</p>
+        <p>Voce aprendeu cerca de <strong>80 palavras em ingles</strong> em 10 semanas! Isso e incrivel. Falantes nativos usam apenas <strong>800 palavras para 75% da conversa do dia-a-dia.</strong> Voce ja esta 10% do caminho! Continue — todo dia um pouquinho melhor.</p>
+    </div>
+
+    <div class="section-divider">🚀</div>
+
+    <!-- Dialogue 3: Cleci + Vanessa planning the future -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">Cleci tells Vanessa about her plan to keep practicing English every day. / Cleci conta pra Vanessa seu plano de continuar praticando ingles todo dia.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="What are you going to do now?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">What are you going to do now?</div>
+                <div class="dialogue-translation hidden">O que voce vai fazer agora?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I'm going to practice every day!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I'm going to practice every day!</div>
+                <div class="dialogue-translation hidden">Eu vou praticar todo dia!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Every day? Really?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">Every day? Really?</div>
+                <div class="dialogue-translation hidden">Todo dia? Serio?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! Ten minutes with my coffee." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! Ten minutes with my coffee.</div>
+                <div class="dialogue-translation hidden">Sim! Dez minutos com meu cafe.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="And if you don't understand something?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Vanessa</div>
+                <div class="dialogue-text">And if you don't understand something?</div>
+                <div class="dialogue-translation hidden">E se voce nao entender algo?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I say: 'Can you repeat, please?'" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I say: 'Can you repeat, please?'</div>
+                <div class="dialogue-translation hidden">Eu digo: 'Can you repeat, please?'</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">🌟</div>
+
+    <!-- Dialogue 4: Cleci + Blue (sweet closing) -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">Little Blue asks Cleci to show off her English. A sweet ending! / A pequena Blue pede pra Cleci mostrar seu ingles. Um final fofo!</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Cleci! Say something in English!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">Cleci! Say something in English!</div>
+                <div class="dialogue-translation hidden">Cleci! Fala algo em ingles!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good morning, Blue! How are you?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Good morning, Blue! How are you?</div>
+                <div class="dialogue-translation hidden">Bom dia, Blue! Como voce esta?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="You can speak English! You're amazing!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">You can speak English! You're amazing!</div>
+                <div class="dialogue-translation hidden">Voce sabe falar ingles! Voce e incrivel!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Thank you! I can do this!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Thank you! I can do this!</div>
+                <div class="dialogue-translation hidden">Obrigada! Eu consigo!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Congratulations! I love you!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Blue</div>
+                <div class="dialogue-text">Congratulations! I love you!</div>
+                <div class="dialogue-translation hidden">Parabens! Eu te amo!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love you too. See you soon!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I love you too. See you soon!</div>
+                <div class="dialogue-translation hidden">Eu tambem te amo. Ate logo!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 2: Bye Bye Goodbye -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Bye Bye Goodbye! / Tchau Tchau!</h3>
+            <p>The perfect song to end our course! But remember: it's not 'goodbye' — it's 'see you soon!' You can do this. Keep going! 🎉 / A musica perfeita pra encerrar nosso curso! Mas lembre: nao e 'adeus' — e 'ate logo!' You can do this. Keep going! 🎉</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/PraN5ZoSjiY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Bye Bye Goodbye - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip (special format for final class) -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Your study plan / Seu plano de estudo</h3>
+            <p><strong>The 'Coffee English' Plan — 10 minutes with morning coffee:</strong></p>
+            <ul style="margin: 8px 0 12px 16px; line-height: 1.8; font-size: 1rem;">
+                <li>Monday: 1 YouTube video (BBC Learning English)</li>
+                <li>Tuesday: Review 5 words from this app</li>
+                <li>Wednesday: Describe your day aloud (to yourself!)</li>
+                <li>Thursday: Netflix with English subtitles</li>
+                <li>Friday: 3 sentences about your week (WhatsApp!)</li>
+                <li>Saturday: 1 English song — read the lyrics</li>
+                <li>Sunday: Rest!</li>
+            </ul>
+            <p><strong>Three rules:</strong> (1) Never more than 15 minutes (2) Never miss two days in a row (3) Use English for things you already enjoy!</p>
+
+            <hr style="margin: 16px 0; border: none; border-top: 1px solid rgba(0,0,0,0.1);">
+
+            <p style="font-size: 0.9rem; color: var(--text-light);"><strong>O Plano 'Cafe com Ingles' — 10 minutos com o cafe da manha:</strong></p>
+            <ul style="margin: 8px 0 12px 16px; line-height: 1.8; font-size: 0.9rem; color: var(--text-light);">
+                <li>Segunda: 1 video no YouTube (BBC Learning English)</li>
+                <li>Terca: Revise 5 palavras deste app</li>
+                <li>Quarta: Descreva seu dia em voz alta (pra voce mesma!)</li>
+                <li>Quinta: Netflix com legendas em ingles</li>
+                <li>Sexta: 3 frases sobre sua semana (WhatsApp!)</li>
+                <li>Sabado: 1 musica em ingles — leia a letra</li>
+                <li>Domingo: Descanse!</li>
+            </ul>
+            <p style="font-size: 0.9rem; color: var(--text-light);"><strong>Tres regras:</strong> (1) Nunca mais de 15 minutos (2) Nunca pule dois dias seguidos (3) Use ingles nas coisas que voce ja gosta!</p>
+        </div>
+    </div>
+
+    <!-- Closing (special — more emotional) -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">You did it! 10 classes. 80+ words. You can speak English! 🎉 This is not the end — this is just the beginning. Every day a little better. You are amazing. See you soon! 💪🌟</p>
+        <p class="story-intro-pt">Voce conseguiu! 10 aulas. 80+ palavras. Voce sabe falar ingles! 🎉 Isso nao e o fim — e so o comeco. Todo dia um pouquinho melhor. Voce e incrivel. See you soon! 💪🌟</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! 🎉';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 9 - Let's go for a trip!</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="class-page">
+
+    <a href="../../index.html" class="back-link">Back to classes</a>
+
+    <div class="class-header">
+        <h1>Class 9: Let's go for a trip! ✈️</h1>
+        <p id="class-greeting">Travel, plans & "going to"</p>
+    </div>
+
+    <div class="story-intro">
+        <p class="story-intro-en">Exciting news! Cleci and Nelson are going to the beach! From planning to arriving — let's learn travel English!</p>
+        <p class="story-intro-pt">Novidade! Cleci e Nelson vao para a praia! Do planejamento ate a chegada — vamos aprender ingles de viagem!</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="section">
+        <h2>Words of the Week / Palavras da Semana</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px;">
+            Tap to see the translation / Toque para ver a traducao
+        </p>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; font-style: italic;">Review / Revisao ⭐</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I want" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I want 👉</span>
+                <span class="vocab-pt hidden">Eu quero</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I need" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I need 👉</span>
+                <span class="vocab-pt hidden">Eu preciso</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I love 😍</span>
+                <span class="vocab-pt hidden">Eu amo</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="How much?" aria-label="Listen">🔊</button>
+                <span class="vocab-en">How much...? 💰</span>
+                <span class="vocab-pt hidden">Quanto...?</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Please" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Please 🙏</span>
+                <span class="vocab-pt hidden">Por favor</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Thank you" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Thank you 😊</span>
+                <span class="vocab-pt hidden">Obrigado/a</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="First. Then." aria-label="Listen">🔊</button>
+                <span class="vocab-en">First / Then ☝️➡️</span>
+                <span class="vocab-pt hidden">Primeiro / Depois</span>
+            </li>
+        </ul>
+
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; margin-top: 16px; font-style: italic;">New / Novo 🆕</p>
+        <ul class="vocab-list">
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Trip" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Trip ✈️</span>
+                <span class="vocab-pt hidden">Viagem</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Beach" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Beach 🏖️</span>
+                <span class="vocab-pt hidden">Praia</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Hotel" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Hotel 🏨</span>
+                <span class="vocab-pt hidden">Hotel</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Airport" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Airport 🛫</span>
+                <span class="vocab-pt hidden">Aeroporto</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Bag" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Bag 🧳</span>
+                <span class="vocab-pt hidden">Mala</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I'm going to" aria-label="Listen">🔊</button>
+                <span class="vocab-en">I'm going to... 📅</span>
+                <span class="vocab-pt hidden">Eu vou...</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Ticket" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Ticket 🎫</span>
+                <span class="vocab-pt hidden">Passagem</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Passport" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Passport 📕</span>
+                <span class="vocab-pt hidden">Passaporte</span>
+            </li>
+            <li class="vocab-item" onclick="toggleTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Where is?" aria-label="Listen">🔊</button>
+                <span class="vocab-en">Where is...? 📍</span>
+                <span class="vocab-pt hidden">Onde fica...?</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-divider">✈️</div>
+
+    <!-- Dialogue 1: Planning the trip -->
+    <div class="section">
+        <h2>Dialogue 1 / Dialogo 1</h2>
+        <p class="scene-description">Cleci is so excited! She calls Marina to share the news. / Cleci esta muito animada! Ela liga pra Marina pra contar a novidade.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Marina! I'm going to travel!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Marina! I'm going to travel!</div>
+                <div class="dialogue-translation hidden">Marina! Eu vou viajar!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Really? Where?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">Really? Where?</div>
+                <div class="dialogue-translation hidden">Serio? Pra onde?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="To the beach! Next weekend." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">To the beach! Next weekend.</div>
+                <div class="dialogue-translation hidden">Pra praia! No proximo fim de semana.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I love the beach! With Nelson?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">I love the beach! With Nelson?</div>
+                <div class="dialogue-translation hidden">Amo praia! Com o Nelson?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! We're going to stay at a hotel." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! We're going to stay at a hotel.</div>
+                <div class="dialogue-translation hidden">Sim! Vamos ficar num hotel.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="How many nights?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Marina</div>
+                <div class="dialogue-text">How many nights?</div>
+                <div class="dialogue-translation hidden">Quantas noites?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Two nights. I'm so happy!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Two nights. I'm so happy!</div>
+                <div class="dialogue-translation hidden">Duas noites. Estou tao feliz!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Note -->
+    <div class="cultural-note">
+        <h3>🌍 Did you know? / Voce sabia?</h3>
+        <p>Americans say <strong>"vacation"</strong>, British say <strong>"holiday"</strong> — same thing! Also: <strong>"Excuse me"</strong> is the magic travel word. In any English-speaking country, starting with "Excuse me..." makes people want to help you. Try it!</p>
+        <p>Americanos dizem "vacation", britanicos dizem "holiday" — mesma coisa! Tambem: <strong>"Excuse me"</strong> e a palavra magica de viagem. Em qualquer pais de lingua inglesa, comecar com "Excuse me..." faz as pessoas quererem te ajudar. Experimente!</p>
+    </div>
+
+    <div class="section-divider">🧳</div>
+
+    <!-- Dialogue 2: Packing at home -->
+    <div class="section">
+        <h2>Dialogue 2 / Dialogo 2</h2>
+        <p class="scene-description">The day before the trip. Cleci and Nelson are packing at home. / Um dia antes da viagem. Cleci e Nelson estao arrumando as malas em casa.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Are you going to pack today?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Are you going to pack today?</div>
+                <div class="dialogue-translation hidden">Voce vai arrumar a mala hoje?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Yes! I need my bag." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Yes! I need my bag.</div>
+                <div class="dialogue-translation hidden">Sim! Preciso da minha mala.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Don't forget the tickets!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Don't forget the tickets!</div>
+                <div class="dialogue-translation hidden">Nao esquece as passagens!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Tickets... passport... bag... What else?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Tickets... passport... bag... What else?</div>
+                <div class="dialogue-translation hidden">Passagens... passaporte... mala... O que mais?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Medicine? Just in case." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Medicine? Just in case.</div>
+                <div class="dialogue-translation hidden">Remedio? So por garantia.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good idea! I'm going to pack that too." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Good idea! I'm going to pack that too.</div>
+                <div class="dialogue-translation hidden">Boa ideia! Vou colocar isso tambem.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 1: Walking Walking -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎬 Walking Walking / Andando Andando</h3>
+            <p>A fun action song! Walking, hopping, running, stopping... How many ways to move can you hear? Move along! / Uma musica divertida de acao! Andando, pulando, correndo, parando... Quantas formas de se mover voce ouve? Mexa-se junto!</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/fPMjnlTEZwU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Walking Walking - Super Simple Songs"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <h3>🏖️ Fun Fact / Curiosidade</h3>
+        <p>Be careful with <strong>"beach"</strong>! The pronunciation is /bi&#720;t&#643;/ with a <strong>LONG "ee" sound</strong> — like "teacher". A short "i" sound makes a VERY different (bad!) word. Practice: <strong>beeeach</strong>. Long and slow! 🏖️</p>
+        <p>Cuidado com "beach"! A pronuncia e /bi&#720;t&#643;/ com um som de "ee" <strong>LONGO</strong> — como "teacher". Um "i" curto vira uma palavra MUITO diferente (e feia!). Pratique: <strong>beeeach</strong>. Longo e devagar! 🏖️</p>
+    </div>
+
+    <div class="section-divider">🛫</div>
+
+    <!-- Dialogue 3: At the airport -->
+    <div class="section">
+        <h2>Dialogue 3 / Dialogo 3</h2>
+        <p class="scene-description">At the airport! Cleci and Nelson are looking for their gate. / No aeroporto! Cleci e Nelson estao procurando o portao de embarque.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Where is gate 5?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Where is gate 5?</div>
+                <div class="dialogue-translation hidden">Onde e o portao 5?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I don't know. Excuse me!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I don't know. Excuse me!</div>
+                <div class="dialogue-translation hidden">Nao sei. Com licenca!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Where is gate 5, please?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Where is gate 5, please?</div>
+                <div class="dialogue-translation hidden">Onde e o portao 5, por favor?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Thank you! Let's go." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Thank you! Let's go.</div>
+                <div class="dialogue-translation hidden">Obrigado! Vamos.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="I'm so excited! Beach!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">I'm so excited! Beach!</div>
+                <div class="dialogue-translation hidden">Estou tao animada! Praia!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Me too! I'm going to relax." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Me too! I'm going to relax.</div>
+                <div class="dialogue-translation hidden">Eu tambem! Eu vou relaxar.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">🏨</div>
+
+    <!-- Dialogue 4: Checking into the hotel -->
+    <div class="section">
+        <h2>Dialogue 4 / Dialogo 4</h2>
+        <p class="scene-description">They arrived! Cleci and Nelson check into their hotel near the beach. / Chegaram! Cleci e Nelson fazem check-in no hotel perto da praia.</p>
+
+        <div class="dialogue">
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Good afternoon! I have a reservation." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Good afternoon! I have a reservation.</div>
+                <div class="dialogue-translation hidden">Boa tarde! Tenho uma reserva.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Two nights, please." aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Two nights, please.</div>
+                <div class="dialogue-translation hidden">Duas noites, por favor.</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Where is the beach?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Where is the beach?</div>
+                <div class="dialogue-translation hidden">Onde fica a praia?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Is it near the hotel?" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">Is it near the hotel?</div>
+                <div class="dialogue-translation hidden">E perto do hotel?</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="Thank you! Let's go to the beach!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Nelson</div>
+                <div class="dialogue-text">Thank you! Let's go to the beach!</div>
+                <div class="dialogue-translation hidden">Obrigado! Vamos pra praia!</div>
+            </div>
+            <div class="dialogue-line" onclick="toggleDialogueTranslation(event, this)">
+                <button class="audio-btn" data-pronounce="First, I relax. Then, beach!" aria-label="Listen">🔊</button>
+                <div class="dialogue-speaker">Cleci</div>
+                <div class="dialogue-text">First, I relax. Then, beach!</div>
+                <div class="dialogue-translation hidden">Primeiro, relaxo. Depois, praia!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 2: Days of the Week -->
+    <div class="section">
+        <div class="video-section">
+            <h3>🎵 Days of the Week / Dias da Semana</h3>
+            <p>Learn the days of the week with this catchy song! Perfect for planning: "Next Monday I'm going to...", "This Saturday we're going to..." / Aprenda os dias da semana com essa musica! Perfeito para planejar: "Next Monday I'm going to...", "This Saturday we're going to..."</p>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/mXMofxtDPUQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Days of the Week - The Singing Walrus"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider">📚</div>
+
+    <!-- Self-study tip -->
+    <div class="section">
+        <div class="tip-box">
+            <h3>💡 Self-study tip / Dica de estudo</h3>
+            <p><strong>Use Forvo.com for pronunciation!</strong> Type any English word and hear REAL people say it — from different countries! Try it now: search "beach", "hotel", "airport". Listen to American vs British. You can even hear your own name in English! Free and no account needed.</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-light);">
+                <strong>Use o Forvo.com para pronuncia!</strong> Digite qualquer palavra em ingles e ouca PESSOAS REAIS falando — de diferentes paises! Tente agora: busque "beach", "hotel", "airport". Ouca americano vs britanico. Voce pode ate ouvir seu proprio nome em ingles! Gratuito e sem precisar de conta.
+            </p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="story-intro" style="margin-top: 32px;">
+        <p class="story-intro-en">You can plan a trip in English! "I'm going to..." + "Where is...?" — you're ready to travel! ✈️🎉</p>
+        <p class="story-intro-pt">Voce ja sabe planejar uma viagem em ingles! "I'm going to..." + "Where is...?" — pronta pra viajar!</p>
+    </div>
+
+    <a href="../../index.html" class="back-link" style="display: block; text-align: center; margin-top: 20px; font-size: 1rem;">
+        Back to classes / Voltar para aulas
+    </a>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/pronunciation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var name = getStudentName();
+        var greetingEl = document.getElementById('class-greeting');
+        if (greetingEl && name) {
+            greetingEl.textContent = 'Hello, ' + name + '! ✈️';
+        }
+    });
+
+    function toggleTranslation(ev, item) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var pt = item.querySelector('.vocab-pt');
+        if (pt) pt.classList.toggle('hidden');
+    }
+
+    function toggleDialogueTranslation(ev, line) {
+        if (ev.target.classList.contains('audio-btn')) return;
+        var trans = line.querySelector('.dialogue-translation');
+        if (trans) trans.classList.toggle('hidden');
+    }
+    </script>
+
+</body>
+</html>
